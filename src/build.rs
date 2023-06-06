@@ -12,4 +12,6 @@ fn main() {
         "build",
     ]);
 
+    println!("Built book!")
+
 }
