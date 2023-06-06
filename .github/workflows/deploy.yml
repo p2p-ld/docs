@@ -25,7 +25,7 @@ jobs:
       with:
         cache-all-crates: "true"
         cache-targets: "false"
-    - run: cargo install --locked
+    - run: cargo install --locked --path .
 
     # - name: Install latest mdbook
     #   run: |
