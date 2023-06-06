@@ -10,6 +10,7 @@
 
 # p2p-ld Protocol
 
+- [Definitions](./definitions.md)
 - [Protocol](./protocol.md)
 - [Identity](./identity.md)
 - [Discovery](./discovery.md)
