@@ -1,5 +1,7 @@
 # Sketchpad
 
+Dummy change to check that we don't invalidate the rust cache on CI.
+
 ## System Diagram
 
 Just a stub to check if mermaid works
