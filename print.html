@@ -1,0 +1,513 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title></title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="comparison.html"><strong aria-hidden="true">2.</strong> Comparison</a></li><li class="chapter-item expanded "><a href="p2p_concepts.html"><strong aria-hidden="true">3.</strong> P2P Concepts</a></li><li class="chapter-item expanded "><a href="out_of_scope.html"><strong aria-hidden="true">4.</strong> Out of Scope</a></li><li class="chapter-item expanded affix "><li class="part-title">p2p-ld Protocol</li><li class="chapter-item expanded "><a href="definitions.html"><strong aria-hidden="true">5.</strong> Definitions</a></li><li class="chapter-item expanded "><a href="protocol.html"><strong aria-hidden="true">6.</strong> Protocol</a></li><li class="chapter-item expanded "><a href="identity.html"><strong aria-hidden="true">7.</strong> Identity</a></li><li class="chapter-item expanded "><a href="discovery.html"><strong aria-hidden="true">8.</strong> Discovery</a></li><li class="chapter-item expanded "><a href="data_structures.html"><strong aria-hidden="true">9.</strong> Data Structures</a></li><li class="chapter-item expanded "><a href="vocabulary.html"><strong aria-hidden="true">10.</strong> Vocabulary</a></li><li class="chapter-item expanded "><a href="querying.html"><strong aria-hidden="true">11.</strong> Querying</a></li><li class="chapter-item expanded "><a href="encryption.html"><strong aria-hidden="true">12.</strong> Encryption</a></li><li class="chapter-item expanded "><a href="federation.html"><strong aria-hidden="true">13.</strong> Federation</a></li><li class="chapter-item expanded "><a href="backwards_compatibility.html"><strong aria-hidden="true">14.</strong> Backwards Compatibility</a></li><li class="chapter-item expanded "><a href="evolvability.html"><strong aria-hidden="true">15.</strong> Evolvability</a></li><li class="chapter-item expanded affix "><li class="part-title">Ecosystem</li><li class="chapter-item expanded "><div><strong aria-hidden="true">16.</strong> Triplets</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">17.</strong> Translation</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="sketchpad.html">Sketchpad</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p>All of this is very work in progress :) plz do not rely on any of the descriptions or statements here, as they are all effectively provisional.</p>
+<p>This site describes the implementation of the p2p linked data protocol in {{#cite saundersDecentralizedInfrastructureNeuro2022 }}</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="overview"><a class="header" href="#overview">Overview</a></h1>
+<p>p2p-ld </p>
+<h2 id="background"><a class="header" href="#background">Background</a></h2>
+<ul>
+<li>Semweb/Linked Data</li>
+<li>Limitations/differences of existing p2p</li>
+</ul>
+<h2 id="use"><a class="header" href="#use">Use</a></h2>
+<ul>
+<li>How is this intended to be used? by whom? in what contexts?</li>
+</ul>
+<h2 id="roadmap"><a class="header" href="#roadmap">Roadmap</a></h2>
+<ul>
+<li>Development roadmap and timeline!</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="comparison"><a class="header" href="#comparison">Comparison</a></h1>
+<p>All of this is TODO. Comparison to existing protocols and projects (just to situate in context, not talk shit obvs)</p>
+<h2 id="the-big-ones"><a class="header" href="#the-big-ones">&quot;The big ones&quot;</a></h2>
+<ul>
+<li>BitTorrent</li>
+<li>IPFS</li>
+</ul>
+<h2 id="the-research-ones"><a class="header" href="#the-research-ones">&quot;The research ones&quot;</a></h2>
+<ul>
+<li>Dat</li>
+<li>Hypercore</li>
+</ul>
+<h2 id="social"><a class="header" href="#social">Social</a></h2>
+<ul>
+<li>ActivityPub/Fediverse</li>
+<li>Secure Scuttlebutt</li>
+<li>Matrix</li>
+</ul>
+<h2 id="semwebld"><a class="header" href="#semwebld">Semweb/LD</a></h2>
+<ul>
+<li>SOLID</li>
+<li>Nanopubs</li>
+</ul>
+<h2 id="to-be-categorized"><a class="header" href="#to-be-categorized">To be categorized</a></h2>
+<ul>
+<li>Agregore</li>
+<li>Arweave</li>
+<li>CAN</li>
+<li>Chord</li>
+<li>Earthstar</li>
+<li>Freenet</li>
+<li>Manyverse</li>
+<li>P2panda</li>
+<li>SAFE</li>
+<li>Storj</li>
+<li>Swarm</li>
+</ul>
+<h2 id="points-of-comparison"><a class="header" href="#points-of-comparison">Points of comparison</a></h2>
+<ul>
+<li>not append-only</li>
+<li>metadata</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="p2p-concepts"><a class="header" href="#p2p-concepts">P2P Concepts</a></h1>
+<p>Overview of the various concepts that p2p systems have to handle or address with links to the sections where we address them!</p>
+<ul>
+<li><a href="definitions.html">Definitions</a> - Terms used within the protocol spec</li>
+<li><a href="protocol.html">Protocol</a> - The protocol spec itself, which encompasses the following sections and describes how they relate to one another.</li>
+<li><a href="identity.html">Identity</a> - How each peer in the swarm is identified (or not)</li>
+<li><a href="discovery.html">Discovery</a> - How peers are discovered and connected to in the swarm, or, how an identity is dereferenced into some network entity.</li>
+<li><a href="data_structures.html">Data Structures</a> - What and how data is represented within the protocol</li>
+<li><a href="querying.html">Querying</a> - How data, or pieces of data are requested from hosting peers</li>
+<li><a href="evolvability.html">Evolvability</a> - How the protocol is intended to accommodate changes, plugins, etc.</li>
+</ul>
+<p>Additionally, p2p-ld considers these additional properties that are not universal to p2p protocols:</p>
+<ul>
+<li><a href="vocabulary.html">Vocabulary</a> - The linked data vocabulary that is used within the protocol</li>
+<li><a href="encryption.html">Encryption</a> - How individual messages can be encrypted and decrypted by peers</li>
+<li><a href="federation.html">Federation</a> - How peers can form supra-peer clusters for swarm robustness, social organization, and governance</li>
+<li><a href="backwards_compatibility.html">Backwards Compatibility</a> - How the protocol integrates with existing protocols and technologies.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="out-of-scope"><a class="header" href="#out-of-scope">Out of Scope</a></h1>
+<p>What should explicitly be left out of the protocol?</p>
+<h2 id="implementation"><a class="header" href="#implementation">Implementation</a></h2>
+<p>Things that are described in the spec, but details are left up to the implementation</p>
+<ul>
+<li>codecs: the spec describes how to define a codec, but does not include any codecs.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="definitions"><a class="header" href="#definitions">Definitions</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="protocol"><a class="header" href="#protocol">Protocol</a></h1>
+<h2 id="connection"><a class="header" href="#connection">Connection</a></h2>
+<ul>
+<li>When connecting to a peer, a peer MUST advertise its own connections to other peers whose discoverability permissions allow it
+<ul>
+<li>eg. a peer can desig</li>
+</ul>
+</li>
+</ul>
+<h2 id="requests"><a class="header" href="#requests">Requests</a></h2>
+<h2 id="sharding"><a class="header" href="#sharding">Sharding</a></h2>
+<h2 id="backlinks"><a class="header" href="#backlinks">Backlinks</a></h2>
+<p>Every link has an implicit backlink that can be accepted/denied by the owner of the referenced object. </p>
+<p>If a link is proposed from a blocked identifier, the proposed link is automatically dropped</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="identity"><a class="header" href="#identity">Identity</a></h1>
+<p>How is an individual peer identified?</p>
+<ul>
+<li>Cryptographic identity</li>
+<li>Web of trust/shared identity</li>
+<li>External verification/discovery via DNS and other out of band means.</li>
+</ul>
+<h2 id="instances"><a class="header" href="#instances">Instances</a></h2>
+<p>A given identity can have 0 or many instances - a manifestation of the peer within a particular server and runtime. </p>
+<p>Each instance indicates a collection of peers </p>
+<p>When connecting to a peer, the peer MUST tell the connecting peer of the instances that are within its permission scope.</p>
+<h2 id="aliases"><a class="header" href="#aliases">Aliases</a></h2>
+<p>A given identity can have 0 or many bidirectional links indicating that the identity is <code>sameAs</code> another</p>
+<ul>
+<li>eg. a fediverse account can indicate a cryptographic identity and then be used equivalently.</li>
+<li>Verification aliases MUST have a backlink from the original identity</li>
+<li>Subscribers to a given identity MUST store and represent the known aliases and treat them as equivalent</li>
+<li>Other accounts can give an alias to an identity that MAY be accepted (by issuing a backlink) or denied (by ignoring it).</li>
+</ul>
+<h3 id="succession"><a class="header" href="#succession">Succession</a></h3>
+<p>An identity has a specific field indicating whether it is &quot;active&quot; or &quot;retired,&quot; and can issue a special top-level link with given permission scope indicating the identity that succeeds it.
+- eg in the case of harrassment, one can hop identities and only tell close friends.</p>
+<h2 id="beacons"><a class="header" href="#beacons">Beacons</a></h2>
+<p>Any peer can operate as a &quot;Pub&quot; (in the parlance of SSB) or a bootstrapping node, where a dereferenceable network location (eg. DNS) can be resolved to a</p>
+<p>A given identity can have 0 or many static inbound references that can resolve a network</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="discovery"><a class="header" href="#discovery">Discovery</a></h1>
+<p>How do we find people and know how to connect to them?</p>
+<ul>
+<li>Bootstrapping initial connections</li>
+<li>Gossiping</li>
+<li>Hole punching</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="data-structures"><a class="header" href="#data-structures">Data Structures</a></h1>
+<p>Triplet graphs similar to linked data fragments with envelopes. decoupling content addressing from versioning</p>
+<ul>
+<li>Merkel DAGs</li>
+<li>Envelopes</li>
+<li>Versioning</li>
+<li>Typed objects with formatting</li>
+</ul>
+<h2 id="containers"><a class="header" href="#containers">Containers</a></h2>
+<ul>
+<li>Packets of LD-triplets that contain
+<ul>
+<li>Hash of triplets</li>
+<li>Encryption Info (if applicable)</li>
+<li>Permissions scope</li>
+<li>Signature</li>
+</ul>
+</li>
+<li>Anything that can be directly referenced without local qualifier is a container. 
+<ul>
+<li>Triplets within a container can be referenced with the <a href="querying.html#Location">query syntax</a></li>
+</ul>
+</li>
+<li>Containers also behave like &quot;feeds&quot; 
+<ul>
+<li>Eg. one might put their blog posts in <code>@user:blog</code> or </li>
+</ul>
+</li>
+<li>The account identifier is the top-level container.</li>
+<li>Ordering: 
+<ul>
+<li>Every triple within a scope is ordered by default by the time it is declared</li>
+<li>A container can declare its ordering (see <a href="vocabulary.html#Container">vocabulary</a>)</li>
+</ul>
+</li>
+<li>Naming: 
+<ul>
+<li>Each container intended to be directly referenced SHOULD contain a <code>name</code> so it can be referenced w.r.t its parent: <code>@&lt;ACCOUNT&gt;:&lt;name&gt;</code></li>
+<li>Each container can also be indicated numerically</li>
+</ul>
+</li>
+<li>Identity: Each container is uniquely identified by the hash of its contents and the hash of the account identifier. </li>
+<li>Format: A container can specify one or several ways it can be displayed </li>
+<li>Capabilities: A container can specify different capabilities that another account can take (eg. &quot;Like&quot;, &quot;Upvote&quot;, &quot;Reply&quot;)
+<ul>
+<li>Capabilities should also contain a permissions scope, if none is present, the global scope is assumed.</li>
+</ul>
+</li>
+</ul>
+<h2 id="triplets"><a class="header" href="#triplets">Triplets</a></h2>
+<ul>
+<li>Triplet format
+<ul>
+<li>Objects require a shortname that can be hierarchically indexed from </li>
+</ul>
+</li>
+<li>Types/Schema</li>
+<li>Including intrinsic notion of nesting
+<ul>
+<li>every object can have blank/positionally indexed children</li>
+<li>every triple can have blank/positionally indexed &quot;qualifiers&quot; like RDF-star or wikidata's qualifiers.</li>
+</ul>
+</li>
+</ul>
+<h2 id="schema"><a class="header" href="#schema">Schema</a></h2>
+<h2 id="codecs"><a class="header" href="#codecs">Codecs</a></h2>
+<p>See IPLD Codecs and Linked Data Platform spec</p>
+<p>Means of interacting with binary data. </p>
+<p>Describes</p>
+<ul>
+<li>Format</li>
+<li></li>
+</ul>
+<h2 id="versioning"><a class="header" href="#versioning">Versioning</a></h2>
+<ul>
+<li>A given container has an identity hash from its first packing</li>
+<li>A given triple can be contained by</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vocabulary"><a class="header" href="#vocabulary">Vocabulary</a></h1>
+<h2 id="imports"><a class="header" href="#imports">Imports</a></h2>
+<ul>
+<li><code>skos:sameAs</code> - for declaring that a given triplet is equivalent to another.</li>
+</ul>
+<h2 id="container"><a class="header" href="#container">Container</a></h2>
+<ul>
+<li><code>ordering</code> - how the children are to be ordered
+<ul>
+<li><code>declaration</code> - makes numerical references stronger, but less predictable.</li>
+<li><code>alphabetic</code> - makes numerical references weaker, but more predictable</li>
+</ul>
+</li>
+</ul>
+<h2 id="social-1"><a class="header" href="#social-1">Social</a></h2>
+<ul>
+<li>Containers of other accounts</li>
+<li>proxy identites: a given identity can specify a collection of alts that can only be resolved with the correct permission scope - so eg. a public account that is stable can be linked to by an abusive user, but they won't be able to resolve a more private alt.</li>
+<li>Peer Relationship Types
+<ul>
+<li>Other peers can be given special roles that allow them to operate on behalf of the peer in mutually independent ways:</li>
+<li>Keybearer - also share a given private key, </li>
+</ul>
+</li>
+<li>Visibility
+<ul>
+<li>A peer can indicate that it is visible to a given scope as defined by a collection of peers and associated rules. </li>
+<li>eg. a &quot;close friends&quot; collection could be given the visibility rule to make a peer visible to n-deep friends of friends.</li>
+<li>A </li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="querying"><a class="header" href="#querying">Querying</a></h1>
+<p>How do we find peers that have subgraphs that are responsive to what we want?</p>
+<h2 id="syntax"><a class="header" href="#syntax">Syntax</a></h2>
+<h3 id="location"><a class="header" href="#location">Location</a></h3>
+<p>How to refer to a given <a href="data_structures.html#Containers">container</a>, eg.</p>
+<pre><code>@user:containerName:childName
+</code></pre>
+<p>or numerically</p>
+<pre><code>@user:containerName:{0}
+</code></pre>
+<p>Children </p>
+<h3 id="version"><a class="header" href="#version">Version</a></h3>
+<p>How to refer to a specific version of a container</p>
+<p>References without version qualification indicate the most recent version at the time of containerizing the links.</p>
+<h2 id="query-fragments"><a class="header" href="#query-fragments">Query Fragments</a></h2>
+<p>Using blank subgraphs to specify queries</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="encryption"><a class="header" href="#encryption">Encryption</a></h1>
+<p>How can we make it possible to have a protocol that is &quot;open&quot; when it is intended to, but also protects privacy and consent when we need it to?</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="federation"><a class="header" href="#federation">Federation</a></h1>
+<p>Making supra-peer clusters with explicit governance and policies for rehosting and sharing!</p>
+<ul>
+<li>Creating federations of peers</li>
+<li></li>
+</ul>
+<h2 id="sharding-1"><a class="header" href="#sharding-1">Sharding</a></h2>
+<p>Splitting data across multiple peers within a federation</p>
+<h2 id="moderation"><a class="header" href="#moderation">Moderation</a></h2>
+<p>Federations MUST maintain a list of </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="backwards-compatibility"><a class="header" href="#backwards-compatibility">Backwards Compatibility</a></h1>
+<ul>
+<li>HTTP</li>
+<li>Bittorrent</li>
+<li>IPFS</li>
+<li>ActivityPub</li>
+</ul>
+<h2 id="http-servers"><a class="header" href="#http-servers">HTTP Servers</a></h2>
+<ul>
+<li>Using existing HTTP servers as web-seed like things.</li>
+<li>Use codecs to indicate the format and metadata of existing files</li>
+<li>Use HTTP servers as backup mirrors that behave like peers, and how peers can indicate them as mirrors for a given container</li>
+</ul>
+<h2 id="bittorrent"><a class="header" href="#bittorrent">BitTorrent</a></h2>
+<p>See <a href="http://bittorrent.org/beps/bep_0052.html">BEP 52 - Bittorrent V2</a></p>
+<h2 id="ipfs"><a class="header" href="#ipfs">IPFS</a></h2>
+<h2 id="activitypub"><a class="header" href="#activitypub">ActivityPub</a></h2>
+<ul>
+<li>Mappings:
+<ul>
+<li>Container &lt;-&gt; feed</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="evolvability"><a class="header" href="#evolvability">Evolvability</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sketchpad"><a class="header" href="#sketchpad">Sketchpad</a></h1>
+<p>Dummy change to check that we don't invalidate the rust cache on CI.</p>
+<h2 id="system-diagram"><a class="header" href="#system-diagram">System Diagram</a></h2>
+<p>Just a stub to check if mermaid works</p>
+<pre><code class="language-mermaid">erDiagram
+	IDENTITY {
+		string hash
+	}
+	INSTANCE {
+		string ip
+		string client
+	}
+	BEACON {
+		string uri
+	}
+	IDENTITY ||--o{ INSTANCE : runs
+	BEACON }o--|{ INSTANCE : links
+	BEACON }o--|| IDENTITY : represents
+
+</code></pre>
+<h2 id="graph-data-model"><a class="header" href="#graph-data-model">Graph Data Model</a></h2>
+<ul>
+<li>Triplets</li>
+<li>Containers</li>
+<li>Codecs</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
