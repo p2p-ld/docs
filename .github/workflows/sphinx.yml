@@ -41,7 +41,9 @@ jobs:
         run: poetry install --no-root
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
       - name: build docs
-        run: make html
+        run: |
+          poetry shell
+          make html
       - name: deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
