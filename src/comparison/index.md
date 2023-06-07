@@ -2,26 +2,30 @@
 
 All of this is TODO. Comparison to existing protocols and projects (just to situate in context, not talk shit obvs)
 
-## "The big ones"
+```{toctree}
+:caption: P2P
 
-- BitTorrent
-- IPFS
+bittorrent
+ipfs
+hypercore
+```
 
-## "The research ones"
+```{toctree}
+:caption: Social
 
-- Dat
-- Hypercore
+activitypub
+ssb
+matrix
+at_protocol
+```
 
-## Social
+```{toctree}
+:caption: Linked Data
 
-- ActivityPub/Fediverse
-- Secure Scuttlebutt
-- Matrix
-
-## Semweb/LD
-
-- SOLID
-- Nanopubs
+solid
+ld_fragments
+nanopubs
+```
 
 ## To be categorized
 

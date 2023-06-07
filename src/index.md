@@ -8,13 +8,14 @@ This site describes the implementation of the p2p linked data protocol in {cite}
 :caption: Introduction
 
 overview
-comparison
+comparison/index
 p2p_concepts
 out_of_scope
-```
+```  
 
 ```{toctree}
 :caption: Protocol
+:numbered:
 
 definitions
 protocol

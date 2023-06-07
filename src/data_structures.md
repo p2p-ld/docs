@@ -29,6 +29,7 @@ Triplet graphs similar to linked data fragments with envelopes. decoupling conte
 - Format: A container can specify one or several ways it can be displayed 
 - Capabilities: A container can specify different capabilities that another account can take (eg. "Like", "Upvote", "Reply")
 	- Capabilities should also contain a permissions scope, if none is present, the global scope is assumed.
+	- Since Identities are just a special form of container, they too can advertise different actions that they support with capabilities.
 
 
 
