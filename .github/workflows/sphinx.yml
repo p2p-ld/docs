@@ -41,9 +41,7 @@ jobs:
         run: poetry install --no-root
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
       - name: build docs
-        run: |
-          poetry shell
-          make html
+        run: poetry run sphinx-build -M html src build
       - name: deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
