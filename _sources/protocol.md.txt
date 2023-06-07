@@ -14,4 +14,4 @@
 
 Every link has an implicit backlink that can be accepted/denied by the owner of the referenced object. 
 
-If a link is proposed from a blocked identifier, the proposed link is automatically dropped
+If a link is proposed from a blocked identifier, the proposed link is automatically dropped 

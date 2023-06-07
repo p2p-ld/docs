@@ -6,7 +6,7 @@ How is an individual peer identified?
 - Web of trust/shared identity
 - External verification/discovery via DNS and other out of band means.
 
-## Instances
+## {index}`Instances`
 
 A given identity can have 0 or many instances - a manifestation of the peer within a particular server and runtime. 
 
@@ -32,3 +32,4 @@ An identity has a specific field indicating whether it is "active" or "retired,"
 Any peer can operate as a "Pub" (in the parlance of SSB) or a bootstrapping node, where a dereferenceable network location (eg. DNS) can be resolved to a
 
 A given identity can have 0 or many static inbound references that can resolve a network
+
