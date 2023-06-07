@@ -18,6 +18,7 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.autodoc',
     'sphinxcontrib.mermaid',
+    'sphinxcontrib.bibtex',
     'myst_parser'
 ]
 
@@ -51,3 +52,7 @@ napoleon_use_rtype = True
 napoleon_preprocess_types = False
 napoleon_type_aliases = None
 napoleon_attr_annotations = True
+
+# bibtex
+bibtex_bibfiles = ['p2p_ld_docs.bib']
+bibtex_reference_style = 'author_year'
