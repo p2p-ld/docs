@@ -25,6 +25,7 @@ jobs:
       with:
         cache-all-crates: "true"
         cache-targets: "false"
+        prefix-key: "v0"
     # - run: cargo install --locked --path .
 
     - name: Install latest mdbook

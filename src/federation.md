@@ -8,3 +8,7 @@ Making supra-peer clusters with explicit governance and policies for rehosting a
 ## Sharding
 
 Splitting data across multiple peers within a federation
+
+## Moderation
+
+Federations MUST maintain a list of 
