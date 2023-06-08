@@ -62,3 +62,82 @@ napoleon_attr_annotations = True
 # bibtex
 bibtex_bibfiles = ['p2p_ld_docs.bib']
 bibtex_reference_style = 'author_year'
+bibtex_default_style = 'bbibtex'
+
+## Formatting to handle dates that are in the `date` field rather than `year`
+import re
+import pybtex.plugin
+from pybtex.richtext import Symbol, Text
+from pybtex.style.formatting.unsrt import Style as UnsrtStyle
+from pybtex.style.formatting import toplevel
+from pybtex.style.template import (
+    field, first_of, href, join, names, optional, optional_field, sentence,
+    tag, together, words
+)
+
+def dashify(text):
+    dash_re = re.compile(r'-+')
+    return Text(Symbol('ndash')).join(text.split(dash_re))
+
+date = first_of [
+    field('date'),
+    words [optional_field('month'), field('year')]
+]
+pages = field('pages', apply_func=dashify)
+
+
+class BetterBibTeXStyle(UnsrtStyle):
+    def get_article_template(self, e):
+        volume_and_pages = first_of [
+            # volume and pages, with optional issue number
+            optional [
+                join [
+                    field('volume'),
+                    optional['(', field('number'),')'],
+                    ':', pages
+                ],
+            ],
+            # pages only
+            words ['pages', pages],
+        ]
+        template = toplevel [
+            self.format_names('author'),
+            self.format_title(e, 'title'),
+            sentence [
+                tag('em') [first_of [
+                    field('journaltitle'),
+                    field('journal')
+                ]],
+                optional[ volume_and_pages ],
+                date],
+            sentence [ optional_field('note') ],
+            self.format_web_refs(e),
+        ]
+        return template
+
+# ----------------
+# Handle when dates are in `date` and not `year`
+
+# fuck it just monkey patch it
+
+from sphinxcontrib.bibtex.style.template import node
+from typing import Dict
+from sphinxcontrib.bibtex.style.template import first_of as first_of_
+from sphinxcontrib.bibtex.style.template import optional as optional_
+from sphinxcontrib.bibtex.style.template import field as field_
+from sphinxcontrib.bibtex.style import template as template_module
+
+
+
+def split_year(date:str) -> str:
+    return date.split('-')[0]
+
+@node
+def year(children, data: Dict[str, Any]) -> "BaseText":
+    assert not children
+    return first_of_[optional_[field_('year')], optional_[field_('date', apply_func=split_year)], 'n.d.'].format_data(data)
+
+template_module.year = year
+
+
+pybtex.plugin.register_plugin('pybtex.style.formatting', 'bbibtex', BetterBibTeXStyle)
