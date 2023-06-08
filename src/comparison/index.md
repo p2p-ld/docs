@@ -8,6 +8,7 @@ All of this is TODO. Comparison to existing protocols and projects (just to situ
 bittorrent
 ipfs
 hypercore
+spritely
 ```
 
 ```{toctree}
@@ -17,6 +18,7 @@ activitypub
 ssb
 matrix
 at_protocol
+nostr
 ```
 
 ```{toctree}
@@ -25,6 +27,13 @@ at_protocol
 solid
 ld_fragments
 nanopubs
+```
+
+```{toctree}
+:caption: Data Structures
+
+eris
+dmc
 ```
 
 ## To be categorized
