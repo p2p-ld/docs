@@ -3,11 +3,11 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Vocabulary" href="vocabulary.html" /><link rel="prev" title="Discovery" href="discovery.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="7. Vocabulary" href="vocabulary.html" /><link rel="prev" title="4. Discovery" href="discovery.html" />
         <link rel="canonical" href="/docs/data_structures.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
-        <title>Data Structures - p2p-ld 0.1.0 documentation</title>
+        <title>6. Data Structures - p2p-ld 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -158,23 +158,42 @@
   <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comparison.html">Comparison</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="comparison/index.html">Comparison</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Comparison</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison/bittorrent.html">BitTorrent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/ipfs.html">IPFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/hypercore.html">Dat/Hypercore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/spritely.html">Spritely/Goblin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/activitypub.html">ActivityPub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/ssb.html">Secure Scuttlebutt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/matrix.html">Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/at_protocol.html">AT Protocol/Bluesky</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/nostr.html">Nostr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/xmpp.html">XMPP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/solid.html">SOLID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/ld_fragments.html">Linked Data Fragments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/nanopubs.html">NanoPubs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/eris.html">ERIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/dmc.html">DMC</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="p2p_concepts.html">P2P Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="out_of_scope.html">Out of Scope</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Protocol</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="protocol.html">Protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="identity.html">Identity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="discovery.html">Discovery</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Data Structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vocabulary.html">Vocabulary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="querying.html">Querying</a></li>
-<li class="toctree-l1"><a class="reference internal" href="encryption.html">Encryption</a></li>
-<li class="toctree-l1"><a class="reference internal" href="federation.html">Federation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backwards_compatibility.html">Backwards Compatibility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="evolvability.html">Evolvability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">1. Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="protocol.html">2. Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identity.html">3. Identity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discovery.html">4. Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discovery.html#scraps">5. Scraps</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">6. Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vocabulary.html">7. Vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="querying.html">8. Querying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">9. Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html#todo">10. TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="federation.html">11. Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backwards_compatibility.html">12. Backwards Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evolvability.html">13. Evolvability</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
 <ul>
@@ -183,6 +202,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Drafting</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Design Decisions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sketchpad.html">Sketchpad</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Meta</span></p>
@@ -224,7 +244,7 @@
         </div>
         <article role="main">
           <section id="data-structures">
-<h1>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this heading">#</a></h1>
 <p>Triplet graphs similar to linked data fragments with envelopes. decoupling content addressing from versioning</p>
 <ul class="simple">
 <li><p>Merkel DAGs</p></li>
@@ -233,7 +253,7 @@
 <li><p>Typed objects with formatting</p></li>
 </ul>
 <section id="containers">
-<h2>Containers<a class="headerlink" href="#containers" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>Containers<a class="headerlink" href="#containers" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Packets of LD-triplets that contain</p>
 <ul>
@@ -245,7 +265,7 @@
 </li>
 <li><p>Anything that can be directly referenced without local qualifier is a container.</p>
 <ul>
-<li><p>Triplets within a container can be referenced with the <a class="reference internal" href="#querying.html#Location"><span class="xref myst">query syntax</span></a></p></li>
+<li><p>Triplets within a container can be referenced with the <a class="reference internal" href="querying.html#qlocation"><span class="std std-ref">query syntax</span></a></p></li>
 </ul>
 </li>
 <li><p>Containers also behave like “feeds”</p>
@@ -257,7 +277,7 @@
 <li><p>Ordering:</p>
 <ul>
 <li><p>Every triple within a scope is ordered by default by the time it is declared</p></li>
-<li><p>A container can declare its ordering (see <a class="reference internal" href="#vocabulary.html#Container"><span class="xref myst">vocabulary</span></a>)</p></li>
+<li><p>A container can declare its ordering (see <a class="reference internal" href="definitions.html#term-Container"><span class="xref std std-term">Container</span></a>)</p></li>
 </ul>
 </li>
 <li><p>Naming:</p>
@@ -271,12 +291,14 @@
 <li><p>Capabilities: A container can specify different capabilities that another account can take (eg. “Like”, “Upvote”, “Reply”)</p>
 <ul>
 <li><p>Capabilities should also contain a permissions scope, if none is present, the global scope is assumed.</p></li>
+<li><p>Since Identities are just a special form of container, they too can advertise different actions that they support with capabilities.</p></li>
 </ul>
 </li>
 </ul>
+<p>Re hashing a graph: the container always has one root node that is the container’s identity from which a graph traversal starts. A <span class="target" id="index-0"></span>Merkle DAG is then constructed starting from the leaves.</p>
 </section>
 <section id="triplets">
-<h2>Triplets<a class="headerlink" href="#triplets" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>Triplets<a class="headerlink" href="#triplets" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Triplet format</p>
 <ul>
@@ -293,10 +315,10 @@
 </ul>
 </section>
 <section id="schema">
-<h2>Schema<a class="headerlink" href="#schema" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.3. </span>Schema<a class="headerlink" href="#schema" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="codecs">
-<h2>Codecs<a class="headerlink" href="#codecs" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.4. </span>Codecs<a class="headerlink" href="#codecs" title="Permalink to this heading">#</a></h2>
 <p>See IPLD Codecs and Linked Data Platform spec</p>
 <p>Means of interacting with binary data.</p>
 <p>Describes</p>
@@ -306,7 +328,7 @@
 </ul>
 </section>
 <section id="versioning">
-<h2>Versioning<a class="headerlink" href="#versioning" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.5. </span>Versioning<a class="headerlink" href="#versioning" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>A given container has an identity hash from its first packing</p></li>
 <li><p>A given triple can be contained by</p></li>
@@ -324,7 +346,7 @@
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Vocabulary</div>
+                <div class="title"><span class="section-number">7. </span>Vocabulary</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -335,7 +357,7 @@
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Discovery</div>
+                <div class="title"><span class="section-number">4. </span>Discovery</div>
                 
               </div>
             </a>
@@ -369,12 +391,12 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Data Structures</a><ul>
-<li><a class="reference internal" href="#containers">Containers</a></li>
-<li><a class="reference internal" href="#triplets">Triplets</a></li>
-<li><a class="reference internal" href="#schema">Schema</a></li>
-<li><a class="reference internal" href="#codecs">Codecs</a></li>
-<li><a class="reference internal" href="#versioning">Versioning</a></li>
+<li><a class="reference internal" href="#">6. Data Structures</a><ul>
+<li><a class="reference internal" href="#containers">6.1. Containers</a></li>
+<li><a class="reference internal" href="#triplets">6.2. Triplets</a></li>
+<li><a class="reference internal" href="#schema">6.3. Schema</a></li>
+<li><a class="reference internal" href="#codecs">6.4. Codecs</a></li>
+<li><a class="reference internal" href="#versioning">6.5. Versioning</a></li>
 </ul>
 </li>
 </ul>

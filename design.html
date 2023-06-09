@@ -1,0 +1,350 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Sketchpad" href="sketchpad.html" /><link rel="prev" title="Translation" href="translation.html" />
+        <link rel="canonical" href="/docs/design.html" />
+
+    <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
+        <title>Design Decisions - p2p-ld 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">p2p-ld 0.1.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">p2p-ld 0.1.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="comparison/index.html">Comparison</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Comparison</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison/bittorrent.html">BitTorrent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/ipfs.html">IPFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/hypercore.html">Dat/Hypercore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/spritely.html">Spritely/Goblin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/activitypub.html">ActivityPub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/ssb.html">Secure Scuttlebutt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/matrix.html">Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/at_protocol.html">AT Protocol/Bluesky</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/nostr.html">Nostr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/xmpp.html">XMPP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/solid.html">SOLID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/ld_fragments.html">Linked Data Fragments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/nanopubs.html">NanoPubs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/eris.html">ERIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/dmc.html">DMC</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="p2p_concepts.html">P2P Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="out_of_scope.html">Out of Scope</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Protocol</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">1. Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="protocol.html">2. Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identity.html">3. Identity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discovery.html">4. Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discovery.html#scraps">5. Scraps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_structures.html">6. Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vocabulary.html">7. Vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="querying.html">8. Querying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">9. Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html#todo">10. TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="federation.html">11. Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backwards_compatibility.html">12. Backwards Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evolvability.html">13. Evolvability</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="triplets.html">Triplets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">Translation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Drafting</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Design Decisions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sketchpad.html">Sketchpad</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Meta</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="design-decisions">
+<h1>Design Decisions<a class="headerlink" href="#design-decisions" title="Permalink to this heading">#</a></h1>
+<p>A scratchpad for keeping track of the specific choices that we are making so that we know they are choices lol.</p>
+<section id="cultivate-abundance">
+<h2>Cultivate Abundance<a class="headerlink" href="#cultivate-abundance" title="Permalink to this heading">#</a></h2>
+<p>Much of the focus and energy in p2p and decentralized systems has been vaccuumed up by cryptocurrency and other blockchain scams. These technologies intrinsically generate artificial scarcity rather than the abundance of p2p systems like bittorrent. Much of the thinking in these systems is oriented around self-sovereignty, but p2p-ld is intended to cultivate mutualism and the radical mutual responsibility to each other that any truly autonomous social system outside of libertarian fantasies requires. We don’t design the <em>system</em> to be maximally efficient and make <em>system-level</em> guarantees about reliability or persistence, but design systems for people to organize these things among themselves, voluntarily. We are <em>not</em> interested in making a self-sustaining system that is “out there” and needs to be maintained by some blockchain economy. We are interested in making tools <em>for us</em> to make our own digital life online</p>
+</section>
+<section id="permanence-is-impossible">
+<h2>Permanence is Impossible<a class="headerlink" href="#permanence-is-impossible" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>Every one knows that change is inevitable. From the second law of thermodynamics to Darwinian evolution, from Buddhism’s insistence that nothing is permanent and all suffering results from our delusions of permanence to the third chapter of Ecclesiastes (“To everything there is a season”), change is part of life, of existence, of the common wisdom. But I don’t believe we’re dealing with all that that means. We haven’t even begun to deal with it.</p>
+<p class="attribution">—Octavia Butler, Parable of the Sower</p>
+</div></blockquote>
+<p>There is no such thing as a <a class="reference external" href="https://www.w3.org/Provider/Style/URI">Cool URI that doesn’t change</a>, and there is no such thing as a persistent identifier that lasts forever <span id="id1">[<a class="reference internal" href="references.html#id2" title="John Kunze, Scout Calvert, Jeremy D. DeBarry, Matthew Hanlon, Greg Janée, and Sandra Sweat. Persistence Statements: Describing Digital Stickiness. Data Science Journal, 16(0):39, 2017-08-14. URL: http://datascience.codata.org/articles/10.5334/dsj-2017-039/ (visited on 2022-09-07), doi:10.5334/dsj-2017-039.">Kunze <em>et al.</em>, 2017</a>]</span>. All things change. Change can be because of practical reasons like running out of funding and shutting down the server, cultural reasons like shifting meanings of words, or larger shifts that render the entire domain that a thing is fixed in irrelevant. No matter how many layers of abstraction and redirection we want to create, there is no system that will for all time be able to unambiguously identify something on the web or elsewhere.</p>
+<p>The appearance of persistence is a <em>social</em> phenomenon rather than a <em>technological</em> one. <code class="docutils literal notranslate"><span class="pre">Archive.org</span></code> continues to exist because many people actively keep it existing, not because of the architecture of their archive. Designing for permanence makes systems <em>fragile.</em> Instead we should design for <em>adapting</em> to change. Adapting to change is also a social phenomenon - I might misplace things, change how they are named, and tell you that the same URL means something different, or the same page goes by a different URL now. A newspaper might go out of business and its website might go offline, but someone might save a PDF of the original page and rehost it on their personal website. The tools we need look more like systems for renaming, declaring equivalence, translation, change, than they do an unalterable, permanent append-only blockchain thing.</p>
+</section>
+<section id="ambiguity-is-natural">
+<h2>Ambiguity is Natural<a class="headerlink" href="#ambiguity-is-natural" title="Permalink to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://www.w3.org/DesignIssues/LinkedData.html">original vision</a> for Linked Data on the web imagined every concept having a single unique URI, but unambiguous identifiers are fictional for the same reason that unambiguous concepts are fictional. Information is contextual. The same set of words has a different meaning in a different context. Multiple sets of words can have the same meaning.</p>
+<p>Names and locations are <em>linguistic</em> not <em>mathematical.</em> Rather than trying to design ambiguity out of the system so that web crawlers can deterministically generate algorithmic restaurant reservations, we should design systems that explicitly incorporate context to reference and use.</p>
+</section>
+<section id="autonomy-and-convenience-can-coexist">
+<h2>Autonomy <em>and</em> Convenience Can Coexist<a class="headerlink" href="#autonomy-and-convenience-can-coexist" title="Permalink to this heading">#</a></h2>
+<p>We should neither sacrifice control of the internet to platform giants nor should we insist that self-hosting is the only alternative. If the alternative to using Google Docs or Slack requires me to be a professional sysadmin, or even to keep a raspberry pi plugged in and online at all times, it isn’t an alternative for 95% of people.</p>
+<p>It should be possible to share resources such that relatively few people need to maintain persistent network infrastructure, and it should be possible to accomodate their leaving at any time. It should also be very difficult for one or a few actors to make a large number of other peers on the network dependent on them, claiming de-facto control over an ostensibly decentralized system (lookin at you mastodon.social).</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="sketchpad.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Sketchpad</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="translation.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Translation</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Jonny Saunders
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Design Decisions</a><ul>
+<li><a class="reference internal" href="#cultivate-abundance">Cultivate Abundance</a></li>
+<li><a class="reference internal" href="#permanence-is-impossible">Permanence is Impossible</a></li>
+<li><a class="reference internal" href="#ambiguity-is-natural">Ambiguity is Natural</a></li>
+<li><a class="reference internal" href="#autonomy-and-convenience-can-coexist">Autonomy <em>and</em> Convenience Can Coexist</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    </body>
+</html>

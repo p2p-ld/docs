@@ -22,7 +22,7 @@ A given identity can have 0 or many bidirectional links indicating that the iden
 - Subscribers to a given identity MUST store and represent the known aliases and treat them as equivalent
 - Other accounts can give an alias to an identity that MAY be accepted (by issuing a backlink) or denied (by ignoring it).
 
-### Succession
+### Rotation
 
 An identity has a specific field indicating whether it is "active" or "retired," and can issue a special top-level link with given permission scope indicating the identity that succeeds it.
 	- eg in the case of harrassment, one can hop identities and only tell close friends.

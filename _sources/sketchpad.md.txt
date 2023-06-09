@@ -6,7 +6,7 @@ Dummy change to check that we don't invalidate the rust cache on CI.
 
 Just a stub to check if mermaid works
 
-```mermaid
+```{mermaid}
 erDiagram
 	IDENTITY {
 		string hash

@@ -156,23 +156,42 @@
   <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comparison.html">Comparison</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="comparison/index.html">Comparison</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Comparison</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison/bittorrent.html">BitTorrent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/ipfs.html">IPFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/hypercore.html">Dat/Hypercore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/spritely.html">Spritely/Goblin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/activitypub.html">ActivityPub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/ssb.html">Secure Scuttlebutt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/matrix.html">Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/at_protocol.html">AT Protocol/Bluesky</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/nostr.html">Nostr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/xmpp.html">XMPP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/solid.html">SOLID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/ld_fragments.html">Linked Data Fragments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/nanopubs.html">NanoPubs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/eris.html">ERIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/dmc.html">DMC</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="p2p_concepts.html">P2P Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="out_of_scope.html">Out of Scope</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Protocol</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="protocol.html">Protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="identity.html">Identity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="discovery.html">Discovery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_structures.html">Data Structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vocabulary.html">Vocabulary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="querying.html">Querying</a></li>
-<li class="toctree-l1"><a class="reference internal" href="encryption.html">Encryption</a></li>
-<li class="toctree-l1"><a class="reference internal" href="federation.html">Federation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backwards_compatibility.html">Backwards Compatibility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="evolvability.html">Evolvability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">1. Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="protocol.html">2. Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identity.html">3. Identity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discovery.html">4. Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discovery.html#scraps">5. Scraps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_structures.html">6. Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vocabulary.html">7. Vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="querying.html">8. Querying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">9. Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html#todo">10. TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="federation.html">11. Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backwards_compatibility.html">12. Backwards Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evolvability.html">13. Evolvability</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
 <ul>
@@ -181,6 +200,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Drafting</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Design Decisions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sketchpad.html">Sketchpad</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Meta</span></p>
@@ -223,14 +243,148 @@
           
 <section class="genindex-section">
   <h1 id="index">Index</h1>
-  <div class="genindex-jumpbox"><a href="#I"><strong>I</strong></a></div>
+  <div class="genindex-jumpbox"><a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#S"><strong>S</strong></a></div>
 </section>
+<section id="B" class="genindex-section">
+  <h2>B</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="definitions.html#term-Beacon"><strong>Beacon</strong></a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="comparison/ipfs.html#index-1">BitTorrent</a>
+</li>
+        <li><a href="comparison/at_protocol.html#index-1">Bluesky</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="C" class="genindex-section">
+  <h2>C</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="definitions.html#term-Container"><strong>Container</strong></a>, <a href="comparison/spritely.html#index-0">[1]</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="comparison/spritely.html#index-2">Content Addressing</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="D" class="genindex-section">
+  <h2>D</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="comparison/nostr.html#index-0">DNS</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="E" class="genindex-section">
+  <h2>E</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="comparison/spritely.html#index-4">Encryption</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="G" class="genindex-section">
+  <h2>G</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="comparison/ipfs.html#index-2">git</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
 <section id="I" class="genindex-section">
   <h2>I</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="definitions.html#term-Identity"><strong>Identity</strong></a>, <a href="comparison/at_protocol.html#index-0">[1]</a>
+
+        <ul>
+          <li><a href="comparison/at_protocol.html#index-2">DID</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="identity.html#index-0">Instances</a>
 </li>
+        <li><a href="comparison/ipfs.html#index-0">IPFS</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="L" class="genindex-section">
+  <h2>L</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li>
+    Linked Data
+
+        <ul>
+          <li><a href="comparison/ld_fragments.html#index-0">Fragments</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="M" class="genindex-section">
+  <h2>M</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="comparison/ipfs.html#index-3">Merkle DAG</a>, <a href="data_structures.html#index-0">[1]</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="comparison/spritely.html#index-3">Mutability</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="P" class="genindex-section">
+  <h2>P</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="comparison/ld_fragments.html#index-2">Peer Federations</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="definitions.html#term-Petname"><strong>Petname</strong></a>
+</li>
+        <li><a href="comparison/nostr.html#index-1">Petnames</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="S" class="genindex-section">
+  <h2>S</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="comparison/ld_fragments.html#index-1">SPARQL</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li>
+    Storage
+
+        <ul>
+          <li><a href="comparison/spritely.html#index-1">Portability</a>
+</li>
+        </ul></li>
     </ul></td>
   </tr></table>
 </section>

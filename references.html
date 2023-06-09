@@ -158,23 +158,42 @@
   <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comparison.html">Comparison</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="comparison/index.html">Comparison</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Comparison</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison/bittorrent.html">BitTorrent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/ipfs.html">IPFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/hypercore.html">Dat/Hypercore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/spritely.html">Spritely/Goblin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/activitypub.html">ActivityPub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/ssb.html">Secure Scuttlebutt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/matrix.html">Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/at_protocol.html">AT Protocol/Bluesky</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/nostr.html">Nostr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/xmpp.html">XMPP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/solid.html">SOLID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/ld_fragments.html">Linked Data Fragments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/nanopubs.html">NanoPubs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/eris.html">ERIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/dmc.html">DMC</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="p2p_concepts.html">P2P Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="out_of_scope.html">Out of Scope</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Protocol</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="protocol.html">Protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="identity.html">Identity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="discovery.html">Discovery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_structures.html">Data Structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vocabulary.html">Vocabulary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="querying.html">Querying</a></li>
-<li class="toctree-l1"><a class="reference internal" href="encryption.html">Encryption</a></li>
-<li class="toctree-l1"><a class="reference internal" href="federation.html">Federation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backwards_compatibility.html">Backwards Compatibility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="evolvability.html">Evolvability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">1. Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="protocol.html">2. Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identity.html">3. Identity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discovery.html">4. Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discovery.html#scraps">5. Scraps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_structures.html">6. Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vocabulary.html">7. Vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="querying.html">8. Querying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">9. Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html#todo">10. TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="federation.html">11. Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backwards_compatibility.html">12. Backwards Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evolvability.html">13. Evolvability</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
 <ul>
@@ -183,6 +202,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Drafting</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Design Decisions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sketchpad.html">Sketchpad</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Meta</span></p>
@@ -226,9 +246,29 @@
           <section id="references">
 <h1>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h1>
 <div class="docutils container" id="id1">
+<div class="citation" id="id4" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Jonny L. Saunders. Decentralized Infrastructure for (Neuro)science. 2022-08-31. URL: <a class="reference external" href="http://arxiv.org/abs/2209.07493">http://arxiv.org/abs/2209.07493</a> (visited on 2023-03-01), <a class="reference external" href="https://arxiv.org/abs/2209.07493">arXiv:2209.07493</a>, <a class="reference external" href="https://doi.org/10.48550/arXiv.2209.07493">doi:10.48550/arXiv.2209.07493</a>.</p>
+</div>
+<div class="citation" id="id3" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>Christine Lemmer-Webber, Randy Farmer, and Juliana Sims. The Heart of Spritely: Distributed Objects and Capability Security. URL: <a class="reference external" href="https://www.spritely.institute/static/papers/spritely-core.html">https://www.spritely.institute/static/papers/spritely-core.html</a> (visited on 2023-06-07).</p>
+</div>
+<div class="citation" id="id7" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<p>Ruben Verborgh, Sam Coppens, Miel Vander Sande, Erik Mannens, Pieter Colpaert, and Rik Van de Walle. Web-Scale Querying through Linked Data Fragments. In <em>Proceedings of the 7th Workshop on Linked Data on the Web</em>. 2014-04-08.</p>
+</div>
+<div class="citation" id="id6" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></span>
+<p>Ruben Verborgh, Miel Vander Sande, Olaf Hartig, Joachim Van Herwegen, Laurens De Vocht, Ben De Meester, Gerald Haesendonck, and Pieter Colpaert. Triple Pattern Fragments: A low-cost knowledge graph interface for the Web. <em>Journal of Web Semantics</em>, 37–38:184–206, 2016-03. URL: <a class="reference external" href="https://linkinghub.elsevier.com/retrieve/pii/S1570826816000214">https://linkinghub.elsevier.com/retrieve/pii/S1570826816000214</a> (visited on 2023-06-08), <a class="reference external" href="https://doi.org/10.1016/j.websem.2016.03.003">doi:10.1016/j.websem.2016.03.003</a>.</p>
+</div>
+<div class="citation" id="id5" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></span>
+<p>Jonny L. Saunders. Surveillance Graphs. 2023-04-02T00:00:00+00:00. URL: <a class="reference external" href="https://jon-e.net/surveillance-graphs">https://jon-e.net/surveillance-graphs</a> (visited on 2023-06-08), <a class="reference external" href="https://arxiv.org/abs/hc:54749">arXiv:hc:54749</a>, <a class="reference external" href="https://doi.org/10.17613/syv8-cp10">doi:10.17613/syv8-cp10</a>.</p>
+</div>
 <div class="citation" id="id2" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>Sau22<span class="fn-bracket">]</span></span>
-<p>Jonny L. Saunders. Decentralized infrastructure for (neuro)science. 08 2022. URL: <a class="reference external" href="http://arxiv.org/abs/2209.07493">http://arxiv.org/abs/2209.07493</a> (visited on 2023-03-01), <a class="reference external" href="https://arxiv.org/abs/2209.07493">arXiv:2209.07493</a>, <a class="reference external" href="https://doi.org/10.48550/arXiv.2209.07493">doi:10.48550/arXiv.2209.07493</a>.</p>
+<span class="label"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></span>
+<p>John Kunze, Scout Calvert, Jeremy D. DeBarry, Matthew Hanlon, Greg Janée, and Sandra Sweat. Persistence Statements: Describing Digital Stickiness. <em>Data Science Journal</em>, 16(0):39, 2017-08-14. URL: <a class="reference external" href="http://datascience.codata.org/articles/10.5334/dsj-2017-039/">http://datascience.codata.org/articles/10.5334/dsj-2017-039/</a> (visited on 2022-09-07), <a class="reference external" href="https://doi.org/10.5334/dsj-2017-039">doi:10.5334/dsj-2017-039</a>.</p>
 </div>
 </div>
 </div>
