@@ -10,6 +10,10 @@ Identity
 Petname
     A short name used to refer to a {term}`Identity`. Petnames are always contextual: `@Alice` referring to `@Bob` has the status of "The person that @Alice knows as @Bob." A petname can be declared by the identity being referred to as a "canonical" petname, but since they are potentially nonunique they should always be dereferenced against the Identity making the reference.
 
+Container
+    Stub to check cross-references
 
+Beacon
+    Stub to check cross-references
 
 ```

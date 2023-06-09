@@ -1,3 +1,4 @@
+(comparison)=
 # Comparison
 
 All of this is TODO. Comparison to existing protocols and projects (just to situate in context, not talk shit obvs)
@@ -19,6 +20,7 @@ ssb
 matrix
 at_protocol
 nostr
+xmpp
 ```
 
 ```{toctree}
@@ -48,7 +50,10 @@ dmc
 - P2panda
 - SAFE
 - Storj
-- Swarm
+- [Swarm](https://www.ethswarm.org/swarm-whitepaper.pdf)
+	- not interesting, based around coins and smart contracts
+	- kademlia routing
+	- chunks stored by nodes close in hash space
 
 
 ## Points of comparison

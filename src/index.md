@@ -48,6 +48,7 @@ translation
 :caption: Drafting
 :hidden:
 
+design
 sketchpad
 ```
 
@@ -58,7 +59,7 @@ sketchpad
 genindex
 references
 ```
-
+ 
 Indices and tables
 ==================
 

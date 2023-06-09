@@ -10,7 +10,7 @@ packages = [{include = "p2p_ld"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 sphinx = "^6.2.1"
-myst-parser = "^1.0.0"
+myst-parser = { version = "^1.0.0", extras = ["linkify"] }
 furo = "^2023.5.20"
 sphinxcontrib-mermaid = "^0.9.2"
 sphinxcontrib-bibtex = "^2.5.0"

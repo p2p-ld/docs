@@ -15,13 +15,13 @@ Triplet graphs similar to linked data fragments with envelopes. decoupling conte
 	- Permissions scope
 	- Signature
 - Anything that can be directly referenced without local qualifier is a container. 
-	- Triplets within a container can be referenced with the [query syntax](querying.html#Location)
+	- Triplets within a container can be referenced with the [query syntax](qlocation)
 - Containers also behave like "feeds" 
 	- Eg. one might put their blog posts in `@user:blog` or 
 - The account identifier is the top-level container.
 - Ordering: 
 	- Every triple within a scope is ordered by default by the time it is declared
-	- A container can declare its ordering (see [vocabulary](vocabulary.html#Container))
+	- A container can declare its ordering (see {term}`Container`)
 - Naming: 
 	- Each container intended to be directly referenced SHOULD contain a `name` so it can be referenced w.r.t its parent: `@<ACCOUNT>:<name>`
 	- Each container can also be indicated numerically
@@ -30,6 +30,8 @@ Triplet graphs similar to linked data fragments with envelopes. decoupling conte
 - Capabilities: A container can specify different capabilities that another account can take (eg. "Like", "Upvote", "Reply")
 	- Capabilities should also contain a permissions scope, if none is present, the global scope is assumed.
 	- Since Identities are just a special form of container, they too can advertise different actions that they support with capabilities.
+
+Re hashing a graph: the container always has one root node that is the container's identity from which a graph traversal starts. A {index}`Merkle DAG` is then constructed starting from the leaves. 
 
 
 

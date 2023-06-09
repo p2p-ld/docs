@@ -4,6 +4,7 @@ How do we find peers that have subgraphs that are responsive to what we want?
 
 ## Syntax
 
+(qlocation)=
 ### Location
 
 How to refer to a given [container](data_structures.html#Containers), eg.

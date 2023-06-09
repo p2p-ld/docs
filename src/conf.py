@@ -40,8 +40,11 @@ html_baseurl = '/docs/'
 # myst
 myst_heading_anchors = 3
 myst_enable_extensions = [
-    'tasklist'
+    'tasklist',
+    'linkify',
+    'attrs_block'
 ]
+myst_linkify_fuzzy_links = False
 
 # Napoleon settings
 napoleon_google_docstring = True
@@ -69,6 +72,7 @@ import re
 import pybtex.plugin
 from pybtex.richtext import Symbol, Text
 from pybtex.style.formatting.unsrt import Style as UnsrtStyle
+from pybtex.style.formatting import unsrt as unsrt_module
 from pybtex.style.formatting import toplevel
 from pybtex.style.template import (
     field, first_of, href, join, names, optional, optional_field, sentence,
@@ -84,6 +88,9 @@ date = first_of [
     words [optional_field('month'), field('year')]
 ]
 pages = field('pages', apply_func=dashify)
+
+# monkey patch date
+unsrt_module.date = date
 
 
 class BetterBibTeXStyle(UnsrtStyle):
