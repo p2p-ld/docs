@@ -29,3 +29,8 @@ erDiagram
 - Triplets
 - Containers
 - Codecs
+
+
+## Random notes
+
+- re: {index}`Backlinks` - https://lists.w3.org/Archives/Public/public-rdf-comments/2012Jul/0007.html
