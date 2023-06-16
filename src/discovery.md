@@ -4,11 +4,20 @@ How do we find people and know how to connect to them?
 
 - Bootstrapping initial connections
 - Gossiping
-- Hole punching
+
+```{index} Hole Punching
+```
+## Hole Punching
+
+- https://tailscale.com/blog/how-nat-traversal-works/
+- {index}`Hypercore`
 	- See: https://docs.holepunch.to/apps/keet.io
+	- https://github.com/mafintosh/dht-rpc
+	- https://docs.holepunch.to/building-blocks/hyperdht
+- Socket Supply Co
 
 
-# Scraps
+## Scraps
 
 https://xmpp.org/extensions/xep-0030.html
 
