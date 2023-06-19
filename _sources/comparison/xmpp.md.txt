@@ -5,3 +5,5 @@ Stuff we like about XMPP
 - Service discovery 
 	- https://xmpp.org/extensions/xep-0030.html
 - Protocol interoperability
+- https://en.wikipedia.org/wiki/BOSH_(protocol)
+- https://en.wikipedia.org/wiki/Jingle_(protocol)

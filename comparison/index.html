@@ -171,6 +171,7 @@
 <li class="toctree-l2"><a class="reference internal" href="xmpp.html">XMPP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="solid.html">SOLID</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ld_fragments.html">Linked Data Fragments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ld_platform.html">Linked Data Platform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nanopubs.html">NanoPubs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="eris.html">ERIS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dmc.html">DMC</a></li>
@@ -185,20 +186,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../protocol.html">2. Protocol</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../identity.html">3. Identity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../discovery.html">4. Discovery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../discovery.html#scraps">5. Scraps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data_structures.html">6. Data Structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">7. Vocabulary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../querying.html">8. Querying</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../encryption.html">9. Encryption</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../encryption.html#todo">10. TODO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../federation.html">11. Federation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backwards_compatibility.html">12. Backwards Compatibility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../evolvability.html">13. Evolvability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_structures.html">5. Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">6. Vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../querying.html">7. Querying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encryption.html">8. Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encryption.html#todo">9. TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../federation.html">10. Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backwards_compatibility.html">11. Backwards Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evolvability.html">12. Evolvability</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../triplets.html">Triplets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../translation.html">Translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adapter/index.html">Adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../translation/index.html">Translation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Drafting</span></p>
 <ul>
@@ -257,7 +258,10 @@
 <li class="toctree-l2"><a class="reference internal" href="ipfs.html#differences">Differences</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="hypercore.html">Dat/Hypercore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hypercore.html">Dat/Hypercore</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hypercore.html#holepunch">Holepunch</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="spritely.html">Spritely/Goblin</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="spritely.html#references">References</a></li>
 </ul>
@@ -268,7 +272,11 @@
 <p class="caption" role="heading"><span class="caption-text">Social</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="activitypub.html">ActivityPub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ssb.html">Secure Scuttlebutt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssb.html">Secure Scuttlebutt</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ssb.html#feeds-metafeeds">Feeds &amp; Metafeeds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssb.html#references">References</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="matrix.html">Matrix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="at_protocol.html">AT Protocol/Bluesky</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nostr.html">Nostr</a><ul>
@@ -291,6 +299,13 @@
 <li class="toctree-l2"><a class="reference internal" href="ld_fragments.html#references">References</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="ld_platform.html">Linked Data Platform</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ld_platform.html#containers">Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ld_platform.html#similarities">Similarities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ld_platform.html#differences">Differences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ld_platform.html#references">References</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="nanopubs.html">NanoPubs</a></li>
 </ul>
 </div>
@@ -308,10 +323,10 @@
 <li><p>Arweave</p></li>
 <li><p>CAN</p></li>
 <li><p>Chord</p></li>
-<li><p>Earthstar</p></li>
+<li><p>Earthstar - <a class="reference external" href="https://earthstar-project.org/">https://earthstar-project.org/</a></p></li>
 <li><p>Freenet</p></li>
 <li><p>Manyverse</p></li>
-<li><p>P2panda</p></li>
+<li><p>P2panda - v interesting! <a class="reference external" href="https://p2panda.org/">https://p2panda.org/</a></p></li>
 <li><p>SAFE</p></li>
 <li><p>Storj</p></li>
 <li><p><a class="reference external" href="https://www.ethswarm.org/swarm-whitepaper.pdf">Swarm</a></p>
@@ -321,6 +336,8 @@
 <li><p>chunks stored by nodes close in hash space</p></li>
 </ul>
 </li>
+<li><p>Repute.Social</p></li>
+<li><p>LinkedTrust.us</p></li>
 </ul>
 </section>
 <section id="points-of-comparison">

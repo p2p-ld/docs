@@ -168,6 +168,7 @@
 <li class="toctree-l2"><a class="reference internal" href="comparison/xmpp.html">XMPP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/solid.html">SOLID</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/ld_fragments.html">Linked Data Fragments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/ld_platform.html">Linked Data Platform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/nanopubs.html">NanoPubs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/eris.html">ERIS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/dmc.html">DMC</a></li>
@@ -182,20 +183,20 @@
 <li class="toctree-l1"><a class="reference internal" href="protocol.html">2. Protocol</a></li>
 <li class="toctree-l1"><a class="reference internal" href="identity.html">3. Identity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="discovery.html">4. Discovery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="discovery.html#scraps">5. Scraps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_structures.html">6. Data Structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vocabulary.html">7. Vocabulary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="querying.html">8. Querying</a></li>
-<li class="toctree-l1"><a class="reference internal" href="encryption.html">9. Encryption</a></li>
-<li class="toctree-l1"><a class="reference internal" href="encryption.html#todo">10. TODO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="federation.html">11. Federation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backwards_compatibility.html">12. Backwards Compatibility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="evolvability.html">13. Evolvability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_structures.html">5. Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vocabulary.html">6. Vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="querying.html">7. Querying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">8. Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html#todo">9. TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="federation.html">10. Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backwards_compatibility.html">11. Backwards Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evolvability.html">12. Evolvability</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="triplets.html">Triplets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="translation.html">Translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapter/index.html">Adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation/index.html">Translation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Drafting</span></p>
 <ul>
@@ -287,7 +288,21 @@
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
     <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>
+mermaid.initialize({
+    "startOnLoad":true,
+    "theme": "base",
+    "themeVariables": {
+      "darkMode": true,
+      "primaryColor": "#202020",
+      "primaryBorderColor": "#00A5CF",
+      "primaryTextColor": "#FFFFFF",
+      "secondaryColor": "#ffffff",
+      "mainBkg": "#30303000",
+      "lineColor": "#999999"
+    }
+})
+</script>
     
 <script src="_static/searchtools.js"></script>
 <script src="_static/language_data.js"></script>

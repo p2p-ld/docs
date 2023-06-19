@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="NanoPubs" href="nanopubs.html" /><link rel="prev" title="SOLID" href="solid.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Linked Data Platform" href="ld_platform.html" /><link rel="prev" title="SOLID" href="solid.html" />
         <link rel="canonical" href="/docs/comparison/ld_fragments.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
@@ -171,6 +171,7 @@
 <li class="toctree-l2"><a class="reference internal" href="xmpp.html">XMPP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="solid.html">SOLID</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Linked Data Fragments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ld_platform.html">Linked Data Platform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nanopubs.html">NanoPubs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="eris.html">ERIS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dmc.html">DMC</a></li>
@@ -185,20 +186,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../protocol.html">2. Protocol</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../identity.html">3. Identity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../discovery.html">4. Discovery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../discovery.html#scraps">5. Scraps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data_structures.html">6. Data Structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">7. Vocabulary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../querying.html">8. Querying</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../encryption.html">9. Encryption</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../encryption.html#todo">10. TODO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../federation.html">11. Federation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backwards_compatibility.html">12. Backwards Compatibility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../evolvability.html">13. Evolvability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_structures.html">5. Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">6. Vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../querying.html">7. Querying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encryption.html">8. Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encryption.html#todo">9. TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../federation.html">10. Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backwards_compatibility.html">11. Backwards Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evolvability.html">12. Evolvability</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../triplets.html">Triplets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../translation.html">Translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adapter/index.html">Adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../translation/index.html">Translation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Drafting</span></p>
 <ul>
@@ -245,10 +246,14 @@
         <article role="main">
           <section id="linked-data-fragments">
 <span id="index-0"></span><h1>Linked Data Fragments<a class="headerlink" href="#linked-data-fragments" title="Permalink to this heading">#</a></h1>
+<p><a class="reference internal" href="../data_structures.html#containers"><span class="std std-ref">Containers</span></a> are one example of:</p>
+<blockquote>
+<div><p>However, we envision that different kinds of ldf partitionings will emerge, and that these might even vary dynamically depending on server load. Perhaps a semantic way to express the data, metadata, and hypermedia controls of each fragment will be necessary. -<span id="id1">[<a class="reference internal" href="../references.html#id7" title="Ruben Verborgh, Sam Coppens, Miel Vander Sande, Erik Mannens, Pieter Colpaert, and Rik Van de Walle. Web-Scale Querying through Linked Data Fragments. In Proceedings of the 7th Workshop on Linked Data on the Web. 2014-04-08.">Verborgh <em>et al.</em>, 2014</a>]</span></p>
+</div></blockquote>
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
-<p><a class="reference external" href="https://linkeddatafragments.org/publications/">Linked data fragments</a> are designed to “fill in the middle” between entirely serverside (<span class="target" id="index-1"></span>SPARQL) or clientside (downloading a triple store) usage of linked data triples. SPARQL queries are notorious for being resource intensive, as queries can become much more complex than typical relational algebra and the server needs to resolve a potentially enormous number of resources. Placing all the logic on the server, rather than the client, is an architectural decision that has a complex history, but descends from the idea that the web should work by having “agents” that work on the web on our behalf<a class="footnote-reference brackets" href="#semwebagents" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
-<p>Linked data fragments (LDFs) split the difference by placing more of the work on clients, with the server providing pre-computed sets of triples for a given selector. “Selector” is a purposefully general concept, but the LDF authors focus primarily on <a class="reference external" href="https://linkeddatafragments.org/specification/triple-pattern-fragments/">Triple Pattern Fragments</a> that are composed of:</p>
+<p><a class="reference external" href="https://linkeddatafragments.org/publications/">Linked data fragments</a> are designed to “fill in the middle” between entirely serverside (<span class="target" id="index-1"></span>SPARQL) or clientside (downloading a triple store) usage of linked data triples. SPARQL queries are notorious for being resource intensive, as queries can become much more complex than typical relational algebra and the server needs to resolve a potentially enormous number of resources. Placing all the logic on the server, rather than the client, is an architectural decision that has a complex history, but descends from the idea that the web should work by having “agents” that work on the web on our behalf<a class="footnote-reference brackets" href="#semwebagents" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<p>Linked data fragments (LDFs) split the difference by placing more of the work on clients, with the server providing <span class="target" id="index-2"></span>pre-computed sets of triples for a given selector. “Selector” is a purposefully general concept, but the LDF authors focus primarily on <a class="reference external" href="https://linkeddatafragments.org/specification/triple-pattern-fragments/">Triple Pattern Fragments</a> that are composed of:</p>
 <ul class="simple">
 <li><p>A <strong>Triple Pattern</strong>, a <code class="docutils literal notranslate"><span class="pre">?subject</span> <span class="pre">?predicate</span> <span class="pre">?object</span></code> that defines the contents of the fragment</p></li>
 <li><p><strong>Metadata</strong>, specifically a <code class="docutils literal notranslate"><span class="pre">triples</span></code> predicate indicating the estimated total number of triples in the fragment since large fragments need to be paginated, and</p></li>
@@ -258,19 +263,20 @@
 </section>
 <section id="overlap">
 <h2>Overlap<a class="headerlink" href="#overlap" title="Permalink to this heading">#</a></h2>
-<p>p2p-ld follows Linked Data Fragments in that it emphasizes clientside logic rather than query logic on the network. Executing distributed complex queries adds substantial complexity to the protocol and would potentially import a lot of the problems with SPARQL like heightened resource requirements and potential for abuse for denial of service.</p>
+<p>p2p-ld follows Linked Data Fragments in that it emphasizes clientside logic rather than query logic on the network. Executing distributed queries with as much logic as SPARQL can embed adds substantial complexity to the protocol and would potentially import a lot of the problems with SPARQL like heightened resource requirements and potential for abuse for denial of service.</p>
+<p>LDF is a strategy for (pre-)partitioning a dataset of triples into cacheable chunks, rather than having the server query over the entire graph at once. It also emphasizes querying as iteration: do many small queries in sequence rather than one large query and waiting for the entire result.</p>
 </section>
 <section id="differences">
 <h2>Differences<a class="headerlink" href="#differences" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>re: linked data platform, p2p-ld also concerns “leaf” nodes with binary data accessed via codec, rather than represented as triplets. The results of queries are thus not necessarily imagined to be single factual assertions, but datasets, images, documents, posts, etc. -&gt; So the container concept is less rigidly defined than an LDF host with a completely partitioned triplet graph.</p></li>
+<li><p>Primarily, containers are more generic than LDFs. Where LDFs create a deterministic partitioning of a set of triples (all combinations, including wildcards, of each subject, predicate, and object in the dataset), p2p-ld partitions based on meaning and use. They are not mutually exclusive, though - one could also make containers that correspond to the expected LDF format.</p></li>
+<li><p>re: <span class="target" id="index-3"></span>Linked Data Platform, p2p-ld also concerns “leaf” nodes with binary data accessed via codec, rather than represented as triplets. The results of queries are thus not necessarily imagined to be single factual assertions, but datasets, images, documents, posts, etc. -&gt; So the container concept is less rigidly defined than an LDF host with a completely partitioned triplet graph.</p></li>
 </ul>
-<p>Additionally, by being an explicitly <em>social</em> system, p2p-ld is unconcerned with arbitrary query execution time on anonymous data systems - the expectation is that individual peers and <span class="target" id="index-2"></span>peer federations</p>
+<p>Additionally, by being an explicitly <em>social</em> system, p2p-ld is unconcerned with arbitrary query execution on anonymous data systems - the expectation is that individual peers and <span class="target" id="index-4"></span>peer federations manage their resources and the norms around their use. Accordingly, they would manage a set of containers (or, the partition of its graph) that</p>
 <div class="attention admonition">
 <p class="admonition-title">To be very clear!</p>
 <p>p2p-ld does not attempt to replace or improve SPARQL. There are a number of philosophical and practical differences in the design of the greater semantic web, and particularly its instantiation as bigass corporate knowledge graphs. We will do what we can to integrate with RDF and RDF-like technologies, but p2p-ld is <em>not</em> a distributed SPARQL endpoint.</p>
 </div>
-<p>There are a number of philosophical</p>
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
@@ -278,8 +284,8 @@
 <li><p>Homepage: <a class="reference external" href="https://linkeddatafragments.org/">https://linkeddatafragments.org/</a></p></li>
 <li><p>Papers:</p>
 <ul>
-<li><p>Original conference paper: <span id="id2">[<a class="reference internal" href="../references.html#id7" title="Ruben Verborgh, Sam Coppens, Miel Vander Sande, Erik Mannens, Pieter Colpaert, and Rik Van de Walle. Web-Scale Querying through Linked Data Fragments. In Proceedings of the 7th Workshop on Linked Data on the Web. 2014-04-08.">Verborgh <em>et al.</em>, 2014</a>]</span></p></li>
-<li><p><span id="id3">[<a class="reference internal" href="../references.html#id6" title="Ruben Verborgh, Miel Vander Sande, Olaf Hartig, Joachim Van Herwegen, Laurens De Vocht, Ben De Meester, Gerald Haesendonck, and Pieter Colpaert. Triple Pattern Fragments: A low-cost knowledge graph interface for the Web. Journal of Web Semantics, 37–38:184–206, 2016-03. URL: https://linkinghub.elsevier.com/retrieve/pii/S1570826816000214 (visited on 2023-06-08), doi:10.1016/j.websem.2016.03.003.">Verborgh <em>et al.</em>, 2016</a>]</span></p></li>
+<li><p>Original conference paper: <span id="id3">[<a class="reference internal" href="../references.html#id7" title="Ruben Verborgh, Sam Coppens, Miel Vander Sande, Erik Mannens, Pieter Colpaert, and Rik Van de Walle. Web-Scale Querying through Linked Data Fragments. In Proceedings of the 7th Workshop on Linked Data on the Web. 2014-04-08.">Verborgh <em>et al.</em>, 2014</a>]</span></p></li>
+<li><p><span id="id4">[<a class="reference internal" href="../references.html#id6" title="Ruben Verborgh, Miel Vander Sande, Olaf Hartig, Joachim Van Herwegen, Laurens De Vocht, Ben De Meester, Gerald Haesendonck, and Pieter Colpaert. Triple Pattern Fragments: A low-cost knowledge graph interface for the Web. Journal of Web Semantics, 37–38:184–206, 2016-03. URL: https://linkinghub.elsevier.com/retrieve/pii/S1570826816000214 (visited on 2023-06-08), doi:10.1016/j.websem.2016.03.003.">Verborgh <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 </li>
 <li><p>Specification: <a class="reference external" href="https://linkeddatafragments.org/specification/triple-pattern-fragments/">Triple Pattern Fragments</a></p></li>
@@ -287,8 +293,8 @@
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="semwebagents" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>See the history of the early to middle semantic web, discussed in <span id="id4">[<a class="reference internal" href="../references.html#id5" title="Jonny L. Saunders. Surveillance Graphs. 2023-04-02T00:00:00+00:00. URL: https://jon-e.net/surveillance-graphs (visited on 2023-06-08), arXiv:hc:54749, doi:10.17613/syv8-cp10.">Saunders, 2023</a>]</span></p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>See the history of the early to middle semantic web, discussed in <span id="id5">[<a class="reference internal" href="../references.html#id5" title="Jonny L. Saunders. Surveillance Graphs. 2023-04-02T00:00:00+00:00. URL: https://jon-e.net/surveillance-graphs (visited on 2023-06-08), arXiv:hc:54749, doi:10.17613/syv8-cp10.">Saunders, 2023</a>]</span></p>
 </aside>
 </aside>
 </section>
@@ -299,12 +305,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="nanopubs.html">
+          <a class="next-page" href="ld_platform.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">NanoPubs</div>
+                <div class="title">Linked Data Platform</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>

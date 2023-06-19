@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="6. Data Structures" href="data_structures.html" /><link rel="prev" title="3. Identity" href="identity.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="5. Data Structures" href="data_structures.html" /><link rel="prev" title="3. Identity" href="identity.html" />
         <link rel="canonical" href="/docs/discovery.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
@@ -135,7 +135,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -171,6 +171,7 @@
 <li class="toctree-l2"><a class="reference internal" href="comparison/xmpp.html">XMPP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/solid.html">SOLID</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/ld_fragments.html">Linked Data Fragments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/ld_platform.html">Linked Data Platform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/nanopubs.html">NanoPubs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/eris.html">ERIS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/dmc.html">DMC</a></li>
@@ -185,20 +186,20 @@
 <li class="toctree-l1"><a class="reference internal" href="protocol.html">2. Protocol</a></li>
 <li class="toctree-l1"><a class="reference internal" href="identity.html">3. Identity</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">4. Discovery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#scraps">5. Scraps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_structures.html">6. Data Structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vocabulary.html">7. Vocabulary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="querying.html">8. Querying</a></li>
-<li class="toctree-l1"><a class="reference internal" href="encryption.html">9. Encryption</a></li>
-<li class="toctree-l1"><a class="reference internal" href="encryption.html#todo">10. TODO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="federation.html">11. Federation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backwards_compatibility.html">12. Backwards Compatibility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="evolvability.html">13. Evolvability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_structures.html">5. Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vocabulary.html">6. Vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="querying.html">7. Querying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">8. Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html#todo">9. TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="federation.html">10. Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backwards_compatibility.html">11. Backwards Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evolvability.html">12. Evolvability</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="triplets.html">Triplets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="translation.html">Translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapter/index.html">Adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation/index.html">Translation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Drafting</span></p>
 <ul>
@@ -237,7 +238,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -249,11 +250,23 @@
 <ul class="simple">
 <li><p>Bootstrapping initial connections</p></li>
 <li><p>Gossiping</p></li>
-<li><p>Hole punching</p></li>
+</ul>
+<section id="hole-punching">
+<span id="index-0"></span><h2><span class="section-number">4.1. </span>Hole Punching<a class="headerlink" href="#hole-punching" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://tailscale.com/blog/how-nat-traversal-works/">https://tailscale.com/blog/how-nat-traversal-works/</a></p></li>
+<li><p><span class="target" id="index-1"></span>Hypercore</p>
+<ul>
+<li><p>See: <a class="reference external" href="https://docs.holepunch.to/apps/keet.io">https://docs.holepunch.to/apps/keet.io</a></p></li>
+<li><p><a class="reference external" href="https://github.com/mafintosh/dht-rpc">https://github.com/mafintosh/dht-rpc</a></p></li>
+<li><p><a class="reference external" href="https://docs.holepunch.to/building-blocks/hyperdht">https://docs.holepunch.to/building-blocks/hyperdht</a></p></li>
+</ul>
+</li>
+<li><p>Socket Supply Co</p></li>
 </ul>
 </section>
 <section id="scraps">
-<h1><span class="section-number">5. </span>Scraps<a class="headerlink" href="#scraps" title="Permalink to this heading">#</a></h1>
+<h2><span class="section-number">4.2. </span>Scraps<a class="headerlink" href="#scraps" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://xmpp.org/extensions/xep-0030.html">https://xmpp.org/extensions/xep-0030.html</a></p>
 <blockquote>
 <div><p>There are three kinds of information that need to be discovered about an entity:</p>
@@ -264,6 +277,10 @@
 </ul>
 <p>All three MUST be supported, but the first two kinds of information relate to the entity itself whereas the third kind of information relates to items associated with the entity itself; therefore two different query types are needed.</p>
 </div></blockquote>
+<ul class="simple">
+<li><p>subscription to particular data types or query patterns - each peer keeps a list of things that we should tell it about when we make a new graph. So I might want to always see new posts and pre-emptively index those but I don’t care about your datasets. This should probably exist at the level of a peer relationship rather than a peer outbox-like thing</p></li>
+</ul>
+</section>
 </section>
 
         </article>
@@ -276,7 +293,7 @@
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title"><span class="section-number">6. </span>Data Structures</div>
+                <div class="title"><span class="section-number">5. </span>Data Structures</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -309,8 +326,28 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">4. Discovery</a><ul>
+<li><a class="reference internal" href="#hole-punching">4.1. Hole Punching</a></li>
+<li><a class="reference internal" href="#scraps">4.2. Scraps</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

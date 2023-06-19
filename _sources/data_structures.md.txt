@@ -7,6 +7,7 @@ Triplet graphs similar to linked data fragments with envelopes. decoupling conte
 - Versioning
 - Typed objects with formatting
 
+(Containers)=
 ## Containers
 
 - Packets of LD-triplets that contain
@@ -30,6 +31,8 @@ Triplet graphs similar to linked data fragments with envelopes. decoupling conte
 - Capabilities: A container can specify different capabilities that another account can take (eg. "Like", "Upvote", "Reply")
 	- Capabilities should also contain a permissions scope, if none is present, the global scope is assumed.
 	- Since Identities are just a special form of container, they too can advertise different actions that they support with capabilities.
+- Basically a container is a merkle DAG with binary data at its leaves a la the {index}`Linked Data; Platform`
+- Re: Ordering - https://github.com/ssbc/ssb-tangle
 
 Re hashing a graph: the container always has one root node that is the container's identity from which a graph traversal starts. A {index}`Merkle DAG` is then constructed starting from the leaves. 
 

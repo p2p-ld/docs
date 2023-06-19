@@ -3,11 +3,11 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="IPFS" href="ipfs.html" /><link rel="prev" title="Comparison" href="index.html" />
-        <link rel="canonical" href="/docs/comparison/bittorrent.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="NanoPubs" href="nanopubs.html" /><link rel="prev" title="Linked Data Fragments" href="ld_fragments.html" />
+        <link rel="canonical" href="/docs/comparison/ld_platform.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
-        <title>BitTorrent - p2p-ld 0.1.0 documentation</title>
+        <title>Linked Data Platform - p2p-ld 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -135,7 +135,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -159,7 +159,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Comparison</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Comparison</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">BitTorrent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bittorrent.html">BitTorrent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ipfs.html">IPFS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hypercore.html">Dat/Hypercore</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spritely.html">Spritely/Goblin</a></li>
@@ -171,7 +171,7 @@
 <li class="toctree-l2"><a class="reference internal" href="xmpp.html">XMPP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="solid.html">SOLID</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ld_fragments.html">Linked Data Fragments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ld_platform.html">Linked Data Platform</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Linked Data Platform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nanopubs.html">NanoPubs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="eris.html">ERIS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dmc.html">DMC</a></li>
@@ -238,14 +238,134 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="bittorrent">
-<h1>BitTorrent<a class="headerlink" href="#bittorrent" title="Permalink to this heading">#</a></h1>
+          <section id="linked-data-platform">
+<span id="index-0"></span><h1>Linked Data Platform<a class="headerlink" href="#linked-data-platform" title="Permalink to this heading">#</a></h1>
+<section id="containers">
+<span id="index-1"></span><h2>Containers<a class="headerlink" href="#containers" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.w3.org/TR/ldp/#ldpc">https://www.w3.org/TR/ldp/#ldpc</a></p>
+<p>We extend the notion of LDP containers!</p>
+<p>Terms:</p>
+<ul class="simple">
+<li><p>Containment Triples</p></li>
+<li><p>Membership Triples</p></li>
+</ul>
+<p>Types:</p>
+<ul class="simple">
+<li><p>Direct Containers</p></li>
+</ul>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/terms/&gt;</span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">ldp:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/ns/ldp#&gt;</span><span class="p">.</span>
+
+<span class="nv">&lt;http://example.org/c1/&gt;</span>
+   <span class="kt">a</span> <span class="nn">ldp</span><span class="p">:</span><span class="nt">BasicContainer</span><span class="p">;</span>
+   <span class="nn">dcterms</span><span class="p">:</span><span class="nt">title</span> <span class="s">&quot;A very simple container&quot;</span><span class="p">;</span>
+   <span class="nn">ldp</span><span class="p">:</span><span class="nt">contains</span> <span class="nv">&lt;r1&gt;</span><span class="p">,</span> <span class="nv">&lt;r2&gt;</span><span class="p">,</span> <span class="nv">&lt;r3&gt;</span><span class="p">.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Indirect Containers - a way of interacting with existing data</p></li>
+</ul>
+<p>Given:</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">ldp:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/ns/ldp#&gt;</span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">o:</span><span class="w"> </span><span class="nv">&lt;http://example.org/ontology#&gt;</span><span class="p">.</span>
+
+<span class="nv">&lt;http://example.org/netWorth/nw1/&gt;</span>
+   <span class="kt">a</span> <span class="nn">o</span><span class="p">:</span><span class="nt">NetWorth</span><span class="p">;</span>
+   <span class="nn">o</span><span class="p">:</span><span class="nt">netWorthOf</span> <span class="nv">&lt;http://example.org/users/JohnZSmith&gt;</span><span class="p">;</span>
+   <span class="nn">o</span><span class="p">:</span><span class="nt">asset</span> 
+      <span class="nv">&lt;assets/a1&gt;</span><span class="p">,</span>
+      <span class="nv">&lt;assets/a2&gt;</span><span class="p">;</span>
+   <span class="nn">o</span><span class="p">:</span><span class="nt">liability</span> 
+      <span class="nv">&lt;liabilities/l1&gt;</span><span class="p">,</span>
+      <span class="nv">&lt;liabilities/l2&gt;</span><span class="p">,</span>
+      <span class="nv">&lt;liabilities/l3&gt;</span><span class="p">.</span>
+</pre></div>
+</div>
+<p>we can make direct containers that describe the assets and liabilities as containers without modifying the original data</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">ldp:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/ns/ldp#&gt;</span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/terms/&gt;</span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">o:</span><span class="w"> </span><span class="nv">&lt;http://example.org/ontology#&gt;</span><span class="p">.</span>
+
+<span class="nv">&lt;http://example.org/netWorth/nw1/assets/&gt;</span>
+   <span class="kt">a</span> <span class="nn">ldp</span><span class="p">:</span><span class="nt">DirectContainer</span><span class="p">;</span>
+   <span class="nn">dcterms</span><span class="p">:</span><span class="nt">title</span> <span class="s">&quot;The assets of JohnZSmith&quot;</span><span class="p">;</span>
+   <span class="nn">ldp</span><span class="p">:</span><span class="nt">membershipResource</span> <span class="nv">&lt;http://example.org/netWorth/nw1/&gt;</span><span class="p">;</span>
+   <span class="nn">ldp</span><span class="p">:</span><span class="nt">hasMemberRelation</span> <span class="nn">o</span><span class="p">:</span><span class="nt">asset</span><span class="p">;</span>
+   <span class="nn">ldp</span><span class="p">:</span><span class="nt">contains</span> <span class="nv">&lt;a1&gt;</span><span class="p">,</span> <span class="nv">&lt;a2&gt;</span><span class="p">.</span>
+</pre></div>
+</div>
+<p>Additionally, if one were to add a new set of “advisors,” we would make an indirect container that tells us we need an additional triple when creating new members of the container (<code class="docutils literal notranslate"><span class="pre">foaf:primaryTopic</span></code>):</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="nv">&lt;advisors/&gt;</span>
+   <span class="kt">a</span> <span class="nn">ldp</span><span class="p">:</span><span class="nt">IndirectContainer</span><span class="p">;</span>
+   <span class="nn">dcterms</span><span class="p">:</span><span class="nt">title</span> <span class="s">&quot;The asset advisors of JohnZSmith&quot;</span><span class="p">;</span>
+   <span class="nn">ldp</span><span class="p">:</span><span class="nt">membershipResource</span> <span class="nv">&lt;&gt;</span><span class="p">;</span>
+   <span class="nn">ldp</span><span class="p">:</span><span class="nt">hasMemberRelation</span> <span class="nn">o</span><span class="p">:</span><span class="nt">advisor</span><span class="p">;</span>
+   <span class="nn">ldp</span><span class="p">:</span><span class="nt">insertedContentRelation</span> <span class="nn">foaf</span><span class="p">:</span><span class="nt">primaryTopic</span><span class="p">;</span>
+   <span class="nn">ldp</span><span class="p">:</span><span class="nt">contains</span>
+   	 <span class="nv">&lt;advisors/bob&gt;</span><span class="p">,</span>     <span class="c"># URI of a document a.k.a. an information resource</span>
+   	 <span class="nv">&lt;advisors/marsha&gt;</span><span class="p">.</span>  <span class="c"># describing a person</span>
+</pre></div>
+</div>
+<p>(still unclear to me what is different about that, still reading.)</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Completed Request</p></th>
+<th class="head"><p>Membership Effect</p></th>
+<th class="head"><p>Containment Effect</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Create in Basic Container</p></td>
+<td><p>New triple: (LDPC, ldp:contains, LDPR)</p></td>
+<td><p>Same</p></td>
+</tr>
+<tr class="row-odd"><td><p>Create in Direct Container</p></td>
+<td><p>New triple links LDP-RS to created LDPR. LDP-RS URI may be same as LDP-DC</p></td>
+<td><p>New triple: (LDPC, ldp:contains, LDPR)</p></td>
+</tr>
+<tr class="row-even"><td><p>Create in Indirect Container</p></td>
+<td><p>New triple links LDP-RS to content indicated URI</p></td>
+<td><p>New triple: (LDPC, ldp:contains, LDPR)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Resource deleted</p></td>
+<td><p>Membership triple may be removed</p></td>
+<td><p>(LDPC, ldp:contains, LDPR) triple is removed</p></td>
+</tr>
+<tr class="row-even"><td><p>Container deleted</p></td>
+<td><p>Triples and member resources may be removed</p></td>
+<td><p>Triples of form (LDPC, ldp:contains, LDPR) and contained LDPRs may be removed</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="similarities">
+<h2>Similarities<a class="headerlink" href="#similarities" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Separation between container data and metadata - “minimal-container triples,” what remains in the container when the container has zero members and zero contained resources</p></li>
+</ul>
+</section>
+<section id="differences">
+<h2>Differences<a class="headerlink" href="#differences" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Containers are not recursive??or at least that is suggested by the ‘net worth’ example that explains why we can’t just turn the original subject into a container: “can’t mix assets and liabilities” and i am like why not make one container for the person and then subcontainers for each of the types?</p></li>
+</ul>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Spec: <a class="reference external" href="https://www.w3.org/TR/ldp/">https://www.w3.org/TR/ldp/</a></p></li>
+<li><p>Use cases and requirements: <a class="reference external" href="https://www.w3.org/TR/ldp-ucr/">https://www.w3.org/TR/ldp-ucr/</a></p></li>
+<li><p>eg. using virtuoso. <a class="reference external" href="https://github.com/vemonet/virtuoso-ldp">https://github.com/vemonet/virtuoso-ldp</a></p></li>
+</ul>
+</section>
 </section>
 
         </article>
@@ -253,23 +373,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="ipfs.html">
+          <a class="next-page" href="nanopubs.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">IPFS</div>
+                <div class="title">NanoPubs</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="index.html">
+          <a class="prev-page" href="ld_fragments.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Comparison</div>
+                <div class="title">Linked Data Fragments</div>
                 
               </div>
             </a>
@@ -291,8 +411,30 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Linked Data Platform</a><ul>
+<li><a class="reference internal" href="#containers">Containers</a></li>
+<li><a class="reference internal" href="#similarities">Similarities</a></li>
+<li><a class="reference internal" href="#differences">Differences</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

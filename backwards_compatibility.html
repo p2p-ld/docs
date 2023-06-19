@@ -3,11 +3,11 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="13. Evolvability" href="evolvability.html" /><link rel="prev" title="11. Federation" href="federation.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="12. Evolvability" href="evolvability.html" /><link rel="prev" title="10. Federation" href="federation.html" />
         <link rel="canonical" href="/docs/backwards_compatibility.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
-        <title>12. Backwards Compatibility - p2p-ld 0.1.0 documentation</title>
+        <title>11. Backwards Compatibility - p2p-ld 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -171,6 +171,7 @@
 <li class="toctree-l2"><a class="reference internal" href="comparison/xmpp.html">XMPP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/solid.html">SOLID</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/ld_fragments.html">Linked Data Fragments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/ld_platform.html">Linked Data Platform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/nanopubs.html">NanoPubs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/eris.html">ERIS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/dmc.html">DMC</a></li>
@@ -185,20 +186,20 @@
 <li class="toctree-l1"><a class="reference internal" href="protocol.html">2. Protocol</a></li>
 <li class="toctree-l1"><a class="reference internal" href="identity.html">3. Identity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="discovery.html">4. Discovery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="discovery.html#scraps">5. Scraps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_structures.html">6. Data Structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vocabulary.html">7. Vocabulary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="querying.html">8. Querying</a></li>
-<li class="toctree-l1"><a class="reference internal" href="encryption.html">9. Encryption</a></li>
-<li class="toctree-l1"><a class="reference internal" href="encryption.html#todo">10. TODO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="federation.html">11. Federation</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">12. Backwards Compatibility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="evolvability.html">13. Evolvability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_structures.html">5. Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vocabulary.html">6. Vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="querying.html">7. Querying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">8. Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html#todo">9. TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="federation.html">10. Federation</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">11. Backwards Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evolvability.html">12. Evolvability</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="triplets.html">Triplets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="translation.html">Translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapter/index.html">Adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation/index.html">Translation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Drafting</span></p>
 <ul>
@@ -244,7 +245,7 @@
         </div>
         <article role="main">
           <section id="backwards-compatibility">
-<h1><span class="section-number">12. </span>Backwards Compatibility<a class="headerlink" href="#backwards-compatibility" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">11. </span>Backwards Compatibility<a class="headerlink" href="#backwards-compatibility" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>HTTP</p></li>
 <li><p>Bittorrent</p></li>
@@ -252,7 +253,7 @@
 <li><p>ActivityPub</p></li>
 </ul>
 <section id="http-servers">
-<h2><span class="section-number">12.1. </span>HTTP Servers<a class="headerlink" href="#http-servers" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.1. </span>HTTP Servers<a class="headerlink" href="#http-servers" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Using existing HTTP servers as web-seed like things.</p></li>
 <li><p>Use codecs to indicate the format and metadata of existing files</p></li>
@@ -260,14 +261,14 @@
 </ul>
 </section>
 <section id="bittorrent">
-<h2><span class="section-number">12.2. </span>BitTorrent<a class="headerlink" href="#bittorrent" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.2. </span>BitTorrent<a class="headerlink" href="#bittorrent" title="Permalink to this heading">#</a></h2>
 <p>See <a class="reference external" href="http://bittorrent.org/beps/bep_0052.html">BEP 52 - Bittorrent V2</a></p>
 </section>
 <section id="ipfs">
-<h2><span class="section-number">12.3. </span>IPFS<a class="headerlink" href="#ipfs" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.3. </span>IPFS<a class="headerlink" href="#ipfs" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="activitypub">
-<h2><span class="section-number">12.4. </span>ActivityPub<a class="headerlink" href="#activitypub" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.4. </span>ActivityPub<a class="headerlink" href="#activitypub" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Mappings:</p>
 <ul>
@@ -288,7 +289,7 @@
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title"><span class="section-number">13. </span>Evolvability</div>
+                <div class="title"><span class="section-number">12. </span>Evolvability</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -299,7 +300,7 @@
                   <span>Previous</span>
                 </div>
                 
-                <div class="title"><span class="section-number">11. </span>Federation</div>
+                <div class="title"><span class="section-number">10. </span>Federation</div>
                 
               </div>
             </a>
@@ -333,11 +334,11 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">12. Backwards Compatibility</a><ul>
-<li><a class="reference internal" href="#http-servers">12.1. HTTP Servers</a></li>
-<li><a class="reference internal" href="#bittorrent">12.2. BitTorrent</a></li>
-<li><a class="reference internal" href="#ipfs">12.3. IPFS</a></li>
-<li><a class="reference internal" href="#activitypub">12.4. ActivityPub</a></li>
+<li><a class="reference internal" href="#">11. Backwards Compatibility</a><ul>
+<li><a class="reference internal" href="#http-servers">11.1. HTTP Servers</a></li>
+<li><a class="reference internal" href="#bittorrent">11.2. BitTorrent</a></li>
+<li><a class="reference internal" href="#ipfs">11.3. IPFS</a></li>
+<li><a class="reference internal" href="#activitypub">11.4. ActivityPub</a></li>
 </ul>
 </li>
 </ul>

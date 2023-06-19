@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Sketchpad" href="sketchpad.html" /><link rel="prev" title="Translation" href="translation.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Sketchpad" href="sketchpad.html" /><link rel="prev" title="Translation" href="translation/index.html" />
         <link rel="canonical" href="/docs/design.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
@@ -171,6 +171,7 @@
 <li class="toctree-l2"><a class="reference internal" href="comparison/xmpp.html">XMPP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/solid.html">SOLID</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/ld_fragments.html">Linked Data Fragments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/ld_platform.html">Linked Data Platform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/nanopubs.html">NanoPubs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/eris.html">ERIS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/dmc.html">DMC</a></li>
@@ -185,20 +186,20 @@
 <li class="toctree-l1"><a class="reference internal" href="protocol.html">2. Protocol</a></li>
 <li class="toctree-l1"><a class="reference internal" href="identity.html">3. Identity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="discovery.html">4. Discovery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="discovery.html#scraps">5. Scraps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_structures.html">6. Data Structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vocabulary.html">7. Vocabulary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="querying.html">8. Querying</a></li>
-<li class="toctree-l1"><a class="reference internal" href="encryption.html">9. Encryption</a></li>
-<li class="toctree-l1"><a class="reference internal" href="encryption.html#todo">10. TODO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="federation.html">11. Federation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backwards_compatibility.html">12. Backwards Compatibility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="evolvability.html">13. Evolvability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_structures.html">5. Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vocabulary.html">6. Vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="querying.html">7. Querying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">8. Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html#todo">9. TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="federation.html">10. Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backwards_compatibility.html">11. Backwards Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evolvability.html">12. Evolvability</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="triplets.html">Triplets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="translation.html">Translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapter/index.html">Adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation/index.html">Translation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Drafting</span></p>
 <ul class="current">
@@ -269,6 +270,10 @@
 <p>We should neither sacrifice control of the internet to platform giants nor should we insist that self-hosting is the only alternative. If the alternative to using Google Docs or Slack requires me to be a professional sysadmin, or even to keep a raspberry pi plugged in and online at all times, it isn’t an alternative for 95% of people.</p>
 <p>It should be possible to share resources such that relatively few people need to maintain persistent network infrastructure, and it should be possible to accomodate their leaving at any time. It should also be very difficult for one or a few actors to make a large number of other peers on the network dependent on them, claiming de-facto control over an ostensibly decentralized system (lookin at you mastodon.social).</p>
 </section>
+<section id="lack-of-agency-is-a-tighter-bottleneck-than-performance">
+<h2>Lack of Agency is a tighter bottleneck than Performance<a class="headerlink" href="#lack-of-agency-is-a-tighter-bottleneck-than-performance" title="Permalink to this heading">#</a></h2>
+<p>(rather than optimizing for performance of massive queries over huge datasets, we optimize for the ability for individual people to organize the resources that would be relevant to them. The thing that is limiting our ability to make sense of data in neuroscience, for example, is not that our servers aren’t fast enough, but the barriers to making well-structured data are too high, as is the expertise to conduct large scale queries. Even then, our ability to <em>understand</em> and <em>make sense of</em> the information is even less constrained by performance, and more by the absence of infrastructure to link and communicate heterogeneous things. We focus on small-scale computing not only for ethical reasons, but also practical ones.)</p>
+</section>
 </section>
 
         </article>
@@ -285,7 +290,7 @@
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="translation.html">
+          <a class="prev-page" href="translation/index.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
@@ -331,6 +336,7 @@
 <li><a class="reference internal" href="#permanence-is-impossible">Permanence is Impossible</a></li>
 <li><a class="reference internal" href="#ambiguity-is-natural">Ambiguity is Natural</a></li>
 <li><a class="reference internal" href="#autonomy-and-convenience-can-coexist">Autonomy <em>and</em> Convenience Can Coexist</a></li>
+<li><a class="reference internal" href="#lack-of-agency-is-a-tighter-bottleneck-than-performance">Lack of Agency is a tighter bottleneck than Performance</a></li>
 </ul>
 </li>
 </ul>

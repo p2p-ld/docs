@@ -28,6 +28,7 @@ xmpp
 
 solid
 ld_fragments
+ld_platform
 nanopubs
 ```
 
@@ -44,16 +45,18 @@ dmc
 - Arweave
 - CAN
 - Chord
-- Earthstar
+- Earthstar - https://earthstar-project.org/
 - Freenet
 - Manyverse
-- P2panda
+- P2panda - v interesting! https://p2panda.org/
 - SAFE
 - Storj
 - [Swarm](https://www.ethswarm.org/swarm-whitepaper.pdf)
 	- not interesting, based around coins and smart contracts
 	- kademlia routing
 	- chunks stored by nodes close in hash space
+- Repute.Social
+- LinkedTrust.us
 
 
 ## Points of comparison

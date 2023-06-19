@@ -41,7 +41,8 @@ evolvability
 :hidden:
 
 triplets
-translation
+adapter/index
+translation/index
 ```
 
 ```{toctree}

@@ -3,11 +3,11 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="9. Encryption" href="encryption.html" /><link rel="prev" title="7. Vocabulary" href="vocabulary.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="8. Encryption" href="encryption.html" /><link rel="prev" title="6. Vocabulary" href="vocabulary.html" />
         <link rel="canonical" href="/docs/querying.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
-        <title>8. Querying - p2p-ld 0.1.0 documentation</title>
+        <title>7. Querying - p2p-ld 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -171,6 +171,7 @@
 <li class="toctree-l2"><a class="reference internal" href="comparison/xmpp.html">XMPP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/solid.html">SOLID</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/ld_fragments.html">Linked Data Fragments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison/ld_platform.html">Linked Data Platform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/nanopubs.html">NanoPubs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/eris.html">ERIS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comparison/dmc.html">DMC</a></li>
@@ -185,20 +186,20 @@
 <li class="toctree-l1"><a class="reference internal" href="protocol.html">2. Protocol</a></li>
 <li class="toctree-l1"><a class="reference internal" href="identity.html">3. Identity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="discovery.html">4. Discovery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="discovery.html#scraps">5. Scraps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_structures.html">6. Data Structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vocabulary.html">7. Vocabulary</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">8. Querying</a></li>
-<li class="toctree-l1"><a class="reference internal" href="encryption.html">9. Encryption</a></li>
-<li class="toctree-l1"><a class="reference internal" href="encryption.html#todo">10. TODO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="federation.html">11. Federation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backwards_compatibility.html">12. Backwards Compatibility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="evolvability.html">13. Evolvability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_structures.html">5. Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vocabulary.html">6. Vocabulary</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">7. Querying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">8. Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html#todo">9. TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="federation.html">10. Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backwards_compatibility.html">11. Backwards Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evolvability.html">12. Evolvability</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="triplets.html">Triplets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="translation.html">Translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapter/index.html">Adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation/index.html">Translation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Drafting</span></p>
 <ul>
@@ -244,13 +245,16 @@
         </div>
         <article role="main">
           <section id="querying">
-<h1><span class="section-number">8. </span>Querying<a class="headerlink" href="#querying" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">7. </span>Querying<a class="headerlink" href="#querying" title="Permalink to this heading">#</a></h1>
 <p>How do we find peers that have subgraphs that are responsive to what we want?</p>
+<ul class="simple">
+<li><p>Query results should then become their own containers, with the component triplets of the query being hashed at the root level, so then the query-er can cache the query results (in case anyone else makes the same query) while also rehosting the original containers returned from the query.</p></li>
+</ul>
 <section id="syntax">
-<h2><span class="section-number">8.1. </span>Syntax<a class="headerlink" href="#syntax" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.1. </span>Syntax<a class="headerlink" href="#syntax" title="Permalink to this heading">#</a></h2>
 <section id="location">
-<span id="qlocation"></span><h3><span class="section-number">8.1.1. </span>Location<a class="headerlink" href="#location" title="Permalink to this heading">#</a></h3>
-<p>How to refer to a given <a class="reference internal" href="#data_structures.html#Containers"><span class="xref myst">container</span></a>, eg.</p>
+<span id="qlocation"></span><h3><span class="section-number">7.1.1. </span>Location<a class="headerlink" href="#location" title="Permalink to this heading">#</a></h3>
+<p>How to refer to a given <a class="reference internal" href="data_structures.html#containers"><span class="std std-ref">container</span></a>, eg.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@user</span><span class="p">:</span><span class="n">containerName</span><span class="p">:</span><span class="n">childName</span>
 </pre></div>
 </div>
@@ -258,17 +262,16 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@user</span><span class="p">:</span><span class="n">containerName</span><span class="p">:{</span><span class="mi">0</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Children</p>
 </section>
 <section id="version">
-<h3><span class="section-number">8.1.2. </span>Version<a class="headerlink" href="#version" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.1.2. </span>Version<a class="headerlink" href="#version" title="Permalink to this heading">#</a></h3>
 <p>How to refer to a specific version of a container</p>
 <p>References without version qualification indicate the most recent version at the time of containerizing the links.</p>
 </section>
 </section>
 <section id="query-fragments">
-<h2><span class="section-number">8.2. </span>Query Fragments<a class="headerlink" href="#query-fragments" title="Permalink to this heading">#</a></h2>
-<p>Using blank subgraphs to specify queries</p>
+<h2><span class="section-number">7.2. </span>Query Fragments<a class="headerlink" href="#query-fragments" title="Permalink to this heading">#</a></h2>
+<p>Using blank subgraphs to specify queries like <span class="target" id="index-0"></span>Linked Data; Fragments and <span class="target" id="index-1"></span>SPARQL</p>
 </section>
 </section>
 
@@ -282,7 +285,7 @@
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title"><span class="section-number">9. </span>Encryption</div>
+                <div class="title"><span class="section-number">8. </span>Encryption</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -293,7 +296,7 @@
                   <span>Previous</span>
                 </div>
                 
-                <div class="title"><span class="section-number">7. </span>Vocabulary</div>
+                <div class="title"><span class="section-number">6. </span>Vocabulary</div>
                 
               </div>
             </a>
@@ -327,13 +330,13 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">8. Querying</a><ul>
-<li><a class="reference internal" href="#syntax">8.1. Syntax</a><ul>
-<li><a class="reference internal" href="#location">8.1.1. Location</a></li>
-<li><a class="reference internal" href="#version">8.1.2. Version</a></li>
+<li><a class="reference internal" href="#">7. Querying</a><ul>
+<li><a class="reference internal" href="#syntax">7.1. Syntax</a><ul>
+<li><a class="reference internal" href="#location">7.1.1. Location</a></li>
+<li><a class="reference internal" href="#version">7.1.2. Version</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#query-fragments">8.2. Query Fragments</a></li>
+<li><a class="reference internal" href="#query-fragments">7.2. Query Fragments</a></li>
 </ul>
 </li>
 </ul>
