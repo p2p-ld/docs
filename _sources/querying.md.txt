@@ -31,4 +31,4 @@ References without version qualification indicate the most recent version at the
 
 ## Query Fragments
 
-Using blank subgraphs to specify queries like {index}`Linked Data; Fragments` and {index}`SPARQL`
+Using blank subgraphs to specify queries like {index}`Linked Data; Fragments` and {index}`SPARQL <Linked Data; SPARQL>`

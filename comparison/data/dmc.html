@@ -3,14 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Spritely/Goblin" href="spritely.html" /><link rel="prev" title="IPFS" href="ipfs.html" />
-        <link rel="canonical" href="/docs/comparison/hypercore.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="P2P Concepts" href="../../p2p_concepts.html" /><link rel="prev" title="ERIS" href="eris.html" />
+        <link rel="canonical" href="/docs/comparison/data/dmc.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
-        <title>Dat/Hypercore - p2p-ld 0.1.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+        <title>DMC - p2p-ld 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
 
@@ -124,7 +124,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">p2p-ld 0.1.0 documentation</div></a>
+      <a href="../../index.html"><div class="brand">p2p-ld 0.1.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -135,7 +135,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -144,12 +144,12 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
   
   <span class="sidebar-brand-text">p2p-ld 0.1.0 documentation</span>
   
-</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
@@ -157,59 +157,71 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Comparison</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Comparison</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="bittorrent.html">BitTorrent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ipfs.html">IPFS</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Dat/Hypercore</a></li>
-<li class="toctree-l2"><a class="reference internal" href="spritely.html">Spritely/Goblin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="activitypub.html">ActivityPub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ssb.html">Secure Scuttlebutt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matrix.html">Matrix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="at_protocol.html">AT Protocol/Bluesky</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nostr.html">Nostr</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xmpp.html">XMPP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="solid.html">SOLID</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ld_fragments.html">Linked Data Fragments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ld_platform.html">Linked Data Platform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nanopubs.html">NanoPubs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="eris.html">ERIS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dmc.html">DMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Comparison</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Comparison</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../p2p/index.html">P2P</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of P2P</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../p2p/bittorrent.html">BitTorrent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../p2p/ipfs.html">IPFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../p2p/hypercore.html">Dat/Hypercore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../p2p/spritely.html">Spritely/Goblin</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../p2p_concepts.html">P2P Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../out_of_scope.html">Out of Scope</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../social/index.html">Social</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Social</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../social/activitypub.html">ActivityPub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../social/ssb.html">Secure Scuttlebutt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../social/matrix.html">Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../social/at_protocol.html">AT Protocol/Bluesky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../social/nostr.html">Nostr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../social/xmpp.html">XMPP</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../ld/index.html">Linked Data</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Linked Data</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ld/solid.html">SOLID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ld/ld_fragments.html">Linked Data Fragments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ld/ld_platform.html">Linked Data Platform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ld/nanopubs.html">NanoPubs</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">Data Structures</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Data Structures</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="eris.html">ERIS</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">DMC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../p2p_concepts.html">P2P Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../out_of_scope.html">Out of Scope</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Protocol</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../definitions.html">1. Definitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../protocol.html">2. Protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../identity.html">3. Identity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../discovery.html">4. Discovery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data_structures.html">5. Data Structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">6. Vocabulary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../querying.html">7. Querying</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../encryption.html">8. Encryption</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../encryption.html#todo">9. TODO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../federation.html">10. Federation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../backwards_compatibility.html">11. Backwards Compatibility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../evolvability.html">12. Evolvability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../definitions.html">1. Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../protocol.html">2. Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../identity.html">3. Identity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discovery.html">4. Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_structures.html">5. Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vocabulary.html">6. Vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../querying.html">7. Querying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../encryption.html">8. Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../encryption.html#todo">9. TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../federation.html">10. Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backwards_compatibility.html">11. Backwards Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../evolvability.html">12. Evolvability</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../triplets.html">Triplets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adapter/index.html">Adapter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../translation/index.html">Translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../triplets.html">Triplets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../adapter/index.html">Adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../translation/index.html">Translation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Drafting</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../design.html">Design Decisions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sketchpad.html">Sketchpad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Design Decisions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sketchpad.html">Sketchpad</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Meta</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
 </ul>
 
 </div>
@@ -238,18 +250,16 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="dat-hypercore">
-<h1>Dat/Hypercore<a class="headerlink" href="#dat-hypercore" title="Permalink to this heading">#</a></h1>
-<section id="holepunch">
-<span id="index-0"></span><h2>Holepunch<a class="headerlink" href="#holepunch" title="Permalink to this heading">#</a></h2>
-<p><a class="reference external" href="https://docs.holepunch.to/">https://docs.holepunch.to/</a></p>
-</section>
+          <section id="dmc">
+<h1>DMC<a class="headerlink" href="#dmc" title="Permalink to this heading">#</a></h1>
+<p>Distributed Mutable Containers</p>
+<p><a class="reference external" href="https://inqlab.net/projects/dmc/">https://inqlab.net/projects/dmc/</a></p>
 </section>
 
         </article>
@@ -257,23 +267,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="spritely.html">
+          <a class="next-page" href="../../p2p_concepts.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Spritely/Goblin</div>
+                <div class="title">P2P Concepts</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="ipfs.html">
+          <a class="prev-page" href="eris.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">IPFS</div>
+                <div class="title">ERIS</div>
                 
               </div>
             </a>
@@ -295,34 +305,15 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Dat/Hypercore</a><ul>
-<li><a class="reference internal" href="#holepunch">Holepunch</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
   </div>
-</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/scripts/furo.js"></script>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
     </body>
 </html>

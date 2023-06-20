@@ -4,40 +4,14 @@
 All of this is TODO. Comparison to existing protocols and projects (just to situate in context, not talk shit obvs)
 
 ```{toctree}
-:caption: P2P
+:maxdepth: 2
 
-bittorrent
-ipfs
-hypercore
-spritely
+p2p/index
+social/index
+ld/index
+data/index
 ```
 
-```{toctree}
-:caption: Social
-
-activitypub
-ssb
-matrix
-at_protocol
-nostr
-xmpp
-```
-
-```{toctree}
-:caption: Linked Data
-
-solid
-ld_fragments
-ld_platform
-nanopubs
-```
-
-```{toctree}
-:caption: Data Structures
-
-eris
-dmc
-```
 
 ## To be categorized
 
@@ -47,7 +21,6 @@ dmc
 - Chord
 - Earthstar - https://earthstar-project.org/
 - Freenet
-- Manyverse
 - P2panda - v interesting! https://p2panda.org/
 - SAFE
 - Storj

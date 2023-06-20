@@ -1,0 +1,458 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="IPFS" href="ipfs.html" /><link rel="prev" title="P2P" href="index.html" />
+        <link rel="canonical" href="/docs/comparison/p2p/bittorrent.html" />
+
+    <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
+        <title>BitTorrent - p2p-ld 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">p2p-ld 0.1.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">p2p-ld 0.1.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Comparison</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Comparison</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">P2P</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of P2P</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">BitTorrent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ipfs.html">IPFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hypercore.html">Dat/Hypercore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spritely.html">Spritely/Goblin</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../social/index.html">Social</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Social</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../social/activitypub.html">ActivityPub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../social/ssb.html">Secure Scuttlebutt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../social/matrix.html">Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../social/at_protocol.html">AT Protocol/Bluesky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../social/nostr.html">Nostr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../social/xmpp.html">XMPP</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../ld/index.html">Linked Data</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Linked Data</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ld/solid.html">SOLID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ld/ld_fragments.html">Linked Data Fragments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ld/ld_platform.html">Linked Data Platform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ld/nanopubs.html">NanoPubs</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../data/index.html">Data Structures</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Data Structures</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../data/eris.html">ERIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/dmc.html">DMC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../p2p_concepts.html">P2P Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../out_of_scope.html">Out of Scope</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Protocol</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../definitions.html">1. Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../protocol.html">2. Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../identity.html">3. Identity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discovery.html">4. Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_structures.html">5. Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vocabulary.html">6. Vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../querying.html">7. Querying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../encryption.html">8. Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../encryption.html#todo">9. TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../federation.html">10. Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backwards_compatibility.html">11. Backwards Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../evolvability.html">12. Evolvability</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../triplets.html">Triplets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../adapter/index.html">Adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../translation/index.html">Translation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Drafting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Design Decisions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sketchpad.html">Sketchpad</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Meta</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="bittorrent">
+<span id="index-0"></span><span id="id1"></span><h1>BitTorrent<a class="headerlink" href="#bittorrent" title="Permalink to this heading">#</a></h1>
+<p>Bittorrent is unarguably the most successful p2p protocol to date, and needless to say we have much to learn walking in its footsteps.</p>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<p>There are a number of very complete explanations of BitTorrent as a protocol, so we don’t attempt one here outside of giving an unfamiliar reader a general sense of how it works.</p>
+<section id="torrents">
+<h3>Torrents<a class="headerlink" href="#torrents" title="Permalink to this heading">#</a></h3>
+<p>Data is shared on BitTorrent in units described by <code class="docutils literal notranslate"><span class="pre">.torrent</span></code> files. They are <a class="reference external" href="https://en.wikipedia.org/wiki/Bencode">bencoded</a> dictionaries that contain the following fields (in Bittorrent v1):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">announce</span></code>: The URL of one or several trackers (described below)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">info</span></code>: A dictionary which includes metadata that describes the included file(s) and their length. The files are concatenated and then split into fixed-size pieces, and the info dict contains the SHA-1 hash of each piece.</p></li>
+</ul>
+<p>For example, a directory of three random files has a (decoded) <code class="docutils literal notranslate"><span class="pre">.torrent</span></code> file that looks like this:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;announce&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://example.tracker.com:8080/announce&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;info&quot;</span><span class="p">:{</span>
+<span class="w">    </span><span class="nt">&quot;files&quot;</span><span class="p">:[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;length&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">204800</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;path&quot;</span><span class="p">:[</span><span class="s2">&quot;random-file3&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;length&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">51200</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;random-file2&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;length&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">102400</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;path&quot;</span><span class="p">:[</span><span class="s2">&quot;random-file&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;random&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;piece length&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">16384</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;pieces&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;long string of concatenated hashes&gt;&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The contents of a torrent file are then uniquely indexed by the <code class="docutils literal notranslate"><span class="pre">infohash</span></code>, which is the hash of the entire (bencoded) <code class="docutils literal notranslate"><span class="pre">info</span></code> dictionary.  are an abbreviated form of the <code class="docutils literal notranslate"><span class="pre">.torrent</span></code> file that contain only the info-hash, which allows downloading peers to request and independently verify the rest of the info dictionary and start downloading without a complete <code class="docutils literal notranslate"><span class="pre">.torrent</span></code>.</p>
+<p>A generic magnet link looks like:</p>
+<p><code class="docutils literal notranslate"><span class="pre">magnet:?xt=urn:btih:&lt;INFOHASH&gt;&amp;dn=&lt;TORRENT_NAME&gt;&amp;tr=&lt;TRACKER_URL&gt;</span></code></p>
+<p>BitTorrent v2 extends traditional <code class="docutils literal notranslate"><span class="pre">.torrent</span></code> files to include a <span class="target" id="index-1"></span>Merkle Tree which generalizes the traditional piece structure with some nice properties like being able to recognize unique files across multiple <code class="docutils literal notranslate"><span class="pre">.torrent</span></code>s, etc.</p>
+</section>
+<section id="trackers">
+<h3>Trackers<a class="headerlink" href="#trackers" title="Permalink to this heading">#</a></h3>
+<p>To connect peers that might have or be interested in the contents of a given <code class="docutils literal notranslate"><span class="pre">.torrent</span></code> file, the <code class="docutils literal notranslate"><span class="pre">.torrent</span></code> (but not its contents) are uploaded to a <span class="target" id="index-2"></span>Tracker. Peers interested in downloading a <code class="docutils literal notranslate"><span class="pre">.torrent</span></code> will connect to the trackers that it indicates in its <code class="docutils literal notranslate"><span class="pre">announce</span></code><a class="footnote-reference brackets" href="#announcelist" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> metadata, and the trackers will return a list of peer IP:Port combinations that the peer can download the file from. The downloading (leeching) peer doesn’t need to trust the uploading (seeding) peers that the data they are sending is what is specified by the <code class="docutils literal notranslate"><span class="pre">.torrent</span></code>: the client checks the computed hash of each received piece against the hashes in the info dict, which is in turn checked against the info hash.</p>
+<p>Trackers solve the problem of <span class="target" id="index-3"></span>Discovery by giving a clear point where peers can find other peers from only the information contained within the <code class="docutils literal notranslate"><span class="pre">.torrent</span></code> itself. Trackers introduce a degree of brittleness, however, as they can become a single point of failure. Additional means of discovering peers have been added to BitTorrent over time, including <a class="reference external" href="http://www.bittorrent.org/beps/bep_0005.html"><span class="target" id="index-4"></span>Distributed Hash Tables</a>, <a class="reference external" href="http://www.bittorrent.org/beps/bep_0011.html">Peer Exchange</a></p>
+<p>Beyond their technical role, BitTorrent trackers also form a <strong>social space</strong> that is critical to understand its success as a protocol. While prior protocols like <span class="target" id="index-5"></span>Gnutella (of <span class="target" id="index-6"></span>Limewire/<span class="target" id="index-7"></span>Kazaa fame) had integrated search and peer discovery into the client and protocol itself, separating trackers as a means of organizing the BitTorrent ecosystem has allowed them to flourish as a means of experimenting with the kinds of social organization that keeps p2p swarms healthy. Tracker communities range from huge and disconnected as in widely-known public trackers like ThePirateBay, to tiny and close-knit like some niche private trackers.</p>
+<p>The bifurcated tracker/peer structure makes the overall system remarkably <em>resilient</em>. The trackers don’t host any infringing content themselves, they just organize the metadata for finding it, so they are relatively long-lived and inexpensive to start compared to more resource- and risk-intensive piracy vectors. If they are shut down, the peers can continue to share amongst themselves through DHT, Peer Exchange, and any other trackers that are specified in the <code class="docutils literal notranslate"><span class="pre">.torrent</span></code> files. When a successor pops up, the members of the old tracker can then re-collect the <code class="docutils literal notranslate"><span class="pre">.torrent</span></code> files from the prior site, and without needing a massive re-upload of data to a centralized server repopulate the new site.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See more detailed discussion re: lessons from BitTorrent Trackers for social infrastructure in “<a class="reference external" href="https://jon-e.net/infrastructure/#archives-need-communities">Archives Need Communities</a>” in <span id="id3">[<a class="reference internal" href="../../references.html#id8" title="Jonny L. Saunders. Decentralized Infrastructure for (Neuro)science. 2022-08-31. URL: http://arxiv.org/abs/2209.07493 (visited on 2023-03-01), arXiv:2209.07493, doi:10.48550/arXiv.2209.07493.">Saunders, 2022</a>]</span></p>
+</div>
+</section>
+<section id="protocol">
+<h3>Protocol<a class="headerlink" href="#protocol" title="Permalink to this heading">#</a></h3>
+<p>Peers that have been referred to one another from a tracker or other means start by attempting to make a connection with a ‘handshake’ that specifies the peer is connecting with BitTorrent and any other protocol extensions it supports.</p>
+<p>There are a number of subtleties in the transfer protocol, but it can be broadly summarized as a series of steps where peers tell each other which pieces they have, which they are interested in, and then sharing them amongst themselves.</p>
+<p>Though not explicitly in the protocol spec, two prominent design decisions are worth mentioning (See eg. <span id="id4">[<a class="reference internal" href="../../references.html#id5" title="Arnaud Legout, G. Urvoy-Keller, and P. Michiardi. Rarest first and choke algorithms are enough. In Proceedings of the 6th ACM SIGCOMM on Internet Measurement - IMC '06, 203. ACM Press, 2006. URL: http://portal.acm.org/citation.cfm?doid=1177080.1177106 (visited on 2018-11-09), doi:10.1145/1177080.1177106.">Legout <em>et al.</em>, 2006</a>]</span> for additional discussion).</p>
+<ul class="simple">
+<li><p><strong>Peer Selection:</strong> Which peers should I spent finite bandwidth uploading to? BitTorrent uses a variety of <strong>Choke</strong> algorithms that reward peers that reciprocate bandwidth. Choke algorithms are typically some variant of a ‘tit-for-tat’ strategy, although rarely the strict bitwise tit-for-tat favored by later blockchain systems and others that require a peer to upload an equivalent amount to what they have downloaded before they are given any additional pieces. Contrast this with <a class="reference internal" href="ipfs.html#bitswap"><span class="std std-ref"><span class="target" id="index-8"></span>BitSwap</span></a> from IPFS. It is by <em>not</em> perfectly optimizing peer selection that BitTorrent is better capable of using more of its available network resources.</p></li>
+<li><p><strong>Piece Selection:</strong> Which pieces should be uploaded/requested first? BitTorrent uses a <strong>Rarest First</strong> strategy, where a peer keeps track of the number of copies of each piece present in the swarm, and preferentially seeds the rarest pieces. This keeps the swarm healthy, rewarding keeping and sharing complete copies of files. This is in contrast to, eg. <a class="reference internal" href="#SWARM"><span class="xref myst">SWARM</span></a> which explicitly rewards hosting and sharing the most in-demand pieces.</p></li>
+</ul>
+</section>
+</section>
+<section id="lessons">
+<h2>Lessons<a class="headerlink" href="#lessons" title="Permalink to this heading">#</a></h2>
+<p>(This section is mostly a scratchpad at the moment)</p>
+<section id="adopt">
+<h3>Adopt<a class="headerlink" href="#adopt" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Eventually had to add a generic ‘extension extension’ (<a class="reference external" href="http://www.bittorrent.org/beps/bep_0010.html">BEP 10</a>), where on initial connection a peer informs another peer what extra features of the protocol it supports without needing to make constant adjustment to the underlying BitTorrent protocol. This pattern is adopted by most p2p protocols that follow, including <a class="reference internal" href="../social/nostr.html#nostr"><span class="std std-ref">Nostr</span></a> which is almost <em>entirely</em> extensions.</p>
+<ul>
+<li><p>These extensions are not self-describing, however, and they require some centralized registry of extensions, see also <a class="reference internal" href="ipfs.html#ipfs"><span class="std std-ref">IPFS</span></a> and its handling of codecs, which curiously build a lot of infrastructure for self-describing extensions but at the very last stage fall back to a single git repository as the registry.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.torrent</span></code> files make for a very <strong>low barrier to entry</strong> and are extremely <strong>portable.</strong> They also operate over the existing idioms of files and folders, rather than creating their own filesystem abstraction.</p></li>
+<li><p>Explicit peer and piece selection algorithms are left out of the protocol specification, allowing individual implementations to experiment with what works. This makes it possible to exploit the protocol by refusing to seed ever, but this rarely occurs in practice, as people are not the complete assholes imagined in worst-case scenarios of scarcity. Indeed even the most selfish peers have the intrinsic incentive to upload, as by aggressively seeding the pieces that a leeching peer already has, the other peers in the swarm are less likely to “waste” the bandwidth of the seeders and more bandwidth can be allocated to pieces that the leecher doesn’t already have.</p></li>
+</ul>
+</section>
+<section id="adapt">
+<h3>Adapt<a class="headerlink" href="#adapt" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Metadata</strong>. Currently all torrent metadata is contained within the tracker, so while it is possible to restore all the files that were indexed by a downed tracker, it is very difficult to restore all the metadata at a torrent level and above, eg. the organization of specific torrents into hierarchical categories that allow one to search for an artist, all the albums they have produced, all the versions of that album in different file formats, and so on.</p></li>
+<li><p>Give more in-protocol tools to social systems. This is tricky because we don’t necessarily need to go down the road of DAOs and make strictly enforceable contracts. Recall that it is precisely by relaxing conditions of “optimality” that BitTorrent makes use of all resources available.</p></li>
+<li><p><strong>Cross-Swarm Indexing</strong> - BitTorrent organizes all peer connections within swarms that are particular for a given <code class="docutils literal notranslate"><span class="pre">.torrent</span></code> file. We instead want to be able for a set of socially connected peers to be able to share many files.</p></li>
+<li><p><strong>Anonymity</strong> This is also a tricky balance - We want to do three things that are potentially in conflict:</p>
+<ol class="arabic simple">
+<li><p>Make use of the social structure of our peer swarm to be able to allocate automatic rehosting/sharding of files uploaded by close friends, etc.</p></li>
+<li><p>Maintain the possibility for loose anonymity where peers can share files without needing a large and well-connected social system to share files to them</p></li>
+<li><p>Avoid significant performance penalties from guarantees of strong network-level anonymity like Tor.</p></li>
+</ol>
+</li>
+<li><p><strong>Trackers</strong> are a good idea, even if they could use some updating. It is good to have an explicit entrypoint specified with a distributed, social mechanism rather than prespecified as a hardcoded entry point. It is a good idea to make a clear space for social curation of information, rather than something that is intrinsically bound to a torrent at the time of uploading. We update the notion of trackers with <a class="reference internal" href="../../federation.html#peer-federations"><span class="std std-ref">Peer Federations</span></a>.</p></li>
+</ul>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Bittorrent Protocol Specification (BEP 3): <a class="reference external" href="http://www.bittorrent.org/beps/bep_0003.html">http://www.bittorrent.org/beps/bep_0003.html</a></p></li>
+<li><p>Bittorrent v2 (BEP 52): <a class="reference external" href="http://www.bittorrent.org/beps/bep_0052.html">http://www.bittorrent.org/beps/bep_0052.html</a></p></li>
+<li><p>Magnet Links (BEP 9): <a class="reference external" href="http://www.bittorrent.org/beps/bep_0009.html">http://www.bittorrent.org/beps/bep_0009.html</a></p></li>
+<li><p>More on BitTorrent and incentives - <span id="id5">[<a class="reference internal" href="../../references.html#id2" title="Bram Cohen. Incentives Build Robustness in BitTorrent. 2003-05-22. URL: http://bittorrent.org/bittorrentecon.pdf.">Cohen, 2003</a>]</span></p></li>
+</ul>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="announcelist" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>Or, properly, in the <code class="docutils literal notranslate"><span class="pre">announce-list</span></code> per (<a class="reference external" href="http://www.bittorrent.org/beps/bep_0012.html">BEP 12</a>)</p>
+</aside>
+</aside>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="ipfs.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">IPFS</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">P2P</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Jonny Saunders
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">BitTorrent</a><ul>
+<li><a class="reference internal" href="#summary">Summary</a><ul>
+<li><a class="reference internal" href="#torrents">Torrents</a></li>
+<li><a class="reference internal" href="#trackers">Trackers</a></li>
+<li><a class="reference internal" href="#protocol">Protocol</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lessons">Lessons</a><ul>
+<li><a class="reference internal" href="#adopt">Adopt</a></li>
+<li><a class="reference internal" href="#adapt">Adapt</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
+    </body>
+</html>

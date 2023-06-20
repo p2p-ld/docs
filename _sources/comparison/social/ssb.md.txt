@@ -1,5 +1,7 @@
-```{index} Protocol; Secure Scuttlebutt
+```{index} pair: Protocol; Secure Scuttlebutt
+           single: Secure Scuttlebutt
 ```
+(SSB)=
 # Secure Scuttlebutt
 
 
@@ -86,6 +88,12 @@ Uses for metafeeds
 	- Device A `entrust`s phone with private key
 	- Device B posts a `proof-of-key` message
 	- If device B lost, `tombstone` the fusion identity message 
+
+## Implementations
+
+```{index} Secure Scuttlebutt; Manyverse
+```
+### Manyverse
 
 ## References
 

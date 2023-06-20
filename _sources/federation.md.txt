@@ -1,3 +1,4 @@
+(Peer-Federations)=
 # Federation
 
 Making supra-peer clusters with explicit governance and policies for rehosting and sharing!
