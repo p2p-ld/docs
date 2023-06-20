@@ -1,9 +1,26 @@
 ```{index} IPFS
 ```
+(IPFS)=
 # IPFS
 
-If IPFS is {index}`BitTorrent` + {index}`git`, and {key}`ActivityPub` is {key}`Distributed Messaging` + {key}`Linked Data`, then p2p-ld is IPFS + ActivityPub. We build on IPFS and are heavily inspired by its design and shortcomings revealed by practical use.
+If IPFS is {index}`BitTorrent` + {index}`git`, and {index}`ActivityPub` is {index}`Distributed Messaging` + {index}`Linked Data`, then p2p-ld is IPFS + ActivityPub. We build on IPFS and are heavily inspired by its design and shortcomings revealed by practical use.
 
+## Summary
+
+```{index} IPFS; BitSwap
+```
+(BitSwap)=
+### BitSwap
+
+```{index} IPFS; IPLD
+```
+(IPLD)=
+### IPLD
+
+```{index} IPFS; libp2p
+```
+(libp2p)=
+### libp2p
 
 ## Problems 
 
@@ -12,8 +29,6 @@ If IPFS is {index}`BitTorrent` + {index}`git`, and {key}`ActivityPub` is {key}`D
 	- Hence the need for filecoin, an exogenous incentive to store, but then it becomes transactional which generates its own problems.
 	- Trust! eg. its use in phishing attacks is because there is no way to know who the hell a given CID is owned by. It needs to be possible to do social curation, or at leats know when something is riskier or not.
 - Lack of metadata means having to build a lot of shit post-hoc, like IPLD and multihashes and codecs and whatnot.
-
-## IPLD
 
 ## Overlap
 

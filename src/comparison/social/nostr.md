@@ -1,3 +1,4 @@
+(Nostr)=
 # Nostr
 
 Again, though we have a general distrust of the anarcho-capitalists, it's worth a comparison.

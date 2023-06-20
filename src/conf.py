@@ -71,18 +71,19 @@ bibtex_default_style = 'bbibtex'
 mermaid_init_js = """
 mermaid.initialize({
     "startOnLoad":true,
-    "theme": "base",
-    "themeVariables": {
-      "darkMode": true,
-      "primaryColor": "#202020",
-      "primaryBorderColor": "#00A5CF",
-      "primaryTextColor": "#FFFFFF",
-      "secondaryColor": "#ffffff",
-      "mainBkg": "#30303000",
-      "lineColor": "#999999"
-    }
+    "theme": "dark"
 })
 """
+
+    # "themeVariables": {
+    #   "darkMode": true,
+    #   "primaryColor": "#202020",
+    #   "primaryBorderColor": "#00A5CF",
+    #   "primaryTextColor": "#FFFF00",
+    #   "secondaryColor": "#ff0000",
+    #   "mainBkg": "#303030",
+    #   "lineColor": "#999999"
+    # }
 
 ## Formatting to handle dates that are in the `date` field rather than `year`
 import re
