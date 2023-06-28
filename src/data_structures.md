@@ -10,6 +10,13 @@ Triplet graphs similar to linked data fragments with envelopes. decoupling conte
 (Containers)=
 ## Containers
 
+```{important}
+Ya this seems like the right set of ideas to build on
+
+- https://www.w3.org/TR/json-ld11-framing/
+- https://w3c.github.io/rdf-canon/spec/#introduction
+```
+
 - Packets of LD-triplets that contain
 	- Hash of triplets
 	- Encryption Info (if applicable)
@@ -66,4 +73,14 @@ Describes
 - A given container has an identity hash from its first packing
 - A given triple can be contained by
 
+## Canonicalization
+
+- https://w3c.github.io/rdf-canon/spec/#introduction
+- https://json-ld.org/spec/ED/rdf-graph-normalization/20111016/
+- https://www.w3.org/TR/json-ld11-framing/
+
+## Compare to:
+
+- {index}`CORAL` - https://github.com/jmchandonia/CORAL
+	- Good idea, also making use of extended context. Very focused on scientific data - 'units' are a core part of the model. distinction between static and dynamic data types seems like sort of a hack. data bricks are similar to containers. the source is an absolute mess.
 

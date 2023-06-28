@@ -17,6 +17,14 @@ If IPFS is {index}`BitTorrent` + {index}`git`, and {index}`ActivityPub` is {inde
 (IPLD)=
 ### IPLD
 
+```{index} IPFS; Multiformats
+```
+### Multiformats
+
+- https://ipfs.io/ipns/multiformats.io/
+- {index}`IPFS; Multihash` - https://ipfs.io/ipns/multiformats.io/multihash/
+- {index}`IPFS; Multicodec` - https://github.com/multiformats/multicodec
+
 ```{index} IPFS; libp2p
 ```
 (libp2p)=

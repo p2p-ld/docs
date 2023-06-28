@@ -19,7 +19,8 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinxcontrib.mermaid',
     'sphinxcontrib.bibtex',
-    'myst_parser'
+    'myst_parser',
+    'sphinx_design'
 ]
 
 templates_path = ['_templates']
