@@ -10,6 +10,7 @@
         <title>Linked Data Fragments - p2p-ld 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -176,6 +177,7 @@
 </ul>
 </li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">Linked Data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Linked Data</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="rdf.html">RDF and Friends</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solid.html">SOLID</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Linked Data Fragments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ld_platform.html">Linked Data Platform</a></li>
@@ -260,7 +262,7 @@
 <span id="index-0"></span><h1>Linked Data Fragments<a class="headerlink" href="#linked-data-fragments" title="Permalink to this heading">#</a></h1>
 <p><a class="reference internal" href="../../data_structures.html#containers"><span class="std std-ref">Containers</span></a> are one example of:</p>
 <blockquote>
-<div><p>However, we envision that different kinds of ldf partitionings will emerge, and that these might even vary dynamically depending on server load. Perhaps a semantic way to express the data, metadata, and hypermedia controls of each fragment will be necessary. -<span id="id1">[<a class="reference internal" href="../../references.html#id11" title="Ruben Verborgh, Sam Coppens, Miel Vander Sande, Erik Mannens, Pieter Colpaert, and Rik Van de Walle. Web-Scale Querying through Linked Data Fragments. In Proceedings of the 7th Workshop on Linked Data on the Web. 2014-04-08.">Verborgh <em>et al.</em>, 2014</a>]</span></p>
+<div><p>However, we envision that different kinds of ldf partitionings will emerge, and that these might even vary dynamically depending on server load. Perhaps a semantic way to express the data, metadata, and hypermedia controls of each fragment will be necessary. -<span id="id1">[<a class="reference internal" href="../../references.html#id18" title="Ruben Verborgh, Sam Coppens, Miel Vander Sande, Erik Mannens, Pieter Colpaert, and Rik Van de Walle. Web-Scale Querying through Linked Data Fragments. In Proceedings of the 7th Workshop on Linked Data on the Web. 2014-04-08.">Verborgh <em>et al.</em>, 2014</a>]</span></p>
 </div></blockquote>
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
@@ -296,8 +298,8 @@
 <li><p>Homepage: <a class="reference external" href="https://linkeddatafragments.org/">https://linkeddatafragments.org/</a></p></li>
 <li><p>Papers:</p>
 <ul>
-<li><p>Original conference paper: <span id="id3">[<a class="reference internal" href="../../references.html#id11" title="Ruben Verborgh, Sam Coppens, Miel Vander Sande, Erik Mannens, Pieter Colpaert, and Rik Van de Walle. Web-Scale Querying through Linked Data Fragments. In Proceedings of the 7th Workshop on Linked Data on the Web. 2014-04-08.">Verborgh <em>et al.</em>, 2014</a>]</span></p></li>
-<li><p><span id="id4">[<a class="reference internal" href="../../references.html#id10" title="Ruben Verborgh, Miel Vander Sande, Olaf Hartig, Joachim Van Herwegen, Laurens De Vocht, Ben De Meester, Gerald Haesendonck, and Pieter Colpaert. Triple Pattern Fragments: A low-cost knowledge graph interface for the Web. Journal of Web Semantics, 37–38:184–206, 2016-03. URL: https://linkinghub.elsevier.com/retrieve/pii/S1570826816000214 (visited on 2023-06-08), doi:10.1016/j.websem.2016.03.003.">Verborgh <em>et al.</em>, 2016</a>]</span></p></li>
+<li><p>Original conference paper: <span id="id3">[<a class="reference internal" href="../../references.html#id18" title="Ruben Verborgh, Sam Coppens, Miel Vander Sande, Erik Mannens, Pieter Colpaert, and Rik Van de Walle. Web-Scale Querying through Linked Data Fragments. In Proceedings of the 7th Workshop on Linked Data on the Web. 2014-04-08.">Verborgh <em>et al.</em>, 2014</a>]</span></p></li>
+<li><p><span id="id4">[<a class="reference internal" href="../../references.html#id17" title="Ruben Verborgh, Miel Vander Sande, Olaf Hartig, Joachim Van Herwegen, Laurens De Vocht, Ben De Meester, Gerald Haesendonck, and Pieter Colpaert. Triple Pattern Fragments: A low-cost knowledge graph interface for the Web. Journal of Web Semantics, 37–38:184–206, 2016-03. URL: https://linkinghub.elsevier.com/retrieve/pii/S1570826816000214 (visited on 2023-06-08), doi:10.1016/j.websem.2016.03.003.">Verborgh <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 </li>
 <li><p>Specification: <a class="reference external" href="https://linkeddatafragments.org/specification/triple-pattern-fragments/">Triple Pattern Fragments</a></p></li>
@@ -306,7 +308,7 @@
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="semwebagents" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
-<p>See the history of the early to middle semantic web, discussed in <span id="id5">[<a class="reference internal" href="../../references.html#id9" title="Jonny L. Saunders. Surveillance Graphs. 2023-04-02T00:00:00+00:00. URL: https://jon-e.net/surveillance-graphs (visited on 2023-06-08), arXiv:hc:54749, doi:10.17613/syv8-cp10.">Saunders, 2023</a>]</span></p>
+<p>See the history of the early to middle semantic web, discussed in <span id="id5">[<a class="reference internal" href="../../references.html#id14" title="Jonny L. Saunders. Surveillance Graphs. 2023-04-02T00:00:00+00:00. URL: https://jon-e.net/surveillance-graphs (visited on 2023-06-08), arXiv:hc:54749, doi:10.17613/syv8-cp10.">Saunders, 2023</a>]</span></p>
 </aside>
 </aside>
 </section>
@@ -387,5 +389,6 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     </body>
 </html>

@@ -10,6 +10,7 @@
         <title>Design Decisions - p2p-ld 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -176,6 +177,7 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="comparison/ld/index.html">Linked Data</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Linked Data</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="comparison/ld/rdf.html">RDF and Friends</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparison/ld/solid.html">SOLID</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparison/ld/ld_fragments.html">Linked Data Fragments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparison/ld/ld_platform.html">Linked Data Platform</a></li>
@@ -269,7 +271,7 @@
 <div><p>Every one knows that change is inevitable. From the second law of thermodynamics to Darwinian evolution, from Buddhism’s insistence that nothing is permanent and all suffering results from our delusions of permanence to the third chapter of Ecclesiastes (“To everything there is a season”), change is part of life, of existence, of the common wisdom. But I don’t believe we’re dealing with all that that means. We haven’t even begun to deal with it.</p>
 <p class="attribution">—Octavia Butler, Parable of the Sower</p>
 </div></blockquote>
-<p>There is no such thing as a <a class="reference external" href="https://www.w3.org/Provider/Style/URI">Cool URI that doesn’t change</a>, and there is no such thing as a persistent identifier that lasts forever <span id="id1">[<a class="reference internal" href="references.html#id4" title="John Kunze, Scout Calvert, Jeremy D. DeBarry, Matthew Hanlon, Greg Janée, and Sandra Sweat. Persistence Statements: Describing Digital Stickiness. Data Science Journal, 16(0):39, 2017-08-14. URL: http://datascience.codata.org/articles/10.5334/dsj-2017-039/ (visited on 2022-09-07), doi:10.5334/dsj-2017-039.">Kunze <em>et al.</em>, 2017</a>]</span>. All things change. Change can be because of practical reasons like running out of funding and shutting down the server, cultural reasons like shifting meanings of words, or larger shifts that render the entire domain that a thing is fixed in irrelevant. No matter how many layers of abstraction and redirection we want to create, there is no system that will for all time be able to unambiguously identify something on the web or elsewhere.</p>
+<p>There is no such thing as a <a class="reference external" href="https://www.w3.org/Provider/Style/URI">Cool URI that doesn’t change</a>, and there is no such thing as a persistent identifier that lasts forever <span id="id1">[<a class="reference internal" href="references.html#id6" title="John Kunze, Scout Calvert, Jeremy D. DeBarry, Matthew Hanlon, Greg Janée, and Sandra Sweat. Persistence Statements: Describing Digital Stickiness. Data Science Journal, 16(0):39, 2017-08-14. URL: http://datascience.codata.org/articles/10.5334/dsj-2017-039/ (visited on 2022-09-07), doi:10.5334/dsj-2017-039.">Kunze <em>et al.</em>, 2017</a>]</span>. All things change. Change can be because of practical reasons like running out of funding and shutting down the server, cultural reasons like shifting meanings of words, or larger shifts that render the entire domain that a thing is fixed in irrelevant. No matter how many layers of abstraction and redirection we want to create, there is no system that will for all time be able to unambiguously identify something on the web or elsewhere.</p>
 <p>The appearance of persistence is a <em>social</em> phenomenon rather than a <em>technological</em> one. <code class="docutils literal notranslate"><span class="pre">Archive.org</span></code> continues to exist because many people actively keep it existing, not because of the architecture of their archive. Designing for permanence makes systems <em>fragile.</em> Instead we should design for <em>adapting</em> to change. Adapting to change is also a social phenomenon - I might misplace things, change how they are named, and tell you that the same URL means something different, or the same page goes by a different URL now. A newspaper might go out of business and its website might go offline, but someone might save a PDF of the original page and rehost it on their personal website. The tools we need look more like systems for renaming, declaring equivalence, translation, change, than they do an unalterable, permanent append-only blockchain thing.</p>
 </section>
 <section id="ambiguity-is-natural">
@@ -364,5 +366,6 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
+    <script src="_static/design-tabs.js"></script>
     </body>
 </html>

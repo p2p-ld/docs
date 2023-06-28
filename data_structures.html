@@ -10,6 +10,7 @@
         <title>5. Data Structures - p2p-ld 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -176,6 +177,7 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="comparison/ld/index.html">Linked Data</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Linked Data</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="comparison/ld/rdf.html">RDF and Friends</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparison/ld/solid.html">SOLID</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparison/ld/ld_fragments.html">Linked Data Fragments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparison/ld/ld_platform.html">Linked Data Platform</a></li>
@@ -267,6 +269,14 @@
 </ul>
 <section id="containers">
 <span id="id1"></span><h2><span class="section-number">5.1. </span>Containers<a class="headerlink" href="#containers" title="Permalink to this heading">#</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Ya this seems like the right set of ideas to build on</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.w3.org/TR/json-ld11-framing/">https://www.w3.org/TR/json-ld11-framing/</a></p></li>
+<li><p><a class="reference external" href="https://w3c.github.io/rdf-canon/spec/#introduction">https://w3c.github.io/rdf-canon/spec/#introduction</a></p></li>
+</ul>
+</div>
 <ul class="simple">
 <li><p>Packets of LD-triplets that contain</p>
 <ul>
@@ -349,6 +359,24 @@
 <li><p>A given triple can be contained by</p></li>
 </ul>
 </section>
+<section id="canonicalization">
+<h2><span class="section-number">5.6. </span>Canonicalization<a class="headerlink" href="#canonicalization" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://w3c.github.io/rdf-canon/spec/#introduction">https://w3c.github.io/rdf-canon/spec/#introduction</a></p></li>
+<li><p><a class="reference external" href="https://json-ld.org/spec/ED/rdf-graph-normalization/20111016/">https://json-ld.org/spec/ED/rdf-graph-normalization/20111016/</a></p></li>
+<li><p><a class="reference external" href="https://www.w3.org/TR/json-ld11-framing/">https://www.w3.org/TR/json-ld11-framing/</a></p></li>
+</ul>
+</section>
+<section id="compare-to">
+<h2><span class="section-number">5.7. </span>Compare to:<a class="headerlink" href="#compare-to" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><span class="target" id="index-2"></span>CORAL - <a class="reference external" href="https://github.com/jmchandonia/CORAL">https://github.com/jmchandonia/CORAL</a></p>
+<ul>
+<li><p>Good idea, also making use of extended context. Very focused on scientific data - ‘units’ are a core part of the model. distinction between static and dynamic data types seems like sort of a hack. data bricks are similar to containers. the source is an absolute mess.</p></li>
+</ul>
+</li>
+</ul>
+</section>
 </section>
 
         </article>
@@ -412,6 +440,8 @@
 <li><a class="reference internal" href="#schema">5.3. Schema</a></li>
 <li><a class="reference internal" href="#codecs">5.4. Codecs</a></li>
 <li><a class="reference internal" href="#versioning">5.5. Versioning</a></li>
+<li><a class="reference internal" href="#canonicalization">5.6. Canonicalization</a></li>
+<li><a class="reference internal" href="#compare-to">5.7. Compare to:</a></li>
 </ul>
 </li>
 </ul>
@@ -427,5 +457,6 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
+    <script src="_static/design-tabs.js"></script>
     </body>
 </html>
