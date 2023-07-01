@@ -41,9 +41,9 @@ evolvability
 :hidden:
 
 triplets
-adapter/index
+codecs/index
 translation/index
-```
+```  
 
 ```{toctree}
 :caption: Drafting
@@ -59,7 +59,7 @@ sketchpad
 
 genindex
 references
-```
+``` 
  
 Indices and tables
 ==================

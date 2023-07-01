@@ -22,14 +22,14 @@
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #0d1117;
+  --color-code-foreground: #e6edf3;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #0d1117;
+  --color-code-foreground: #e6edf3;
   
       }
     }
@@ -178,13 +178,15 @@
 <li class="toctree-l3"><a class="reference internal" href="comparison/ld/rdf.html">RDF and Friends</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparison/ld/solid.html">SOLID</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparison/ld/ld_fragments.html">Linked Data Fragments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison/ld/hdt.html">HDT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparison/ld/ld_platform.html">Linked Data Platform</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparison/ld/nanopubs.html">NanoPubs</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="comparison/data/index.html">Data Structures</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Data Structures</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="comparison/data/eris.html">ERIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison/data/datalad.html">DataLad</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparison/data/dmc.html">DMC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison/data/eris.html">ERIS</a></li>
 </ul>
 </li>
 </ul>
@@ -210,7 +212,10 @@
 <p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="triplets.html">Triplets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="adapter/index.html">Adapter</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="codecs/index.html">Codecs</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Codecs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="codecs/hdf5.html">HDF5</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="translation/index.html">Translation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Drafting</span></p>
@@ -258,7 +263,7 @@
           
 <section class="genindex-section">
   <h1 id="index">Index</h1>
-  <div class="genindex-jumpbox"><a href="#A"><strong>A</strong></a> | <a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#H"><strong>H</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#J"><strong>J</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a></div>
+  <div class="genindex-jumpbox"><a href="#A"><strong>A</strong></a> | <a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#H"><strong>H</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#J"><strong>J</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#W"><strong>W</strong></a></div>
 </section>
 <section id="A" class="genindex-section">
   <h2>A</h2>
@@ -280,16 +285,18 @@
 </li>
         <li><a href="comparison/p2p/bittorrent.html#index-8">BitSwap</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="comparison/p2p/ipfs.html#index-1">BitTorrent</a>
 
         <ul>
+          <li><a href="comparison/p2p/bittorrent.html#index-10">libtorrent</a>
+</li>
           <li><a href="comparison/p2p/bittorrent.html#index-0">Protocol</a>
 </li>
           <li><a href="comparison/p2p/bittorrent.html#index-2">Tracker</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="comparison/social/at_protocol.html#index-1">Bluesky</a>
 </li>
     </ul></td>
@@ -305,6 +312,8 @@
 
         <ul>
           <li><a href="comparison/p2p/bittorrent.html#index-7">Kazaa</a>
+</li>
+          <li><a href="comparison/p2p/bittorrent.html#index-10">libtorrent</a>
 </li>
           <li><a href="comparison/p2p/bittorrent.html#index-6">Limewire</a>
 </li>
@@ -327,12 +336,14 @@
   <h2>D</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="comparison/p2p/bittorrent.html#index-4">DHT</a>
+        <li><a href="comparison/data/datalad.html#index-0">DataLad</a>
 </li>
-        <li><a href="comparison/p2p/bittorrent.html#index-3">Discovery</a>
+        <li><a href="comparison/p2p/bittorrent.html#index-4">DHT</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="comparison/p2p/bittorrent.html#index-3">Discovery</a>
+</li>
         <li><a href="comparison/p2p/ipfs.html#index-4">Distributed Messaging</a>
 </li>
         <li><a href="comparison/social/nostr.html#index-0">DNS</a>
@@ -364,8 +375,12 @@
   <h2>G</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="comparison/p2p/ipfs.html#index-2">git</a>
+        <li><a href="comparison/data/datalad.html#index-1">git</a>, <a href="comparison/p2p/ipfs.html#index-2">[1]</a>
+
+        <ul>
+          <li><a href="comparison/data/datalad.html#index-2">annex</a>
 </li>
+        </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li>
@@ -454,6 +469,8 @@
         <ul>
           <li><a href="comparison/ld/ld_fragments.html#index-0">Fragments</a>, <a href="querying.html#index-0">[1]</a>
 </li>
+          <li><a href="comparison/ld/hdt.html#index-0">HDT</a>
+</li>
           <li><a href="comparison/ld/ld_platform.html#index-0">Platform</a>, <a href="data_structures.html#index-0">[1]</a>
 </li>
           <li><a href="comparison/ld/ld_fragments.html#index-1">SPARQL</a>, <a href="querying.html#index-1">[1]</a>
@@ -479,6 +496,21 @@
 </li>
         <li><a href="comparison/p2p/spritely.html#index-3">Mutability</a>
 </li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="O" class="genindex-section">
+  <h2>O</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li>
+    Ontology
+
+        <ul>
+          <li><a href="comparison/ld/hdt.html#index-1">VOID</a>
+</li>
+        </ul></li>
     </ul></td>
   </tr></table>
 </section>
@@ -549,6 +581,16 @@
           <li><a href="comparison/p2p/spritely.html#index-1">Portability</a>
 </li>
         </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="W" class="genindex-section">
+  <h2>W</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="comparison/p2p/bittorrent.html#index-9">Web Seeds</a>, <a href="comparison/p2p/ipfs.html#index-13">[1]</a>
+</li>
     </ul></td>
   </tr></table>
 </section>

@@ -4,6 +4,7 @@
 :caption: Data Structures
 :maxdepth: 1
 
-eris
+datalad
 dmc
+eris
 ```

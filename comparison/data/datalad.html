@@ -3,11 +3,11 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Social" href="../social/index.html" /><link rel="prev" title="Dat/Hypercore" href="hypercore.html" />
-        <link rel="canonical" href="/docs/comparison/p2p/spritely.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="DMC" href="dmc.html" /><link rel="prev" title="Data Structures" href="index.html" />
+        <link rel="canonical" href="/docs/comparison/data/datalad.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
-        <title>Spritely/Goblin - p2p-ld 0.1.0 documentation</title>
+        <title>DataLad - p2p-ld 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
@@ -160,11 +160,11 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Comparison</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Comparison</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">P2P</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of P2P</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="bittorrent.html">BitTorrent</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ipfs.html">IPFS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hypercore.html">Dat/Hypercore</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Spritely/Goblin</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../p2p/index.html">P2P</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of P2P</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../p2p/bittorrent.html">BitTorrent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../p2p/ipfs.html">IPFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../p2p/hypercore.html">Dat/Hypercore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../p2p/spritely.html">Spritely/Goblin</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../social/index.html">Social</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Social</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -185,10 +185,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../ld/nanopubs.html">NanoPubs</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../data/index.html">Data Structures</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Data Structures</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../data/datalad.html">DataLad</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../data/dmc.html">DMC</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../data/eris.html">ERIS</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">Data Structures</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Data Structures</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">DataLad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dmc.html">DMC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eris.html">ERIS</a></li>
 </ul>
 </li>
 </ul>
@@ -263,40 +263,19 @@
           </label>
         </div>
         <article role="main">
-          <section id="spritely-goblin">
-<h1>Spritely/Goblin<a class="headerlink" href="#spritely-goblin" title="Permalink to this heading">#</a></h1>
-<p>The Spritely Institute is likely the closest in spirit and design to what we are considering with p2p-ld, and have significant experience having previously worked on <a class="reference internal" href="../social/activitypub.html#activitypub"><span class="std std-ref">ActivityPub</span></a>. The primary point of departure is their focus on building applications and running code, rather than structuring and sharing data — so their work is largely complementary.</p>
-<p>Overlapping design choices include</p>
+          <section id="datalad">
+<span id="index-0"></span><h1>DataLad<a class="headerlink" href="#datalad" title="Permalink to this heading">#</a></h1>
+<p>DataLad is a tool for managing datasets! It is built on top of <span class="target" id="index-1"></span>git and <span class="target" id="index-2"></span>git-annex for storage, and is capable of integrating with external hosting providers (through git annex)</p>
+<p>It has a number of interesting extensions that we can learn from</p>
 <ul class="simple">
-<li><p>Emphasis on making a social, rather than a technological system!</p></li>
-<li><p>Capability security vs ACLs - Containers of other identities might be a useful way of coordinating who gets capabilities, but implementing them as capabilities rather than access checks makes for a much richer space of interaction and mutation.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Goblins</span></code> as “addressable entities with encapsulated behavior” are similar to <span class="target" id="index-0"></span>Containers</p></li>
-<li><p>Distributed objects: we imagine containers as being instantiated in multiple places at once and being acted on by multiple actors. Spritely’s use of the “Unum Pattern” focused on distributed behavior rather than distributed data is something we plan on following up on and re-evaluating some of our designs. One place we may diverge is in our emphasis of ‘forking’ and activity that doesn’t need to be explicitly approved: actors need not necessarily operate on the same shared object, but might make their own assertions, links, and so forth that don’t directly change the object as owned by the original actor.</p></li>
+<li><p><a class="reference external" href="https://docs.datalad.org/projects/crawler/en/latest/">crawler</a> allows you to archive web pages</p></li>
+<li><p><a class="reference external" href="https://github.com/datalad/datalad-osf/blob/main/datalad_osf/annex_remote.py">OSF Remote</a> - example of an extension for interacting with OSF</p></li>
 </ul>
-<p>Stuff we can learn from</p>
-<ul class="simple">
-<li><p>A lot</p></li>
-<li><p>Promise Pipelining to reduce roundtrips</p></li>
-<li><p>Implementation of protocol agnosticisim in OCapN</p></li>
-<li><p>Discussion of safety of computing base and evaluation environment</p></li>
-</ul>
-<p>Their description of <em>portable encrypted storage</em> (<span class="target" id="index-1"></span>Storage; Portability) is also extremely useful:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>Documents must be <strong><span class="target" id="index-2"></span>Content Addressed</strong> and <strong>location agnostic.</strong> In other words, the name of the particular resource is based on information stemming from the content itself rather than a particular network location. Generally this name is the hash of the corresponding document in the case of immutable documents and a public key (or hash thereof) in the case of mutable documents.</p></li>
-<li><p>Both <strong><span class="target" id="index-3"></span>immutable and mutable documents</strong> must be supported, with the latter generally being built upon the former.</p></li>
-<li><p>Documents must be <strong><span class="target" id="index-4"></span>encrypted</strong> such that the documents can be stored in locations that are oblivious to their actual contents. Only those possessing read capabilities should be able to access the documents’ contents.</p></li>
-<li><p>Documents should be <strong>chunked</strong> so that they are not vulnerable to sizeof-file attacks.</p></li>
-<li><p>Reading (and, in the case of mutable documents, writing) documents must be accessed through abstract <strong>capabilities.</strong></p></li>
-<li><p>Files must be network agnostic, meaning that they are not only location agnostic but agnostic even to a specific network structure. peer-to-peer, client-to-server, and sneakernet networks all should be supported with the same object URIs between them.</p></li>
-</ol>
-</div></blockquote>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p><span id="id1">[<a class="reference internal" href="../../references.html#id10" title="Christine Lemmer-Webber, Randy Farmer, and Juliana Sims. The Heart of Spritely: Distributed Objects and Capability Security. URL: https://www.spritely.institute/static/papers/spritely-core.html (visited on 2023-06-07).">Lemmer-Webber <em>et al.</em>, n.d.</a>]</span></p></li>
-<li><p>OCapN - <a class="reference external" href="https://github.com/ocapn/ocapn">https://github.com/ocapn/ocapn</a></p></li>
-<li><p>Golem - <a class="reference external" href="https://gitlab.com/spritely/golem/blob/master/README.org">https://gitlab.com/spritely/golem/blob/master/README.org</a></p></li>
+<li><p>DataLad repositories: <a class="reference external" href="https://github.com/datalad">https://github.com/datalad</a></p></li>
+<li><p>Docs: <a class="reference external" href="https://docs.datalad.org/en/latest/">https://docs.datalad.org/en/latest/</a></p></li>
 </ul>
 </section>
 </section>
@@ -306,23 +285,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../social/index.html">
+          <a class="next-page" href="dmc.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Social</div>
+                <div class="title">DMC</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="hypercore.html">
+          <a class="prev-page" href="index.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Dat/Hypercore</div>
+                <div class="title">Data Structures</div>
                 
               </div>
             </a>
@@ -356,7 +335,7 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Spritely/Goblin</a><ul>
+<li><a class="reference internal" href="#">DataLad</a><ul>
 <li><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>

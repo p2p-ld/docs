@@ -24,14 +24,14 @@
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #0d1117;
+  --color-code-foreground: #e6edf3;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #0d1117;
+  --color-code-foreground: #e6edf3;
   
       }
     }
@@ -180,13 +180,15 @@
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">RDF and Friends</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solid.html">SOLID</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ld_fragments.html">Linked Data Fragments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hdt.html">HDT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ld_platform.html">Linked Data Platform</a></li>
 <li class="toctree-l3"><a class="reference internal" href="nanopubs.html">NanoPubs</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../data/index.html">Data Structures</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Data Structures</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../data/eris.html">ERIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/datalad.html">DataLad</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data/dmc.html">DMC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/eris.html">ERIS</a></li>
 </ul>
 </li>
 </ul>
@@ -212,7 +214,10 @@
 <p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../triplets.html">Triplets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../adapter/index.html">Adapter</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../codecs/index.html">Codecs</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Codecs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../codecs/hdf5.html">HDF5</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../translation/index.html">Translation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Drafting</span></p>
@@ -263,22 +268,21 @@
 <p>RDF is one of the elephants in the room when it comes to triplet graphs and linked data. Its history is complex and torrid, known as hopelessly and aggressively complex or a divine calling, depending on your disposition.</p>
 <p><strong>p2p-ld does not necessarily seek to be an RDF-based p2p protocol,</strong> though strategizing for interoperability with RDF and RDF-derivative formats would be nice.</p>
 <p>One of the primary challenges to using RDF-like formats is the conflation of URLs and URIs as the primary identifiers for schema and objects. This idea (roughly) maps onto the “neat” characterization of linked data where everything should have ideally one canonical representation, and there should be a handful of “correct” general-purpose schema capable of modeling the world.</p>
-<p>We depart from that vision, instead favoring radical vernacularism <span id="id1">[<a class="reference internal" href="../../references.html#id14" title="Jonny L. Saunders. Surveillance Graphs. 2023-04-02T00:00:00+00:00. URL: https://jon-e.net/surveillance-graphs (visited on 2023-06-08), arXiv:hc:54749, doi:10.17613/syv8-cp10.">Saunders, 2023</a>]</span>. URIs are extremely general, and include decentralized identifiers like <span class="target" id="index-1"></span>multiaddrs</p>
+<p>We depart from that vision, instead favoring radical vernacularism <span id="id1">[<a class="reference internal" href="../../references.html#id16" title="Jonny L. Saunders. Surveillance Graphs. 2023-04-02T00:00:00+00:00. URL: https://jon-e.net/surveillance-graphs (visited on 2023-06-08), arXiv:hc:54749, doi:10.17613/syv8-cp10.">Saunders, 2023</a>]</span>. URIs are extremely general, and include decentralized identifiers like <span class="target" id="index-1"></span>multiaddrs</p>
 <section id="id2">
 <h2>RDF And Friends<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>RDF has a lot of formats and</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Return here re: RDF canonicalization and IPFS <a class="reference external" href="https://github.com/multiformats/multicodec/pull/261">https://github.com/multiformats/multicodec/pull/261</a></p>
+</div>
 <section id="json-ld">
 <span id="index-2"></span><h3>JSON-LD<a class="headerlink" href="#json-ld" title="Permalink to this heading">#</a></h3>
 </section>
 </section>
 <section id="challenges">
 <h2>Challenges<a class="headerlink" href="#challenges" title="Permalink to this heading">#</a></h2>
-<section id="tabular-and-array-data">
-<h3>Tabular and Array Data<a class="headerlink" href="#tabular-and-array-data" title="Permalink to this heading">#</a></h3>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>See <a class="reference external" href="https://www.cs.ox.ac.uk/isg/challenges/sem-tab/">https://www.cs.ox.ac.uk/isg/challenges/sem-tab/</a></p>
-</div>
+<section id="ordered-data">
+<h3>Ordered Data<a class="headerlink" href="#ordered-data" title="Permalink to this heading">#</a></h3>
 <p>The edges from a node in a graph are unordered, which makes array and tabular data difficult to work with in RDF!</p>
 <p>This has been approached in a few ways:</p>
 <p><strong>RDF</strong> uses a <a class="reference external" href="https://www.w3.org/TR/rdf12-schema/#ch_collectionvocab">godforsaken <code class="docutils literal notranslate"><span class="pre">rdf:first</span></code> <code class="docutils literal notranslate"><span class="pre">rdf:rest</span></code> linked list syntax</a></p>
@@ -289,16 +293,16 @@
 <span class="p">:</span><span class="nt">MyList</span> <span class="p">:</span><span class="nt">Friends</span> <span class="p">:</span><span class="nt">list1</span> <span class="p">.</span> 
 
 <span class="p">:</span><span class="nt">list1</span>
-	<span class="nn">rdf</span><span class="p">:</span><span class="nt">first</span> <span class="p">:</span><span class="nt">Amy</span> <span class="p">;</span>
-	<span class="nn">rdf</span><span class="p">:</span><span class="nt">rest</span> <span class="p">:</span><span class="nt">list2</span> <span class="p">.</span>
+  <span class="nn">rdf</span><span class="p">:</span><span class="nt">first</span> <span class="p">:</span><span class="nt">Amy</span> <span class="p">;</span>
+  <span class="nn">rdf</span><span class="p">:</span><span class="nt">rest</span> <span class="p">:</span><span class="nt">list2</span> <span class="p">.</span>
 
 <span class="p">:</span><span class="nt">list2</span>
-	<span class="nn">rdf</span><span class="p">:</span><span class="nt">first</span> <span class="p">:</span><span class="nt">Bob</span> <span class="p">;</span>
-	<span class="nn">rdf</span><span class="p">:</span><span class="nt">rest</span> <span class="p">:</span><span class="nt">list3</span> <span class="p">.</span>
+  <span class="nn">rdf</span><span class="p">:</span><span class="nt">first</span> <span class="p">:</span><span class="nt">Bob</span> <span class="p">;</span>
+  <span class="nn">rdf</span><span class="p">:</span><span class="nt">rest</span> <span class="p">:</span><span class="nt">list3</span> <span class="p">.</span>
 
 <span class="p">:</span><span class="nt">list3</span>
-	<span class="nn">rdf</span><span class="p">:</span><span class="nt">first</span> <span class="p">:</span><span class="nt">Carly</span> <span class="p">;</span>
-	<span class="nn">rdf</span><span class="p">:</span><span class="nt">rest</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">nil</span> <span class="p">.</span>
+  <span class="nn">rdf</span><span class="p">:</span><span class="nt">first</span> <span class="p">:</span><span class="nt">Carly</span> <span class="p">;</span>
+  <span class="nn">rdf</span><span class="p">:</span><span class="nt">rest</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">nil</span> <span class="p">.</span>
 </pre></div>
 </div>
 <p>And thankfully turtle has a shorthand, which isn’t so bad:</p>
@@ -306,32 +310,32 @@
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nv">&lt;https://example.com&gt;</span><span class="w"> </span><span class="p">.</span>
 
 <span class="p">:</span><span class="nt">MyList</span>
-	<span class="p">:</span><span class="nt">Friends</span> <span class="p">(</span>
-		<span class="p">:</span><span class="nt">Amy</span>
-		<span class="p">:</span><span class="nt">Bob</span>
-		<span class="p">:</span><span class="nt">Carly</span>
-	<span class="p">).</span>
+  <span class="p">:</span><span class="nt">Friends</span> <span class="p">(</span>
+    <span class="p">:</span><span class="nt">Amy</span>
+    <span class="p">:</span><span class="nt">Bob</span>
+    <span class="p">:</span><span class="nt">Carly</span>
+  <span class="p">).</span>
 </pre></div>
 </div>
 <p>Both of these correspond to the triplet graph:</p>
 <div class="mermaid">
             flowchart LR
-	MyList
-	list1
-	list2
-	list3
-	nil
-	Amy
-	Bob
-	Carly
-	
-	MyList --&gt;|Friends| list1
-	list1 --&gt;|rest| list2
-	list2 --&gt;|rest| list3
-	list3 --&gt;|rest| nil
-	list1 --&gt;|first| Amy
-	list2 --&gt;|first| Bob
-	list3 --&gt;|first| Carly
+  MyList
+  list1
+  list2
+  list3
+  nil
+  Amy
+  Bob
+  Carly
+  
+  MyList --&gt;|Friends| list1
+  list1 --&gt;|rest| list2
+  list2 --&gt;|rest| list3
+  list3 --&gt;|rest| nil
+  list1 --&gt;|first| Amy
+  list2 --&gt;|first| Bob
+  list3 --&gt;|first| Carly
         </div><p>Which is not great.</p>
 <p><strong><span class="target" id="index-3"></span>JSON-LD</strong> uses a <code class="docutils literal notranslate"><span class="pre">&#64;list</span></code> keyword:</p>
 <div class="highlight-jsonld notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -392,6 +396,350 @@ Turtle</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </section>
+<section id="tabular-data">
+<h3>Tabular Data<a class="headerlink" href="#tabular-data" title="Permalink to this heading">#</a></h3>
+<p>As an overbrief summary, converting data from tables to RDF needs a schema mapping:</p>
+<ul class="simple">
+<li><p>Columns to Properties</p></li>
+<li></li>
+<li><p>Column names in source table to symbolic names used within the conversion schema</p></li>
+<li><p>datatype (for representation in concrete RDF syntax)</p></li>
+<li></li>
+</ul>
+<p>According to the <a class="reference external" href="https://www.w3.org/TR/csv2rdf/">Tabular Data to RDF</a> recommendation, one would convert the following table (encoded as <code class="docutils literal notranslate"><span class="pre">csv</span></code>):</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>countryCode</p></td>
+<td><p>latitude</p></td>
+<td><p>longitude</p></td>
+<td><p>name</p></td>
+</tr>
+<tr class="row-even"><td><p>AD</p></td>
+<td><p>42.5</p></td>
+<td><p>1.6</p></td>
+<td><p>Andorra</p></td>
+</tr>
+<tr class="row-odd"><td><p>AE</p></td>
+<td><p>23.4</p></td>
+<td><p>53.8</p></td>
+<td><p>United Arab Emirates</p></td>
+</tr>
+<tr class="row-even"><td><p>AF</p></td>
+<td><p>33.9</p></td>
+<td><p>67.7</p></td>
+<td><p>Afghanistan</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Into one of two “minimal” or “standard” formats of RDF:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Minimal mode</label><div class="sd-tab-content docutils">
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="k">@base</span><span class="w"> </span><span class="nv">&lt;http://example.org/countries.csv&gt;</span><span class="w"> </span><span class="p">.</span>
+
+<span class="p">:</span><span class="nt">8228a149-8efe-448d-b15f-8abf92e7bd17</span>
+  <span class="nv">&lt;#countryCode&gt;</span> <span class="s">&quot;AD&quot;</span> <span class="p">;</span>
+  <span class="nv">&lt;#latitude&gt;</span> <span class="s">&quot;42.5&quot;</span> <span class="p">;</span>
+  <span class="nv">&lt;#longitude&gt;</span> <span class="s">&quot;1.6&quot;</span> <span class="p">;</span>
+  <span class="nv">&lt;#name&gt;</span> <span class="s">&quot;Andorra&quot;</span> <span class="p">.</span>
+
+<span class="p">:</span><span class="nt">ec59dcfc-872a-4144-822b-9ad5e2c6149c</span>
+  <span class="nv">&lt;#countryCode&gt;</span> <span class="s">&quot;AE&quot;</span> <span class="p">;</span>
+  <span class="nv">&lt;#latitude&gt;</span> <span class="s">&quot;23.4&quot;</span> <span class="p">;</span>
+  <span class="nv">&lt;#longitude&gt;</span> <span class="s">&quot;53.8&quot;</span> <span class="p">;</span>
+  <span class="nv">&lt;#name&gt;</span> <span class="s">&quot;United Arab Emirates&quot;</span> <span class="p">.</span>
+
+<span class="p">:</span><span class="nt">e8f2e8e9-3d02-4bf5-b4f1-4794ba5b52c9</span>
+  <span class="nv">&lt;#countryCode&gt;</span> <span class="s">&quot;AF&quot;</span> <span class="p">;</span>
+  <span class="nv">&lt;#latitude&gt;</span> <span class="s">&quot;33.9&quot;</span> <span class="p">;</span>
+  <span class="nv">&lt;#longitude&gt;</span> <span class="s">&quot;67.7&quot;</span> <span class="p">;</span>
+  <span class="nv">&lt;#name&gt;</span> <span class="s">&quot;Afghanistan&quot;</span> <span class="p">.</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Standard mode</label><div class="sd-tab-content docutils">
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="k">@base</span><span class="w"> </span><span class="nv">&lt;http://example.org/countries.csv&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">csvw:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/ns/csvw#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span>
+
+<span class="p">:</span><span class="nt">d4f8e548-9601-4e41-aadb-09a8bce32625</span> <span class="kt">a</span> <span class="nn">csvw</span><span class="p">:</span><span class="nt">TableGroup</span> <span class="p">;</span>
+  <span class="nn">csvw</span><span class="p">:</span><span class="nt">table</span> <span class="p">[</span> <span class="kt">a</span> <span class="nn">csvw</span><span class="p">:</span><span class="nt">Table</span> <span class="p">;</span>
+    <span class="nn">csvw</span><span class="p">:</span><span class="nt">url</span> <span class="nv">&lt;http://example.org/countries.csv&gt;</span> <span class="p">;</span>
+    <span class="nn">csvw</span><span class="p">:</span><span class="nt">row</span> <span class="p">[</span> <span class="kt">a</span> <span class="nn">csvw</span><span class="p">:</span><span class="nt">Row</span> <span class="p">;</span>
+      <span class="nn">csvw</span><span class="p">:</span><span class="nt">rownum</span> <span class="s">&quot;1&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">integer</span> <span class="p">;</span>
+      <span class="nn">csvw</span><span class="p">:</span><span class="nt">url</span> <span class="nv">&lt;#row=2&gt;</span> <span class="p">;</span>
+      <span class="nn">csvw</span><span class="p">:</span><span class="nt">describes</span> <span class="p">:</span><span class="nt">8228a149-8efe-448d-b15f-8abf92e7bd17</span>
+    <span class="p">],</span> <span class="p">[</span> <span class="kt">a</span> <span class="nn">csvw</span><span class="p">:</span><span class="nt">Row</span> <span class="p">;</span>
+      <span class="nn">csvw</span><span class="p">:</span><span class="nt">rownum</span> <span class="s">&quot;2&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">integer</span> <span class="p">;</span>
+      <span class="nn">csvw</span><span class="p">:</span><span class="nt">url</span> <span class="nv">&lt;#row=3&gt;</span> <span class="p">;</span>
+      <span class="nn">csvw</span><span class="p">:</span><span class="nt">describes</span> <span class="p">:</span><span class="nt">ec59dcfc-872a-4144-822b-9ad5e2c6149c</span>
+    <span class="p">],</span> <span class="p">[</span> <span class="kt">a</span> <span class="nn">csvw</span><span class="p">:</span><span class="nt">Row</span> <span class="p">;</span>
+      <span class="nn">csvw</span><span class="p">:</span><span class="nt">rownum</span> <span class="s">&quot;3&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">integer</span> <span class="p">;</span>
+      <span class="nn">csvw</span><span class="p">:</span><span class="nt">url</span> <span class="nv">&lt;#row=4&gt;</span> <span class="p">;</span>
+      <span class="nn">csvw</span><span class="p">:</span><span class="nt">describes</span> <span class="p">:</span><span class="nt">e8f2e8e9-3d02-4bf5-b4f1-4794ba5b52c9</span>
+    <span class="p">]</span>
+  <span class="p">]</span> <span class="p">.</span>
+
+<span class="p">:</span><span class="nt">8228a149-8efe-448d-b15f-8abf92e7bd17</span>
+  <span class="nv">&lt;#countryCode&gt;</span> <span class="s">&quot;AD&quot;</span> <span class="p">;</span>
+  <span class="nv">&lt;#latitude&gt;</span> <span class="s">&quot;42.5&quot;</span> <span class="p">;</span>
+  <span class="nv">&lt;#longitude&gt;</span> <span class="s">&quot;1.6&quot;</span> <span class="p">;</span>
+  <span class="nv">&lt;#name&gt;</span> <span class="s">&quot;Andorra&quot;</span> <span class="p">.</span>
+
+<span class="p">:</span><span class="nt">ec59dcfc-872a-4144-822b-9ad5e2c6149c</span>
+  <span class="nv">&lt;#countryCode&gt;</span> <span class="s">&quot;AE&quot;</span> <span class="p">;</span>
+  <span class="nv">&lt;#latitude&gt;</span> <span class="s">&quot;23.4&quot;</span> <span class="p">;</span>
+  <span class="nv">&lt;#longitude&gt;</span> <span class="s">&quot;53.8&quot;</span> <span class="p">;</span>
+  <span class="nv">&lt;#name&gt;</span> <span class="s">&quot;United Arab Emirates&quot;</span> <span class="p">.</span>
+
+<span class="p">:</span><span class="nt">e8f2e8e9-3d02-4bf5-b4f1-4794ba5b52c9</span>
+  <span class="nv">&lt;#countryCode&gt;</span> <span class="s">&quot;AF&quot;</span> <span class="p">;</span>
+  <span class="nv">&lt;#latitude&gt;</span> <span class="s">&quot;33.9&quot;</span> <span class="p">;</span>
+  <span class="nv">&lt;#longitude&gt;</span> <span class="s">&quot;67.7&quot;</span> <span class="p">;</span>
+  <span class="nv">&lt;#name&gt;</span> <span class="s">&quot;Afghanistan&quot;</span> <span class="p">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The recommendation also covers more complex situations. These make use of a JSON schema that handles mapping between the CSV data and RDF.</p>
+<p>By default, each row of a table describes a single RDF resource, and each column has a single property (so each cell is a triple).</p>
+<p>For example this table of concerts:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>Start Date</p></td>
+<td><p>Location Name</p></td>
+<td><p>Location Address</p></td>
+<td><p>Ticket Url</p></td>
+</tr>
+<tr class="row-even"><td><p>B.B. King</p></td>
+<td><p>2014-04-12T19:30</p></td>
+<td><p>Lupo’s Heartbreak Hotel</p></td>
+<td><p>79 Washington St., Providence, RI</p></td>
+<td><p><a class="reference external" href="https://www.etix.com/ticket/1771656">https://www.etix.com/ticket/1771656</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>B.B. King</p></td>
+<td><p>2014-04-13T20:00</p></td>
+<td><p>Lynn Auditorium</p></td>
+<td><p>Lynn, MA, 01901</p></td>
+<td><p><a class="reference external" href="http://frontgatetickets.com/venue.php?id=11766">http://frontgatetickets.com/venue.php?id=11766</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Needs to be mapped to 3 separate resources with 7 properties. The values are not transformed, just grouped in different places under different resources. Notice how in the standard mode the <code class="code docutils literal highlight highlight-turtle"><span class="nn">csvw</span><span class="p">:</span><span class="nt">describes</span></code> entry can have three objects. The turtle is surprisingly humane.</p>
+<p>The JSON schema describes five concrete triples that carry the data from the CSV, and five <code class="docutils literal notranslate"><span class="pre">virtual</span></code> triples that give the resources types and link them together. Abstractions over table iterators take the form of <code class="docutils literal notranslate"><span class="pre">&quot;#event-{_row}&quot;</span></code> to create a resource <code class="docutils literal notranslate"><span class="pre">&lt;#event-1&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;#event-2&gt;</span></code>, etc. for each row.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Minimal mode</label><div class="sd-tab-content docutils">
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="k">@base</span><span class="w"> </span><span class="nv">&lt;http://example.org/events-listing.csv&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nv">&lt;http://schema.org/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span>
+
+<span class="nv">&lt;#event-1&gt;</span> <span class="kt">a</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">MusicEvent</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;B.B. King&quot;</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">startDate</span> <span class="s">&quot;2014-04-12T19:30:00&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">dateTime</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">location</span> <span class="nv">&lt;#place-1&gt;</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">offers</span> <span class="nv">&lt;#offer-1&gt;</span> <span class="p">.</span>
+
+<span class="nv">&lt;#place-1&gt;</span> <span class="kt">a</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">Place</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;Lupo’s Heartbreak Hotel&quot;</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">address</span> <span class="s">&quot;79 Washington St., Providence, RI&quot;</span> <span class="p">.</span>
+
+<span class="nv">&lt;#offer-1&gt;</span> <span class="kt">a</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">Offer</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">url</span> <span class="s">&quot;https://www.etix.com/ticket/1771656&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">anyURI</span> <span class="p">.</span>
+
+<span class="nv">&lt;#event-2&gt;</span> <span class="kt">a</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">MusicEvent</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;B.B. King&quot;</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">startDate</span> <span class="s">&quot;2014-04-13T20:00:00&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">dateTime</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">location</span> <span class="nv">&lt;#place-2&gt;</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">offers</span> <span class="nv">&lt;#offer-2&gt;</span> <span class="p">.</span>
+
+<span class="nv">&lt;#place-2&gt;</span> <span class="kt">a</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">Place</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;Lynn Auditorium&quot;</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">address</span> <span class="s">&quot;Lynn, MA, 01901&quot;</span> <span class="p">.</span>
+
+<span class="nv">&lt;#offer-2&gt;</span> <span class="kt">a</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">Offer</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">url</span> <span class="s">&quot;http://frontgatetickets.com/venue.php?id=11766&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">anyURI</span> <span class="p">.</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Standard mode</label><div class="sd-tab-content docutils">
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="k">@base</span><span class="w"> </span><span class="nv">&lt;http://example.org/events-listing.csv&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">csvw:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/ns/csvw#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nv">&lt;http://schema.org/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span>
+
+<span class="p">:</span><span class="nt">95cc7970-ce99-44b0-900c-e2c2c028bbd3</span> <span class="kt">a</span> <span class="nn">csvw</span><span class="p">:</span><span class="nt">TableGroup</span> <span class="p">;</span>
+  <span class="nn">csvw</span><span class="p">:</span><span class="nt">table</span> <span class="p">[</span> <span class="kt">a</span> <span class="nn">csvw</span><span class="p">:</span><span class="nt">Table</span> <span class="p">;</span>
+    <span class="nn">csvw</span><span class="p">:</span><span class="nt">url</span> <span class="nv">&lt;http://example.org/events-listing.csv&gt;</span> <span class="p">;</span>
+    <span class="nn">csvw</span><span class="p">:</span><span class="nt">row</span> <span class="p">[</span> <span class="kt">a</span> <span class="nn">csvw</span><span class="p">:</span><span class="nt">Row</span> <span class="p">;</span>
+      <span class="nn">csvw</span><span class="p">:</span><span class="nt">rownum</span> <span class="mi">1</span> <span class="p">;</span>
+      <span class="nn">csvw</span><span class="p">:</span><span class="nt">url</span> <span class="nv">&lt;#row=2&gt;</span> <span class="p">;</span>
+      <span class="nn">csvw</span><span class="p">:</span><span class="nt">describes</span> <span class="nv">&lt;#event-1&gt;</span><span class="p">,</span> <span class="nv">&lt;#place-1&gt;</span><span class="p">,</span> <span class="nv">&lt;#offer-1&gt;</span>
+    <span class="p">],</span> <span class="p">[</span> <span class="kt">a</span> <span class="nn">csvw</span><span class="p">:</span><span class="nt">Row</span> <span class="p">;</span>
+      <span class="nn">csvw</span><span class="p">:</span><span class="nt">rownum</span> <span class="mi">2</span> <span class="p">;</span>
+      <span class="nn">csvw</span><span class="p">:</span><span class="nt">url</span> <span class="nv">&lt;#row=3&gt;</span> <span class="p">;</span>
+      <span class="nn">csvw</span><span class="p">:</span><span class="nt">describes</span> <span class="nv">&lt;#event-2&gt;</span><span class="p">,</span> <span class="nv">&lt;#place-2&gt;</span><span class="p">,</span> <span class="nv">&lt;#offer-2&gt;</span>
+    <span class="p">]</span>
+  <span class="p">]</span> <span class="p">.</span>
+
+<span class="nv">&lt;#event-1&gt;</span> <span class="kt">a</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">MusicEvent</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;B.B. King&quot;</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">startDate</span> <span class="s">&quot;2014-04-12T19:30:00&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">dateTime</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">location</span> <span class="nv">&lt;#place-1&gt;</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">offers</span> <span class="nv">&lt;#offer-1&gt;</span> <span class="p">.</span>
+
+<span class="nv">&lt;#place-1&gt;</span> <span class="kt">a</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">Place</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;Lupo’s Heartbreak Hotel&quot;</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">address</span> <span class="s">&quot;79 Washington St., Providence, RI&quot;</span> <span class="p">.</span>
+
+<span class="nv">&lt;#offer-1&gt;</span> <span class="kt">a</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">Offer</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">url</span> <span class="s">&quot;https://www.etix.com/ticket/1771656&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">anyURI</span> <span class="p">.</span>
+
+<span class="nv">&lt;#event-2&gt;</span> <span class="kt">a</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">MusicEvent</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;B.B. King&quot;</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">startDate</span> <span class="s">&quot;2014-04-13T20:00:00&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">dateTime</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">location</span> <span class="nv">&lt;#place-2&gt;</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">offers</span> <span class="nv">&lt;#offer-2&gt;</span> <span class="p">.</span>
+
+<span class="nv">&lt;#place-2&gt;</span> <span class="kt">a</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">Place</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;Lynn Auditorium&quot;</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">address</span> <span class="s">&quot;Lynn, MA, 01901&quot;</span> <span class="p">.</span>
+
+<span class="nv">&lt;#offer-2&gt;</span> <span class="kt">a</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">Offer</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">url</span> <span class="s">&quot;http://frontgatetickets.com/venue.php?id=11766&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">anyURI</span> <span class="p">.</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+JSON Schema</label><div class="sd-tab-content docutils">
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;http://www.w3.org/ns/csvw&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;@language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;en&quot;</span><span class="p">}],</span>
+<span class="w">  </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;events-listing.csv&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;dialect&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;trim&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;tableSchema&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;titles&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Name&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;aboutUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#event-{_row}&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;propertyUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:name&quot;</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;start_date&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;titles&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Start Date&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;datatype&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;base&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;datetime&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;yyyy-MM-ddTHH:mm&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;aboutUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#event-{_row}&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;propertyUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:startDate&quot;</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;location_name&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;titles&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Location Name&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;aboutUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#place-{_row}&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;propertyUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:name&quot;</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;location_address&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;titles&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Location Address&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;aboutUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#place-{_row}&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;propertyUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:address&quot;</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ticket_url&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;titles&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ticket Url&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;datatype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;anyURI&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;aboutUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#offer-{_row}&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;propertyUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:url&quot;</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;type_event&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;virtual&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;aboutUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#event-{_row}&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;propertyUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rdf:type&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;valueUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:MusicEvent&quot;</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;type_place&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;virtual&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;aboutUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#place-{_row}&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;propertyUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rdf:type&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;valueUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:Place&quot;</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;type_offer&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;virtual&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;aboutUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#offer-{_row}&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;propertyUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rdf:type&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;valueUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:Offer&quot;</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;location&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;virtual&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;aboutUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#event-{_row}&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;propertyUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:location&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;valueUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#place-{_row}&quot;</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;offers&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;virtual&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;aboutUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#event-{_row}&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;propertyUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema:offers&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;valueUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#offer-{_row}&quot;</span>
+<span class="w">    </span><span class="p">}]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>One could imagine how this might generalize into multidimensional array data, but that immediately becomes pretty ridiculous - a better strategy in all cases that I can think of would be to just provide metadata about the array like the encoding, the sizes, types, etc. of their axes and indices and then link to the array.</p>
+<p>I’ll just leave this example of encoding the pixels in one RGB video frame as a joke.</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">vid:</span><span class="w"> </span><span class="nv">&lt;http://example.com/GodforsakenVideoSchema&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span>
+
+<span class="p">:</span><span class="nt">myVideo</span> <span class="kt">a</span> <span class="nn">vid</span><span class="p">:</span><span class="nt">VideoGroup</span> <span class="p">;</span>
+  <span class="nn">vid</span><span class="p">:</span><span class="nt">video</span> <span class="p">[</span> <span class="kt">a</span> <span class="nn">vid</span><span class="p">:</span><span class="nt">Video</span> <span class="p">;</span>
+    <span class="nn">vid</span><span class="p">:</span><span class="nt">url</span> <span class="nv">&lt;http://example.com/myVideo.mp4&gt;</span> <span class="p">;</span>
+    <span class="nn">vid</span><span class="p">:</span><span class="nt">frame</span> <span class="p">[</span> <span class="kt">a</span> <span class="nn">vid</span><span class="p">:</span><span class="nt">Frame</span> <span class="p">;</span>
+      <span class="nn">vid</span><span class="p">:</span><span class="nt">framenum</span> <span class="mi">1</span> <span class="p">;</span>
+      <span class="nn">vid</span><span class="p">:</span><span class="nt">url</span> <span class="nv">&lt;#frame=1&gt;</span> <span class="p">;</span>
+      <span class="nn">vid</span><span class="p">:</span><span class="nt">describes</span> <span class="nv">&lt;#frame-1&gt;</span> <span class="p">;</span>
+    <span class="p">],</span> <span class="p">[</span> <span class="kt">a</span> <span class="nn">vid</span><span class="p">:</span><span class="nt">Frame</span> <span class="p">;</span>
+      <span class="nn">vid</span><span class="p">:</span><span class="nt">framenum</span> <span class="mi">2</span> <span class="p">;</span>
+      <span class="nn">vid</span><span class="p">:</span><span class="nt">url</span> <span class="nv">&lt;#frame=2&gt;</span> <span class="p">;</span>
+      <span class="nn">vid</span><span class="p">:</span><span class="nt">describes</span> <span class="nv">&lt;#frame-2&gt;</span> <span class="p">;</span>
+    <span class="p">]</span>
+  <span class="p">]</span> <span class="p">.</span>
+
+<span class="nv">&lt;#frame-1&gt;</span> <span class="kt">a</span> <span class="nn">vid</span><span class="p">:</span><span class="nt">VideoFrame</span> <span class="p">;</span>
+  <span class="nn">vid</span><span class="p">:</span><span class="nt">timestamp</span> <span class="s">&quot;2023-06-29T12:00:00&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">dateTime</span> <span class="p">;</span>
+  <span class="nn">vid</span><span class="p">:</span><span class="nt">bitDepth</span> <span class="mi">8</span> <span class="p">;</span>
+  <span class="nn">vid</span><span class="p">:</span><span class="nt">width</span> <span class="mi">1920</span> <span class="p">;</span>
+  <span class="nn">vid</span><span class="p">:</span><span class="nt">height</span> <span class="mi">1080</span> <span class="p">;</span>
+  <span class="nn">vid</span><span class="p">:</span><span class="nt">channels</span> <span class="nv">&lt;#red-1&gt;</span><span class="p">,</span> <span class="nv">&lt;#green-1&gt;</span><span class="p">,</span> <span class="nv">&lt;#blue-1&gt;</span> <span class="p">;</span>
+
+<span class="nv">&lt;#red-1&gt;</span> <span class="kt">a</span> <span class="nn">vid</span><span class="p">:</span><span class="nt">VideoChannel</span> <span class="p">;</span>
+  <span class="p">:</span><span class="nt">pixel-1</span> <span class="kt">a</span> <span class="nn">vid</span><span class="p">:</span><span class="nt">pixelValue</span> <span class="p">;</span>
+    <span class="nn">rdf</span><span class="p">:</span><span class="nt">first</span> <span class="mi">0</span> <span class="p">;</span>
+    <span class="nn">rdf</span><span class="p">:</span><span class="nt">rest</span> <span class="p">:</span><span class="nt">pixel-2</span> <span class="p">.</span>
+
+  <span class="p">:</span><span class="nt">pixel-2</span> <span class="kt">a</span> <span class="nn">vid</span><span class="p">:</span><span class="nt">pixelValue</span> <span class="p">;</span>
+    <span class="nn">rdf</span><span class="p">:</span><span class="nt">first</span> <span class="mi">46</span> <span class="p">;</span>
+    <span class="nn">rdf</span><span class="p">:</span><span class="nt">rest</span> <span class="p">:</span><span class="nt">pixel-3</span> <span class="p">.</span>
+
+  <span class="c"># ...</span>
+
+  <span class="p">:</span><span class="nt">pixel-2073600</span> <span class="kt">a</span> <span class="nn">vid</span><span class="p">:</span><span class="nt">pixelValue</span> <span class="p">;</span>
+    <span class="nn">rdf</span><span class="p">:</span><span class="nt">first</span> <span class="mi">57</span> <span class="p">;</span>
+    <span class="nn">rdf</span><span class="p">:</span><span class="nt">rest</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">nil</span> <span class="p">.</span>
+</pre></div>
+</div>
+</section>
 <section id="naming">
 <h3>Naming<a class="headerlink" href="#naming" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
@@ -404,7 +752,12 @@ Turtle</label><div class="sd-tab-content docutils">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.w3.org/TR/rdf11-primer/">RDF 1.1 Primer</a></p></li>
-<li><p>W3C Recommendation on generating RDF from tabular data: <span id="id3">[<a class="reference internal" href="../../references.html#id16" title="Jeremy Tandy, Ivan Herman, and Gregg Kellogg. Generating RDF from Tabular Data on the Web. 2015-12-17. URL: https://www.w3.org/TR/csv2rdf/ (visited on 2023-06-28).">Tandy <em>et al.</em>, 2015</a>]</span></p></li>
+<li><p>W3C Recommendation on generating RDF from tabular data: <span id="id3">[<a class="reference internal" href="../../references.html#id18" title="Jeremy Tandy, Ivan Herman, and Gregg Kellogg. Generating RDF from Tabular Data on the Web. 2015-12-17. URL: https://www.w3.org/TR/csv2rdf/ (visited on 2023-06-28).">Tandy <em>et al.</em>, 2015</a>]</span></p>
+<ul>
+<li><p>Tabular data model: <a class="reference external" href="https://www.w3.org/TR/2015/REC-tabular-data-model-20151217/#parsing">https://www.w3.org/TR/2015/REC-tabular-data-model-20151217/#parsing</a></p></li>
+<li><p>Metadata model: <a class="reference external" href="https://www.w3.org/TR/2015/REC-tabular-metadata-20151217/">https://www.w3.org/TR/2015/REC-tabular-metadata-20151217/</a></p></li>
+</ul>
+</li>
 <li><p><span class="target" id="index-4"></span>JSON Schema in RDF: <span id="id4">[<a class="reference internal" href="../../references.html#id2" title="Victor Charpenay, Maxime Lefrançois, and María Poveda Villalón. JSON Schema in RDF. 2023-06-14. URL: https://www.w3.org/2019/wot/json-schema (visited on 2023-06-28).">Charpenay <em>et al.</em>, 2023</a>]</span></p></li>
 <li><p><a class="reference external" href="https://www.w3.org/TR/rdf12-turtle/">Turtle</a></p></li>
 <li><p><a class="reference external" href="https://www.w3.org/TR/swbp-n-aryRelations/">N-ary relations in RDF</a></p></li>
@@ -416,13 +769,14 @@ Turtle</label><div class="sd-tab-content docutils">
 <li><p><a class="reference external" href="https://github.com/digitalbazaar/jsonld.js">jsonld.js</a></p></li>
 <li><p><a class="reference external" href="https://github.com/digitalbazaar/rdf-canonize-native">rdf-canonize-native</a></p></li>
 <li><p><a class="reference external" href="https://github.com/biolink/biolink-model">biolink-model</a> for a nice example of generating multiple schema formats from a .yaml file.</p></li>
-<li><p><a class="reference external" href="https://linkml.io/">linkml</a> - modeling language for linked data <span id="id5">[<a class="reference internal" href="../../references.html#id10" title="Sierra Moxon, Harold Solbrig, Deepak Unni, Dazhi Jiao, Richard Bruskiewich, James Balhoff, Gaurav Vaidya, William Duncan, Harshad Hegde, Mark Miller, Matthew Brush, Nomi Harris, Melissa Haendel, and Christopher Mungall. The linked data modeling language (linkml): a general-purpose data modeling framework grounded in machine-readable semantics. In CEUR Workshop Proceedings, volume 3073, 148–151. CEUR-WS, 2021. URL: https://pure.johnshopkins.edu/en/publications/the-linked-data-modeling-language-linkml-a-general-purpose-data-m (visited on 2023-06-28).">Moxon <em>et al.</em>, 2021</a>]</span></p>
+<li><p><a class="reference external" href="https://linkml.io/">linkml</a> - modeling language for linked data <span id="id5">[<a class="reference internal" href="../../references.html#id11" title="Sierra Moxon, Harold Solbrig, Deepak Unni, Dazhi Jiao, Richard Bruskiewich, James Balhoff, Gaurav Vaidya, William Duncan, Harshad Hegde, Mark Miller, Matthew Brush, Nomi Harris, Melissa Haendel, and Christopher Mungall. The linked data modeling language (linkml): a general-purpose data modeling framework grounded in machine-readable semantics. In CEUR Workshop Proceedings, volume 3073, 148–151. CEUR-WS, 2021. URL: https://pure.johnshopkins.edu/en/publications/the-linked-data-modeling-language-linkml-a-general-purpose-data-m (visited on 2023-06-28).">Moxon <em>et al.</em>, 2021</a>]</span></p>
 <ul>
 <li><p>Multidimensional arrays in linkml <a class="reference external" href="https://linkml.io/linkml/howtos/multidimensional-arrays.html">https://linkml.io/linkml/howtos/multidimensional-arrays.html</a></p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://incatools.github.io/ontology-access-kit/index.html">oaklib</a> - python package for managing ontologies</p></li>
 <li><p><a class="reference external" href="https://github.com/RDFLib/rdflib">rdflib</a> - maybe the canonical python rdf library</p></li>
+<li><p><a class="reference external" href="https://github.com/Swirrl/csv2rdf/">csv2rdf</a></p></li>
 </ul>
 </section>
 <section id="see-also">
@@ -430,6 +784,15 @@ Turtle</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.hydra-cg.com/spec/latest/core/">HYDRA vocabulary</a> - Linked Data plus REST</p></li>
 <li><p><a class="reference external" href="https://github.com/jmchandonia/CORAL">CORAL</a></p></li>
+<li><p><a class="reference external" href="https://www.cs.ox.ac.uk/isg/challenges/sem-tab/">SEMTAB</a> - competition for mapping tabular data to RDF</p></li>
+<li><p><a class="reference external" href="https://www.ceur-ws.org/Vol-1272/paper_22.pdf">SciSPARQL</a> - an extension of SPARQL to include arrays.</p></li>
+</ul>
+</section>
+<section id="example-datasets">
+<h3>Example Datasets<a class="headerlink" href="#example-datasets" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.w3.org/wiki/DataSetRDFDumps">RDF Data Dumps</a></p></li>
+<li><p><a class="reference external" href="https://download.bio2rdf.org">bio2rdf</a></p></li>
 </ul>
 </section>
 </section>
@@ -496,13 +859,15 @@ Turtle</label><div class="sd-tab-content docutils">
 </ul>
 </li>
 <li><a class="reference internal" href="#challenges">Challenges</a><ul>
-<li><a class="reference internal" href="#tabular-and-array-data">Tabular and Array Data</a></li>
+<li><a class="reference internal" href="#ordered-data">Ordered Data</a></li>
+<li><a class="reference internal" href="#tabular-data">Tabular Data</a></li>
 <li><a class="reference internal" href="#naming">Naming</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#references">References</a><ul>
 <li><a class="reference internal" href="#libraries">Libraries</a></li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
+<li><a class="reference internal" href="#example-datasets">Example Datasets</a></li>
 </ul>
 </li>
 </ul>

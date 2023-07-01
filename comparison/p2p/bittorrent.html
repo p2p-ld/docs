@@ -24,14 +24,14 @@
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #0d1117;
+  --color-code-foreground: #e6edf3;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #0d1117;
+  --color-code-foreground: #e6edf3;
   
       }
     }
@@ -180,13 +180,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../ld/rdf.html">RDF and Friends</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ld/solid.html">SOLID</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ld/ld_fragments.html">Linked Data Fragments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ld/hdt.html">HDT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ld/ld_platform.html">Linked Data Platform</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ld/nanopubs.html">NanoPubs</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../data/index.html">Data Structures</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Data Structures</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../data/eris.html">ERIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/datalad.html">DataLad</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data/dmc.html">DMC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/eris.html">ERIS</a></li>
 </ul>
 </li>
 </ul>
@@ -212,7 +214,10 @@
 <p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../triplets.html">Triplets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../adapter/index.html">Adapter</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../codecs/index.html">Codecs</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Codecs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../codecs/hdf5.html">HDF5</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../translation/index.html">Translation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Drafting</span></p>
@@ -309,19 +314,47 @@
 <p>The bifurcated tracker/peer structure makes the overall system remarkably <em>resilient</em>. The trackers don’t host any infringing content themselves, they just organize the metadata for finding it, so they are relatively long-lived and inexpensive to start compared to more resource- and risk-intensive piracy vectors. If they are shut down, the peers can continue to share amongst themselves through DHT, Peer Exchange, and any other trackers that are specified in the <code class="docutils literal notranslate"><span class="pre">.torrent</span></code> files. When a successor pops up, the members of the old tracker can then re-collect the <code class="docutils literal notranslate"><span class="pre">.torrent</span></code> files from the prior site, and without needing a massive re-upload of data to a centralized server repopulate the new site.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>See more detailed discussion re: lessons from BitTorrent Trackers for social infrastructure in “<a class="reference external" href="https://jon-e.net/infrastructure/#archives-need-communities">Archives Need Communities</a>” in <span id="id3">[<a class="reference internal" href="../../references.html#id13" title="Jonny L. Saunders. Decentralized Infrastructure for (Neuro)science. 2022-08-31. URL: http://arxiv.org/abs/2209.07493 (visited on 2023-03-01), arXiv:2209.07493, doi:10.48550/arXiv.2209.07493.">Saunders, 2022</a>]</span></p>
+<p>See more detailed discussion re: lessons from BitTorrent Trackers for social infrastructure in “<a class="reference external" href="https://jon-e.net/infrastructure/#archives-need-communities">Archives Need Communities</a>” in <span id="id3">[<a class="reference internal" href="../../references.html#id15" title="Jonny L. Saunders. Decentralized Infrastructure for (Neuro)science. 2022-08-31. URL: http://arxiv.org/abs/2209.07493 (visited on 2023-03-01), arXiv:2209.07493, doi:10.48550/arXiv.2209.07493.">Saunders, 2022</a>]</span></p>
 </div>
 </section>
 <section id="protocol">
 <h3>Protocol<a class="headerlink" href="#protocol" title="Permalink to this heading">#</a></h3>
 <p>Peers that have been referred to one another from a tracker or other means start by attempting to make a connection with a ‘handshake’ that specifies the peer is connecting with BitTorrent and any other protocol extensions it supports.</p>
 <p>There are a number of subtleties in the transfer protocol, but it can be broadly summarized as a series of steps where peers tell each other which pieces they have, which they are interested in, and then sharing them amongst themselves.</p>
-<p>Though not explicitly in the protocol spec, two prominent design decisions are worth mentioning (See eg. <span id="id4">[<a class="reference internal" href="../../references.html#id8" title="Arnaud Legout, G. Urvoy-Keller, and P. Michiardi. Rarest first and choke algorithms are enough. In Proceedings of the 6th ACM SIGCOMM on Internet Measurement - IMC '06, 203. ACM Press, 2006. URL: http://portal.acm.org/citation.cfm?doid=1177080.1177106 (visited on 2018-11-09), doi:10.1145/1177080.1177106.">Legout <em>et al.</em>, 2006</a>]</span> for additional discussion).</p>
+<p>Though not explicitly in the protocol spec, two prominent design decisions are worth mentioning (See eg. <span id="id4">[<a class="reference internal" href="../../references.html#id9" title="Arnaud Legout, G. Urvoy-Keller, and P. Michiardi. Rarest first and choke algorithms are enough. In Proceedings of the 6th ACM SIGCOMM on Internet Measurement - IMC '06, 203. ACM Press, 2006. URL: http://portal.acm.org/citation.cfm?doid=1177080.1177106 (visited on 2018-11-09), doi:10.1145/1177080.1177106.">Legout <em>et al.</em>, 2006</a>]</span> for additional discussion).</p>
 <ul class="simple">
 <li><p><strong>Peer Selection:</strong> Which peers should I spent finite bandwidth uploading to? BitTorrent uses a variety of <strong>Choke</strong> algorithms that reward peers that reciprocate bandwidth. Choke algorithms are typically some variant of a ‘tit-for-tat’ strategy, although rarely the strict bitwise tit-for-tat favored by later blockchain systems and others that require a peer to upload an equivalent amount to what they have downloaded before they are given any additional pieces. Contrast this with <a class="reference internal" href="ipfs.html#bitswap"><span class="std std-ref"><span class="target" id="index-8"></span>BitSwap</span></a> from IPFS. It is by <em>not</em> perfectly optimizing peer selection that BitTorrent is better capable of using more of its available network resources.</p></li>
 <li><p><strong>Piece Selection:</strong> Which pieces should be uploaded/requested first? BitTorrent uses a <strong>Rarest First</strong> strategy, where a peer keeps track of the number of copies of each piece present in the swarm, and preferentially seeds the rarest pieces. This keeps the swarm healthy, rewarding keeping and sharing complete copies of files. This is in contrast to, eg. <a class="reference internal" href="#SWARM"><span class="xref myst">SWARM</span></a> which explicitly rewards hosting and sharing the most in-demand pieces.</p></li>
 </ul>
 </section>
+</section>
+<section id="web-seeds">
+<span id="index-9"></span><h2>Web Seeds<a class="headerlink" href="#web-seeds" title="Permalink to this heading">#</a></h2>
+<p>One thing we want to mimic from bittorrent is the ability to use traditional web servers as additional peers, or to treat them as <a class="reference external" href="http://bittorrent.org/beps/bep_0019.html">“WebSeeds”</a><a class="footnote-reference brackets" href="#bep17" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
+<p>HTTP servers allow you to specify a byte range to resume a download, but don’t like the downloading client connecting hundreds of times to download the same file, jumping between pieces. To accomodate that, BEP 19 changes piece selection accordingly:</p>
+<p>When downloading from bittorrent peers, we modify the “rarest first” algorithm such that for pieces with similar rareness we</p>
+<ul class="simple">
+<li><p>Select pieces from smaller “gaps” in between completed blocks</p></li>
+<li><p>Select pieces closer to the end of the gap</p></li>
+<li><p>After 50% of the torrent is completed, for some random subset of pieces, ignore rarest first and fill in small gaps.</p></li>
+</ul>
+<p>When downloading from HTTP servers</p>
+<ul class="simple">
+<li><p>Start from some random location in the file (to avoid every peer having the same pieces at the start of the file)</p></li>
+<li><p>When partially completed, select the next longest gap between completed pieces</p></li>
+</ul>
+<p>For multi-file torrents</p>
+<ul class="simple">
+<li><p>Prefer bittorrent downloads for small files that are less than a piece size</p></li>
+</ul>
+<p>We can consider <span class="target" id="index-10"></span>libtorrent’s implementation as a reference implementation.</p>
+<ul class="simple">
+<li><p>Libtorrent chooses pieces by <a class="reference external" href="https://github.com/arvidn/libtorrent/blob/c2012b084c6654d681720ea0693d87a48bc95b14/src/web_peer_connection.cpp#L165-L171">starting by assuming the client has all files and eliminating pieces for files we don’t have</a>.</p></li>
+<li><p>On requesting a piece, it <a class="reference external" href="https://github.com/arvidn/libtorrent/blob/c2012b084c6654d681720ea0693d87a48bc95b14/src/web_peer_connection.cpp#L368-L394">checks for resume data</a> if we have already partially downloaded it before, and modifies the start and length of the piece request</p></li>
+<li><p>It then <a class="reference external" href="https://github.com/arvidn/libtorrent/blob/c2012b084c6654d681720ea0693d87a48bc95b14/src/web_peer_connection.cpp#L423-L442">constructs an HTTP GET request</a>, using the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range">Range</a> header to select some subsection of the file.</p></li>
+<li><p>When we <a class="reference external" href="https://github.com/arvidn/libtorrent/blob/c2012b084c6654d681720ea0693d87a48bc95b14/src/web_peer_connection.cpp#L778">receive data</a> from the server, we wait until we receive the full header, then we parse the body of the response. If the size is different than what we expected, we disconnect from the server. Otherwise, we iterate through any chunks and store them.</p></li>
+<li><p>If the pieces received from the web seed <a class="reference external" href="https://github.com/arvidn/libtorrent/blob/c2012b084c6654d681720ea0693d87a48bc95b14/src/web_peer_connection.cpp#L578-L584">fail the hash check</a>, we mark the peer as not having the file, which bans it in the case of a single file torrent, but allows us to check whether the other files on the server have been changed.</p></li>
+</ul>
 </section>
 <section id="lessons">
 <h2>Lessons<a class="headerlink" href="#lessons" title="Permalink to this heading">#</a></h2>
@@ -352,6 +385,13 @@
 </ol>
 </li>
 <li><p><strong>Trackers</strong> are a good idea, even if they could use some updating. It is good to have an explicit entrypoint specified with a distributed, social mechanism rather than prespecified as a hardcoded entry point. It is a good idea to make a clear space for social curation of information, rather than something that is intrinsically bound to a torrent at the time of uploading. We update the notion of trackers with <a class="reference internal" href="../../federation.html#peer-federations"><span class="std std-ref">Peer Federations</span></a>.</p></li>
+<li><p><strong>Web Seeds</strong></p>
+<ul>
+<li><p>Torrent files handle single and multi-file torrents similarly, with the file structure in the info-dict. We can instead explicitly follow the lead of Bittorrent v2.0 and have per-file hash trees and URL references, avoiding some of the ambiguity in the web seed implementation that <a class="reference external" href="https://github.com/arvidn/libtorrent/blob/c2012b084c6654d681720ea0693d87a48bc95b14/src/web_peer_connection.cpp#L101-L121">requires us to do some manual path traversal</a></p></li>
+<li><p>We want to be able to integrate with existing servers and services, so we want to be able to find files by both the URL of the original file (if that is its “canonical” location) and its hash. Rather than adding a web seed as an additional source of a torrent file, we can treat it as one of the additional identifiers for the given container. This adds an additional argument in favor of nested containers as the unit of exchange. Eg. A data repository might have a single URL for a dataset that has multiple files within it, and the individual files might not have unique URLs (eg. the file picker generates a .zip file on the fly). A peer might want to bundle together multiple files from different locations. So it should be possible for each container to have multiple names, and when another peers requests a file by eg. a URL we can look within our containers for a match. This also allows handling files that might be uploaded in multiple places</p></li>
+<li><p>We want to store the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Last-Modified">Last-Modified</a> data when importing a file from a web seed so that we can handle version changes in a given file without giving up on the web source entirely. When the <code class="docutils literal notranslate"><span class="pre">Last-Modified</span></code> is updated, we get the new file, re-hash it, and update the relevant file container if it has been changed. Otherwise we just store the new <code class="docutils literal notranslate"><span class="pre">Last-Modified</span></code></p></li>
+</ul>
+</li>
 </ul>
 </section>
 </section>
@@ -361,13 +401,20 @@
 <li><p>Bittorrent Protocol Specification (BEP 3): <a class="reference external" href="http://www.bittorrent.org/beps/bep_0003.html">http://www.bittorrent.org/beps/bep_0003.html</a></p></li>
 <li><p>Bittorrent v2 (BEP 52): <a class="reference external" href="http://www.bittorrent.org/beps/bep_0052.html">http://www.bittorrent.org/beps/bep_0052.html</a></p></li>
 <li><p>Magnet Links (BEP 9): <a class="reference external" href="http://www.bittorrent.org/beps/bep_0009.html">http://www.bittorrent.org/beps/bep_0009.html</a></p></li>
-<li><p>More on BitTorrent and incentives - <span id="id5">[<a class="reference internal" href="../../references.html#id3" title="Bram Cohen. Incentives Build Robustness in BitTorrent. 2003-05-22. URL: http://bittorrent.org/bittorrentecon.pdf.">Cohen, 2003</a>]</span></p></li>
+<li><p>WebSeeds (BEP 19): <a class="reference external" href="http://bittorrent.org/beps/bep_0019.html">http://bittorrent.org/beps/bep_0019.html</a></p></li>
+<li><p>More on BitTorrent and incentives - <span id="id6">[<a class="reference internal" href="../../references.html#id3" title="Bram Cohen. Incentives Build Robustness in BitTorrent. 2003-05-22. URL: http://bittorrent.org/bittorrentecon.pdf.">Cohen, 2003</a>]</span></p></li>
+<li><p>Notes about writing a bittorrent client from the GetRight author, particularly re: DHT: <a class="reference external" href="https://www.getright.com/torrentdev.html">https://www.getright.com/torrentdev.html</a></p></li>
+<li><p>Nice example of implementing a very minimal bittorrent client in Python: <a class="reference external" href="https://markuseliasson.se/article/bittorrent-in-python/">https://markuseliasson.se/article/bittorrent-in-python/</a></p></li>
 </ul>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="announcelist" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
 <p>Or, properly, in the <code class="docutils literal notranslate"><span class="pre">announce-list</span></code> per (<a class="reference external" href="http://www.bittorrent.org/beps/bep_0012.html">BEP 12</a>)</p>
+</aside>
+<aside class="footnote brackets" id="bep17" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">2</a><span class="fn-bracket">]</span></span>
+<p>There is a parallel <a class="reference external" href="https://www.bittorrent.org/beps/bep_0017.html">BEP 17</a> that allows modified HTTP servers to more directly seed, but since it requires changes to existing servers we are less concerned with it.</p>
 </aside>
 </aside>
 </section>
@@ -435,6 +482,7 @@
 <li><a class="reference internal" href="#protocol">Protocol</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#web-seeds">Web Seeds</a></li>
 <li><a class="reference internal" href="#lessons">Lessons</a><ul>
 <li><a class="reference internal" href="#adopt">Adopt</a></li>
 <li><a class="reference internal" href="#adapt">Adapt</a></li>

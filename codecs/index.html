@@ -3,11 +3,11 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Translation" href="../translation/index.html" /><link rel="prev" title="Triplets" href="../triplets.html" />
-        <link rel="canonical" href="/docs/adapter/index.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="HDF5" href="hdf5.html" /><link rel="prev" title="Triplets" href="../triplets.html" />
+        <link rel="canonical" href="/docs/codecs/index.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
-        <title>Adapter - p2p-ld 0.1.0 documentation</title>
+        <title>Codecs - p2p-ld 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
@@ -24,14 +24,14 @@
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #0d1117;
+  --color-code-foreground: #e6edf3;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #0d1117;
+  --color-code-foreground: #e6edf3;
   
       }
     }
@@ -180,13 +180,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../comparison/ld/rdf.html">RDF and Friends</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../comparison/ld/solid.html">SOLID</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../comparison/ld/ld_fragments.html">Linked Data Fragments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../comparison/ld/hdt.html">HDT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../comparison/ld/ld_platform.html">Linked Data Platform</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../comparison/ld/nanopubs.html">NanoPubs</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../comparison/data/index.html">Data Structures</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Data Structures</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../comparison/data/eris.html">ERIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../comparison/data/datalad.html">DataLad</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../comparison/data/dmc.html">DMC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../comparison/data/eris.html">ERIS</a></li>
 </ul>
 </li>
 </ul>
@@ -212,7 +214,10 @@
 <p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../triplets.html">Triplets</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Adapter</a></li>
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Codecs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Codecs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="hdf5.html">HDF5</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../translation/index.html">Translation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Drafting</span></p>
@@ -258,20 +263,29 @@
           </label>
         </div>
         <article role="main">
-          <section id="adapter">
-<h1>Adapter<a class="headerlink" href="#adapter" title="Permalink to this heading">#</a></h1>
-<p>Interfaces to other protocols and formats</p>
+          <section id="codecs">
+<h1>Codecs<a class="headerlink" href="#codecs" title="Permalink to this heading">#</a></h1>
+<p>Interfaces to file formats</p>
+<p>We want to support three kinds of interaction with files:</p>
+<ul class="simple">
+<li><p><strong>References</strong> - treat files like abstract binary with some metadata indicating file type and a hash tree for the file</p></li>
+<li><p><strong>Introspection</strong> - Export some metadata from the file that indicates components of the file along with byte ranges. We want to be able to know what is inside the file without downloading it, but we keep the file separate as an out of protocol entity.</p></li>
+<li><p><strong>Ingestion</strong> - Export the metadata and the data contained within the file to triples. We also store some translation between the original binary file and the resulting triple through translation schema that allows us to update our triples if the files change and otherwise keep a strong link to the source, but otherwise enable forking/querying/etc. as if the data does not have an underlying file.</p></li>
+</ul>
+<p>This is a challenging design balance, where we don’t want clients to need to implement a large number of codecs for different files - so they can fall back to the reference strategy as needed - but we also want people to be able to interact and import their files without needing to abandon longstanding practices or other infrastructure they might already have for using/creating them.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hdf5.html">HDF5</a></li>
+</ul>
+</div>
 <ul class="simple">
 <li><p>Files</p>
 <ul>
-<li><p>hdf5</p></li>
 <li><p>json</p></li>
 <li><p>csv</p></li>
 <li><p>mat</p></li>
 </ul>
 </li>
-<li><p>HTTP</p></li>
-<li><p>S3</p></li>
 </ul>
 </section>
 
@@ -280,12 +294,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../translation/index.html">
+          <a class="next-page" href="hdf5.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Translation</div>
+                <div class="title">HDF5</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>

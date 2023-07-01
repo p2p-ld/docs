@@ -1,0 +1,472 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Linked Data Platform" href="ld_platform.html" /><link rel="prev" title="Linked Data Fragments" href="ld_fragments.html" />
+        <link rel="canonical" href="/docs/comparison/ld/hdt.html" />
+
+    <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
+        <title>HDT - p2p-ld 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #0d1117;
+  --color-code-foreground: #e6edf3;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #0d1117;
+  --color-code-foreground: #e6edf3;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">p2p-ld 0.1.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">p2p-ld 0.1.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Comparison</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Comparison</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../p2p/index.html">P2P</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of P2P</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../p2p/bittorrent.html">BitTorrent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../p2p/ipfs.html">IPFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../p2p/hypercore.html">Dat/Hypercore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../p2p/spritely.html">Spritely/Goblin</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../social/index.html">Social</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Social</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../social/activitypub.html">ActivityPub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../social/ssb.html">Secure Scuttlebutt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../social/matrix.html">Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../social/at_protocol.html">AT Protocol/Bluesky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../social/nostr.html">Nostr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../social/xmpp.html">XMPP</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">Linked Data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Linked Data</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="rdf.html">RDF and Friends</a></li>
+<li class="toctree-l3"><a class="reference internal" href="solid.html">SOLID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ld_fragments.html">Linked Data Fragments</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">HDT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ld_platform.html">Linked Data Platform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nanopubs.html">NanoPubs</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../data/index.html">Data Structures</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Data Structures</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../data/datalad.html">DataLad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/dmc.html">DMC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/eris.html">ERIS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../p2p_concepts.html">P2P Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../out_of_scope.html">Out of Scope</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Protocol</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../definitions.html">1. Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../protocol.html">2. Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../identity.html">3. Identity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discovery.html">4. Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_structures.html">5. Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vocabulary.html">6. Vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../querying.html">7. Querying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../encryption.html">8. Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../encryption.html#todo">9. TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../federation.html">10. Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backwards_compatibility.html">11. Backwards Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../evolvability.html">12. Evolvability</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../triplets.html">Triplets</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../codecs/index.html">Codecs</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Codecs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../codecs/hdf5.html">HDF5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../translation/index.html">Translation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Drafting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Design Decisions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sketchpad.html">Sketchpad</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Meta</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="hdt">
+<span id="index-0"></span><span id="id1"></span><h1>HDT<a class="headerlink" href="#hdt" title="Permalink to this heading">#</a></h1>
+<p>Like <a class="reference internal" href="ld_fragments.html"><span class="doc std std-doc">Linked Data Fragments</span></a>, <a class="reference external" href="https://www.rdfhdt.org/">HDT</a> is a transport and query format for linked data triples.</p>
+<p>It is a compressed format that preserves headers to enable query and browsing without decompression.</p>
+<section id="format">
+<h2>Format<a class="headerlink" href="#format" title="Permalink to this heading">#</a></h2>
+<p>It has <a class="reference external" href="https://www.rdfhdt.org/technical-specification/">three components</a>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Header:</strong> The Header holds metadata describing an HDT semantic dataset using plain RDF. It acts as an entry point for the consumer, who can have an initial idea of key properties of the content even before retrieving the whole dataset.</p></li>
+<li><p><strong>Dictionary:</strong> The Dictionary is a catalog comprising all the different terms used in the dataset, such as URIs, literals and blank nodes. A unique identifier (ID) is assigned to each term, enabling triples to be represented as tuples of three IDs, which reference their respective subject/predicate/object term from the dictionary. This is a first step toward compression, since it avoids long terms to be repeated again and again. Moreover, similar strings are now stored together inside the dictionary, fact that can be exploited to improve compression even more.</p></li>
+<li><p><strong>Triples:</strong> As stated before, the RDF triples can now be seen as tuples of three IDs. Therefore, the Triples section models the graph of relationships among the dataset terms. By understanding the typical properties of RDF graphs, we can come up with more efficient ways of representing this information, both to reduce the overall size, but also to provide efficient search/traversal operations.</p></li>
+</ul>
+<p class="attribution">—https://www.rdfhdt.org/technical-specification/</p>
+</div></blockquote>
+<section id="header">
+<h3>Header<a class="headerlink" href="#header" title="Permalink to this heading">#</a></h3>
+<p>A header contains</p>
+<ul class="simple">
+<li><p>At least one resource of type <code class="docutils literal notranslate"><span class="pre">hdt:Dataset</span></code>, which has</p>
+<ul>
+<li><p>Publication metadata - Where and when the dataset was published</p></li>
+<li><p>Statistical metadata - Number of triples, number of terms, etc.</p></li>
+<li><p>Format metadata - Encoding of dataset, which must have</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">hdt:dictionary</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hdt:triples</span></code></p></li>
+</ul>
+</li>
+<li><p>Additional metadata - uh idk anything?</p></li>
+</ul>
+</li>
+</ul>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+HDT Header Example<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">void:</span><span class="w"> </span><span class="nv">&lt;http://rdfs.org/ns/void#&gt;</span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dc:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/terms/&gt;</span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">foaf:</span><span class="w"> </span><span class="nv">&lt;http://xmlns.com/foaf/0.1/&gt;</span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">hdt:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/HDT/hdt#&gt;</span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">swp:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/03/trix/swp-2/&gt;</span><span class="p">.</span>
+
+<span class="nv">&lt;http://example.org/ex/DBpediaEN&gt;</span> 
+  <span class="kt">a</span> <span class="nn">hdt</span><span class="p">:</span><span class="nt">Dataset</span> <span class="p">;</span>
+  <span class="kt">a</span> <span class="nn">void</span><span class="p">:</span><span class="nt">Dataset</span> <span class="p">;</span>
+  <span class="nn">hdt</span><span class="p">:</span><span class="nt">publicationInformation</span> <span class="p">:</span><span class="nt">publication</span> <span class="p">;</span>
+  <span class="nn">hdt</span><span class="p">:</span><span class="nt">statisticalInformation</span> <span class="p">:</span><span class="nt">statistics</span> <span class="p">;</span>
+  <span class="nn">hdt</span><span class="p">:</span><span class="nt">formatInformation</span>      <span class="p">:</span><span class="nt">format</span> <span class="p">;</span>
+  <span class="nn">hdt</span><span class="p">:</span><span class="nt">additionalInformation</span>  <span class="p">:</span><span class="nt">additional</span> <span class="p">;</span> 
+  <span class="nn">void</span><span class="p">:</span><span class="nt">triples</span> <span class="s">&quot;431440396&quot;</span> <span class="p">;</span>
+  <span class="nn">void</span><span class="p">:</span><span class="nt">properties</span> <span class="s">&quot;57986&quot;</span> <span class="p">;</span>
+  <span class="nn">void</span><span class="p">:</span><span class="nt">distinctSubjects</span> <span class="s">&quot;24791728&quot;</span> <span class="p">;</span>
+  <span class="nn">void</span><span class="p">:</span><span class="nt">distinctObjects</span> <span class="s">&quot;108927201&quot;</span> <span class="p">.</span>
+
+<span class="p">:</span><span class="nt">publication</span>   <span class="nn">dc</span><span class="p">:</span><span class="nt">issued</span> <span class="s">&quot;2012-11-23T23:17:50+0000&quot;</span> <span class="p">;</span>
+  <span class="nn">dc</span><span class="p">:</span><span class="nt">license</span> <span class="nv">&lt;http://www.gnu.org/copyleft/fdl.html&gt;</span> <span class="p">;</span>
+  <span class="nn">dc</span><span class="p">:</span><span class="nt">publisher</span> <span class="p">[</span>  <span class="kt">a</span> <span class="nn">foaf</span><span class="p">:</span><span class="nt">Organization</span> <span class="p">;</span>
+    <span class="nn">foaf</span><span class="p">:</span><span class="nt">homepage</span> <span class="nv">&lt;http://www.dbpedia.org&gt;</span><span class="p">]</span> <span class="p">;</span>
+  <span class="nn">dc</span><span class="p">:</span><span class="nt">source</span> <span class="nv">&lt;http://downloads.dbpedia.org/3.8/en&gt;</span> <span class="p">;</span>
+  <span class="nn">dc</span><span class="p">:</span><span class="nt">title</span> <span class="s">&quot;DBpediaEN&quot;</span> <span class="p">;</span>
+  <span class="nn">void</span><span class="p">:</span><span class="nt">sparqlEndpoint</span> <span class="nv">&lt;http://www.dbpedia.org/sparql&gt;</span> <span class="p">.</span>
+
+<span class="p">:</span><span class="nt">statistics</span>    <span class="nn">hdt</span><span class="p">:</span><span class="nt">originalSize</span> <span class="s">&quot;110630364018&quot;</span> <span class="p">;</span>
+  <span class="nn">hdt</span><span class="p">:</span><span class="nt">hdtSize</span> <span class="s">&quot;3082795954&quot;</span> <span class="p">.</span>
+
+<span class="p">:</span><span class="nt">format</span>    <span class="nn">hdt</span><span class="p">:</span><span class="nt">dictionary</span> <span class="p">:</span><span class="nt">dictionary</span> <span class="p">;</span>
+  <span class="nn">hdt</span><span class="p">:</span><span class="nt">triplesBitmap</span> <span class="p">:</span><span class="nt">triples</span> <span class="p">.</span>
+
+<span class="p">:</span><span class="nt">dictionary</span>    <span class="nn">dc</span><span class="p">:</span><span class="nt">format</span> <span class="nn">hdt</span><span class="p">:</span><span class="nt">dictionaryFour</span> <span class="p">;</span>
+  <span class="nn">hdt</span><span class="p">:</span><span class="nt">dictionaryNamespaces</span> <span class="p">[</span><span class="nn">hdt</span><span class="p">:</span><span class="nt">namespace</span> <span class="p">[</span><span class="nn">hdt</span><span class="p">:</span><span class="nt">prefixLabel</span> <span class="s">&quot;dbpedia&quot;</span> <span class="p">;</span>
+    <span class="nn">hdt</span><span class="p">:</span><span class="nt">prefixURI</span> <span class="s">&quot;http://dbpedia.org/resource/&quot;</span><span class="p">]]</span> <span class="p">;</span>
+  <span class="nn">hdt</span><span class="p">:</span><span class="nt">dictionarynumSharedSubjectObject</span> <span class="s">&quot;22762644&quot;</span> <span class="p">;</span>
+  <span class="nn">hdt</span><span class="p">:</span><span class="nt">dictionarysizeStrings</span> <span class="s">&quot;1026354060&quot;</span> <span class="p">;</span>
+  <span class="nn">hdt</span><span class="p">:</span><span class="nt">dictionaryBlockSize</span> <span class="s">&quot;8&quot;</span> <span class="p">.</span>
+
+<span class="p">:</span><span class="nt">triples</span>   <span class="nn">dc</span><span class="p">:</span><span class="nt">format</span> <span class="nn">hdt</span><span class="p">:</span><span class="nt">triplesBitmap</span> <span class="p">;</span>
+  <span class="nn">hdt</span><span class="p">:</span><span class="nt">triplesOrder</span> <span class="s">&quot;SPO&quot;</span> <span class="p">;</span>
+  <span class="nn">hdt</span><span class="p">:</span><span class="nt">triplesnumTriples</span> <span class="s">&quot;431440396&quot;</span> <span class="p">.</span>
+
+<span class="p">:</span><span class="nt">additional</span>    <span class="nn">swp</span><span class="p">:</span><span class="nt">signature</span> <span class="s">&quot;AZ8QWE...&quot;</span> <span class="p">;</span>
+  <span class="nn">swp</span><span class="p">:</span><span class="nt">signatureMethod</span> <span class="s">&quot;DSA&quot;</span> <span class="p">.</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="dictionary">
+<h3>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this heading">#</a></h3>
+<p>The dictionary replaces all terms in the dataset with short, unique IDs to make the dataset more compressible. Oddly, rather than being a simple lookup table, it splits the dictionary into four sections: a “shared” section that includes subjects and objects, and predicates are separated. Terms are lexicographically ordered and <a class="reference external" href="https://en.wikipedia.org/wiki/Incremental_encoding">front coded</a> to additionally aid compression.</p>
+<p>Separating encoding information into a header dictionary is a straightforwardly good idea, and an argument for distributing linked data in ‘packetized’ forms rather than as a bunch of raw triples, as we do here.</p>
+</section>
+<section id="triples">
+<h3>Triples<a class="headerlink" href="#triples" title="Permalink to this heading">#</a></h3>
+<p>Triples are encoded as a tree, where each subject forms a root, with each predicate as children, and likewise for objects. Since the dictionary is ordered such that the subjects are the lowest IDs, it is possible to use an implicit representation of each subject (ie. subjects are not encoded). The predicate and object layers are each encoded with two parallel bit streams: Each predicate or object entry has one <code class="docutils literal notranslate"><span class="pre">Sp</span></code> entry for its dictionary ID, and one <code class="docutils literal notranslate"><span class="pre">Bp</span></code> “bitsequence” entry which is <code class="docutils literal notranslate"><span class="pre">1</span></code> if the entry is the first child of its parent and <code class="docutils literal notranslate"><span class="pre">0</span></code> otherwise.</p>
+</section>
+</section>
+<section id="querying">
+<h2>Querying<a class="headerlink" href="#querying" title="Permalink to this heading">#</a></h2>
+<p>The dictionary being uncompressed allows for the dataset to be indexed at a vocabulary level - it is possible to eg. ‘find all datasets that use this set of terms,’ as well as slightly more refined queries like ‘find datasets that use this term as both subject and object.’</p>
+<p>Lookup is fast for subject-based queries, but predicate and object queries are slower because of the bitmap triple encoding.</p>
+</section>
+<section id="lessons">
+<h2>Lessons<a class="headerlink" href="#lessons" title="Permalink to this heading">#</a></h2>
+<p>First, there are good strategies here for practical compression and serialization of RDF triples!</p>
+<p>The most interesting thing for p2p-ld here is the header: we are also interested in making it possible to do restricted queries and indexing over containers of triples without needing to necessarily query, download, or unpack the entire dataset. The primary focus here is compression, which has add-on benefits like faster query performance because the dataset can be held in memory. We would instead like to focus on exposing hashed tree fragments that can encapsulate query logic - eg. a given RDF resource that might indicate the metadata for a type of experiment would be hashed as a tree, and queries can discover it by querying for the root or any of its child hashes. So we will take the ideas re: using the dictionary encoding without necessarily adopting HDT wholesale.</p>
+<p>The bitmap encoding is also interesting, as according to their tests it outperforms other similar compression schemes and I/O times. We will keep this in mind as a potential serialization format for raw triple data.</p>
+<p>The idea of including publication data in the header seems obvious, but according to the authors later work that is not necessarily the case in RDF world <span id="id2">[<a class="reference internal" href="../../references.html#id14" title="Axel Polleres, Maulik Rajendra Kamdar, Javier David Fernández, Tania Tudorache, and Mark Alan Musen. A more decentralized vision for Linked Data. Semantic Web, 11(1):101–113, 2020-01-31. URL: https://www.medra.org/servlet/aliasResolver?alias=iospress&amp;doi=10.3233/SW-190380 (visited on 2023-06-29), doi:10.3233/SW-190380.">Polleres <em>et al.</em>, 2020</a>]</span>. Since p2p-ld is built explicitly around making identity and origin a more central component of linked data, we will further investigate using the <span class="target" id="index-1"></span>VOID vocabulary - <a class="reference external" href="https://www.w3.org/TR/void/">https://www.w3.org/TR/void/</a></p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.rdfhdt.org/">HDT Homepage</a></p></li>
+<li><p>Original Paper: <span id="id3">[<a class="reference internal" href="../../references.html#id6" title="Javier D. Fernández, Miguel A. Martínez-Prieto, Claudio Gutiérrez, Axel Polleres, and Mario Arias. Binary RDF representation for publication and exchange (HDT). Journal of Web Semantics, 19:22–41, 2013-03-01. URL: https://www.sciencedirect.com/science/article/pii/S1570826813000036 (visited on 2023-06-29), doi:10.1016/j.websem.2013.01.002.">Fernández <em>et al.</em>, 2013</a>]</span></p></li>
+<li><p>Later contextualization: <span id="id4">[<a class="reference internal" href="../../references.html#id14" title="Axel Polleres, Maulik Rajendra Kamdar, Javier David Fernández, Tania Tudorache, and Mark Alan Musen. A more decentralized vision for Linked Data. Semantic Web, 11(1):101–113, 2020-01-31. URL: https://www.medra.org/servlet/aliasResolver?alias=iospress&amp;doi=10.3233/SW-190380 (visited on 2023-06-29), doi:10.3233/SW-190380.">Polleres <em>et al.</em>, 2020</a>]</span></p></li>
+</ul>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="ld_platform.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Linked Data Platform</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="ld_fragments.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Linked Data Fragments</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Jonny Saunders
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">HDT</a><ul>
+<li><a class="reference internal" href="#format">Format</a><ul>
+<li><a class="reference internal" href="#header">Header</a></li>
+<li><a class="reference internal" href="#dictionary">Dictionary</a></li>
+<li><a class="reference internal" href="#triples">Triples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#querying">Querying</a></li>
+<li><a class="reference internal" href="#lessons">Lessons</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    </body>
+</html>

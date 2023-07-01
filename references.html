@@ -24,14 +24,14 @@
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #0d1117;
+  --color-code-foreground: #e6edf3;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #0d1117;
+  --color-code-foreground: #e6edf3;
   
       }
     }
@@ -180,13 +180,15 @@
 <li class="toctree-l3"><a class="reference internal" href="comparison/ld/rdf.html">RDF and Friends</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparison/ld/solid.html">SOLID</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparison/ld/ld_fragments.html">Linked Data Fragments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison/ld/hdt.html">HDT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparison/ld/ld_platform.html">Linked Data Platform</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparison/ld/nanopubs.html">NanoPubs</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="comparison/data/index.html">Data Structures</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Data Structures</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="comparison/data/eris.html">ERIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison/data/datalad.html">DataLad</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparison/data/dmc.html">DMC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison/data/eris.html">ERIS</a></li>
 </ul>
 </li>
 </ul>
@@ -212,7 +214,10 @@
 <p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="triplets.html">Triplets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="adapter/index.html">Adapter</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="codecs/index.html">Codecs</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Codecs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="codecs/hdf5.html">HDF5</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="translation/index.html">Translation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Drafting</span></p>
@@ -261,11 +266,11 @@
           <section id="references">
 <h1>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h1>
 <div class="docutils container" id="id1">
-<div class="citation" id="id13" role="doc-biblioentry">
+<div class="citation" id="id15" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
 <p>Jonny L. Saunders. Decentralized Infrastructure for (Neuro)science. 2022-08-31. URL: <a class="reference external" href="http://arxiv.org/abs/2209.07493">http://arxiv.org/abs/2209.07493</a> (visited on 2023-03-01), <a class="reference external" href="https://arxiv.org/abs/2209.07493">arXiv:2209.07493</a>, <a class="reference external" href="https://doi.org/10.48550/arXiv.2209.07493">doi:10.48550/arXiv.2209.07493</a>.</p>
 </div>
-<div class="citation" id="id8" role="doc-biblioentry">
+<div class="citation" id="id9" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
 <p>Arnaud Legout, G. Urvoy-Keller, and P. Michiardi. Rarest first and choke algorithms are enough. In <em>Proceedings of the 6th ACM SIGCOMM on Internet Measurement - IMC '06</em>, 203. ACM Press, 2006. URL: <a class="reference external" href="http://portal.acm.org/citation.cfm?doid=1177080.1177106">http://portal.acm.org/citation.cfm?doid=1177080.1177106</a> (visited on 2018-11-09), <a class="reference external" href="https://doi.org/10.1145/1177080.1177106">doi:10.1145/1177080.1177106</a>.</p>
 </div>
@@ -273,40 +278,48 @@
 <span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
 <p>Bram Cohen. Incentives Build Robustness in BitTorrent. 2003-05-22. URL: <a class="reference external" href="http://bittorrent.org/bittorrentecon.pdf">http://bittorrent.org/bittorrentecon.pdf</a>.</p>
 </div>
-<div class="citation" id="id12" role="doc-biblioentry">
+<div class="citation" id="id13" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></span>
 <p>Maxwell Ogden. Dat - Distributed Dataset Synchronization And Versioning. 2017-01-31. URL: <a class="reference external" href="https://osf.io/nsv2c">https://osf.io/nsv2c</a> (visited on 2021-10-01), <a class="reference external" href="https://doi.org/10.31219/osf.io/nsv2c">doi:10.31219/osf.io/nsv2c</a>.</p>
 </div>
-<div class="citation" id="id9" role="doc-biblioentry">
+<div class="citation" id="id10" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></span>
 <p>Christine Lemmer-Webber, Randy Farmer, and Juliana Sims. The Heart of Spritely: Distributed Objects and Capability Security. URL: <a class="reference external" href="https://www.spritely.institute/static/papers/spritely-core.html">https://www.spritely.institute/static/papers/spritely-core.html</a> (visited on 2023-06-07).</p>
 </div>
-<div class="citation" id="id14" role="doc-biblioentry">
+<div class="citation" id="id16" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></span>
 <p>Jonny L. Saunders. Surveillance Graphs. 2023-04-02T00:00:00+00:00. URL: <a class="reference external" href="https://jon-e.net/surveillance-graphs">https://jon-e.net/surveillance-graphs</a> (visited on 2023-06-08), <a class="reference external" href="https://arxiv.org/abs/hc:54749">arXiv:hc:54749</a>, <a class="reference external" href="https://doi.org/10.17613/syv8-cp10">doi:10.17613/syv8-cp10</a>.</p>
 </div>
-<div class="citation" id="id16" role="doc-biblioentry">
+<div class="citation" id="id14" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></span>
+<p>Axel Polleres, Maulik Rajendra Kamdar, Javier David Fernández, Tania Tudorache, and Mark Alan Musen. A more decentralized vision for Linked Data. <em>Semantic Web</em>, 11(1):101–113, 2020-01-31. URL: <a class="reference external" href="https://www.medra.org/servlet/aliasResolver?alias=iospress&amp;doi=10.3233/SW-190380">https://www.medra.org/servlet/aliasResolver?alias=iospress&amp;doi=10.3233/SW-190380</a> (visited on 2023-06-29), <a class="reference external" href="https://doi.org/10.3233/SW-190380">doi:10.3233/SW-190380</a>.</p>
+</div>
+<div class="citation" id="id18" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></span>
 <p>Jeremy Tandy, Ivan Herman, and Gregg Kellogg. Generating RDF from Tabular Data on the Web. 2015-12-17. URL: <a class="reference external" href="https://www.w3.org/TR/csv2rdf/">https://www.w3.org/TR/csv2rdf/</a> (visited on 2023-06-28).</p>
 </div>
 <div class="citation" id="id2" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></span>
 <p>Victor Charpenay, Maxime Lefrançois, and María Poveda Villalón. JSON Schema in RDF. 2023-06-14. URL: <a class="reference external" href="https://www.w3.org/2019/wot/json-schema">https://www.w3.org/2019/wot/json-schema</a> (visited on 2023-06-28).</p>
 </div>
-<div class="citation" id="id10" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></span>
+<div class="citation" id="id11" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></span>
 <p>Sierra Moxon, Harold Solbrig, Deepak Unni, Dazhi Jiao, Richard Bruskiewich, James Balhoff, Gaurav Vaidya, William Duncan, Harshad Hegde, Mark Miller, Matthew Brush, Nomi Harris, Melissa Haendel, and Christopher Mungall. The linked data modeling language (linkml): a general-purpose data modeling framework grounded in machine-readable semantics. In <em>CEUR Workshop Proceedings</em>, volume 3073, 148–151. CEUR-WS, 2021. URL: <a class="reference external" href="https://pure.johnshopkins.edu/en/publications/the-linked-data-modeling-language-linkml-a-general-purpose-data-m">https://pure.johnshopkins.edu/en/publications/the-linked-data-modeling-language-linkml-a-general-purpose-data-m</a> (visited on 2023-06-28).</p>
 </div>
-<div class="citation" id="id18" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></span>
+<div class="citation" id="id20" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></span>
 <p>Ruben Verborgh, Sam Coppens, Miel Vander Sande, Erik Mannens, Pieter Colpaert, and Rik Van de Walle. Web-Scale Querying through Linked Data Fragments. In <em>Proceedings of the 7th Workshop on Linked Data on the Web</em>. 2014-04-08.</p>
 </div>
-<div class="citation" id="id17" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></span>
+<div class="citation" id="id19" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></span>
 <p>Ruben Verborgh, Miel Vander Sande, Olaf Hartig, Joachim Van Herwegen, Laurens De Vocht, Ben De Meester, Gerald Haesendonck, and Pieter Colpaert. Triple Pattern Fragments: A low-cost knowledge graph interface for the Web. <em>Journal of Web Semantics</em>, 37–38:184–206, 2016-03. URL: <a class="reference external" href="https://linkinghub.elsevier.com/retrieve/pii/S1570826816000214">https://linkinghub.elsevier.com/retrieve/pii/S1570826816000214</a> (visited on 2023-06-08), <a class="reference external" href="https://doi.org/10.1016/j.websem.2016.03.003">doi:10.1016/j.websem.2016.03.003</a>.</p>
 </div>
 <div class="citation" id="id6" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></span>
+<p>Javier D. Fernández, Miguel A. Martínez-Prieto, Claudio Gutiérrez, Axel Polleres, and Mario Arias. Binary RDF representation for publication and exchange (HDT). <em>Journal of Web Semantics</em>, 19:22–41, 2013-03-01. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1570826813000036">https://www.sciencedirect.com/science/article/pii/S1570826813000036</a> (visited on 2023-06-29), <a class="reference external" href="https://doi.org/10.1016/j.websem.2013.01.002">doi:10.1016/j.websem.2013.01.002</a>.</p>
+</div>
+<div class="citation" id="id7" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></span>
 <p>John Kunze, Scout Calvert, Jeremy D. DeBarry, Matthew Hanlon, Greg Janée, and Sandra Sweat. Persistence Statements: Describing Digital Stickiness. <em>Data Science Journal</em>, 16(0):39, 2017-08-14. URL: <a class="reference external" href="http://datascience.codata.org/articles/10.5334/dsj-2017-039/">http://datascience.codata.org/articles/10.5334/dsj-2017-039/</a> (visited on 2022-09-07), <a class="reference external" href="https://doi.org/10.5334/dsj-2017-039">doi:10.5334/dsj-2017-039</a>.</p>
 </div>
 </div>
