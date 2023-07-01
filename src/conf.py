@@ -34,6 +34,7 @@ exclude_patterns = []
 html_theme = 'furo'
 html_static_path = ['_static']
 html_baseurl = '/docs/'
+pygments_dark_style = "github-dark"
 
 # -----------
 # Extension config
@@ -43,7 +44,8 @@ myst_heading_anchors = 3
 myst_enable_extensions = [
     'tasklist',
     'linkify',
-    'attrs_block'
+    'attrs_block',
+    'attrs_inline'
 ]
 myst_linkify_fuzzy_links = False
 

@@ -45,3 +45,11 @@ If IPFS is {index}`BitTorrent` + {index}`git`, and {index}`ActivityPub` is {inde
 ## Differences
 
 - Not permanent storage! Identities retain custody and control over objects in the network.
+
+
+## References
+
+- [IPFS-LD](https://github.com/ipfs/ipfs/issues/36)
+- Discussions on gateways and {index}`Web Seed <Web Seeds>`-like things in IPFS: 
+	- https://github.com/ipfs/kubo/issues/8234
+	- 
