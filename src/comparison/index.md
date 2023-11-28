@@ -15,6 +15,7 @@ data/index
 
 ## To be categorized
 
+- [CozoDB](https://docs.cozodb.org/en/latest/releases/v0.6.html#experience-cozodb-the-hybrid-relational-graph-vector-database-the-hippocampus-for-llms) - uh i think this is the database we needed...
 - Agregore
 - Arweave
 - CAN
@@ -30,6 +31,14 @@ data/index
 	- chunks stored by nodes close in hash space
 - Repute.Social
 - LinkedTrust.us
+- https://ganarchy.github.io/ - pull request-less git
+
+## See also
+
+- https://gitlab.com/bluesky-community1/decentralized-ecosystem/-/blob/master/README.md
+- https://dsocialcommons.org/
+- https://openengiadina.codeberg.page/rdf-cbor/ - RDF/CBOR graph serialization]
+	- https://openengiadina.codeberg.page/rdf-cbor/content-addressable-rdf-v0.1.html
 
 
 ## Points of comparison

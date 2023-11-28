@@ -17,6 +17,7 @@ release = '0.1.0'
 extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.autodoc',
+    'sphinx.ext.todo',
     'sphinxcontrib.mermaid',
     'sphinxcontrib.bibtex',
     'myst_parser',
@@ -38,6 +39,9 @@ pygments_dark_style = "github-dark"
 
 # -----------
 # Extension config
+
+# todo
+todo_include_todos = True
 
 # myst
 myst_heading_anchors = 3
