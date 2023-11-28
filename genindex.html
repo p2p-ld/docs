@@ -187,6 +187,8 @@
 <li class="toctree-l3"><a class="reference internal" href="comparison/data/datalad.html">DataLad</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparison/data/dmc.html">DMC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparison/data/eris.html">ERIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison/data/graphdb.html">Graph Databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison/data/sqlite.html">SQLite</a></li>
 </ul>
 </li>
 </ul>
@@ -204,10 +206,9 @@
 <li class="toctree-l1"><a class="reference internal" href="vocabulary.html">6. Vocabulary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="querying.html">7. Querying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="encryption.html">8. Encryption</a></li>
-<li class="toctree-l1"><a class="reference internal" href="encryption.html#todo">9. TODO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="federation.html">10. Federation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backwards_compatibility.html">11. Backwards Compatibility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="evolvability.html">12. Evolvability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="federation.html">9. Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backwards_compatibility.html">10. Backwards Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evolvability.html">11. Evolvability</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
 <ul>
@@ -227,6 +228,7 @@
 <ul class="current">
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Index</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">TODO</a></li>
 </ul>
 
 </div>
@@ -263,7 +265,7 @@
           
 <section class="genindex-section">
   <h1 id="index">Index</h1>
-  <div class="genindex-jumpbox"><a href="#A"><strong>A</strong></a> | <a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#H"><strong>H</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#J"><strong>J</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#W"><strong>W</strong></a></div>
+  <div class="genindex-jumpbox"><a href="#A"><strong>A</strong></a> | <a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#H"><strong>H</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#J"><strong>J</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#W"><strong>W</strong></a></div>
 </section>
 <section id="A" class="genindex-section">
   <h2>A</h2>
@@ -279,20 +281,24 @@
   <h2>B</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="comparison/data/sqlite.html#index-3">B-tree</a>
+</li>
         <li><a href="sketchpad.html#index-0">Backlinks</a>
 </li>
         <li><a href="definitions.html#term-Beacon"><strong>Beacon</strong></a>
 </li>
-        <li><a href="comparison/p2p/bittorrent.html#index-8">BitSwap</a>
+        <li><a href="comparison/p2p/bittorrent.html#index-9">BitSwap</a>
 </li>
         <li><a href="comparison/p2p/ipfs.html#index-1">BitTorrent</a>
 
         <ul>
-          <li><a href="comparison/p2p/bittorrent.html#index-10">libtorrent</a>
+          <li><a href="comparison/p2p/bittorrent.html#index-11">libtorrent</a>
+</li>
+          <li><a href="comparison/p2p/bittorrent.html#index-1">Magnet Links</a>
 </li>
           <li><a href="comparison/p2p/bittorrent.html#index-0">Protocol</a>
 </li>
-          <li><a href="comparison/p2p/bittorrent.html#index-2">Tracker</a>
+          <li><a href="comparison/p2p/bittorrent.html#index-3">Tracker</a>
 </li>
         </ul></li>
     </ul></td>
@@ -311,11 +317,11 @@
     Client
 
         <ul>
-          <li><a href="comparison/p2p/bittorrent.html#index-7">Kazaa</a>
+          <li><a href="comparison/p2p/bittorrent.html#index-8">Kazaa</a>
 </li>
-          <li><a href="comparison/p2p/bittorrent.html#index-10">libtorrent</a>
+          <li><a href="comparison/p2p/bittorrent.html#index-11">libtorrent</a>
 </li>
-          <li><a href="comparison/p2p/bittorrent.html#index-6">Limewire</a>
+          <li><a href="comparison/p2p/bittorrent.html#index-7">Limewire</a>
 </li>
         </ul></li>
     </ul></td>
@@ -336,13 +342,22 @@
   <h2>D</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="comparison/data/datalad.html#index-0">DataLad</a>
+        <li>
+    Database Engine
+
+        <ul>
+          <li><a href="comparison/data/graphdb.html#index-1">Graph Database</a>
 </li>
-        <li><a href="comparison/p2p/bittorrent.html#index-4">DHT</a>
+          <li><a href="comparison/data/sqlite.html#index-0">RDBMS</a>
+</li>
+        </ul></li>
+        <li><a href="comparison/data/datalad.html#index-0">DataLad</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="comparison/p2p/bittorrent.html#index-3">Discovery</a>
+        <li><a href="comparison/p2p/bittorrent.html#index-5">DHT</a>
+</li>
+        <li><a href="comparison/p2p/bittorrent.html#index-4">Discovery</a>
 </li>
         <li><a href="comparison/p2p/ipfs.html#index-4">Distributed Messaging</a>
 </li>
@@ -381,13 +396,25 @@
           <li><a href="comparison/data/datalad.html#index-2">annex</a>
 </li>
         </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li>
     Graph
 
         <ul>
           <li><a href="comparison/ld/ld_fragments.html#index-2">Partitioning</a>
+</li>
+        </ul></li>
+        <li><a href="comparison/data/graphdb.html#index-2">Graph Database</a>, <a href="comparison/data/sqlite.html#index-2">[1]</a>
+
+        <ul>
+          <li><a href="comparison/data/graphdb.html#index-5">Blazegraph</a>
+</li>
+          <li><a href="comparison/data/graphdb.html#index-6">GraphDB</a>
+</li>
+          <li><a href="comparison/data/graphdb.html#index-7">Jena</a>
+</li>
+          <li><a href="comparison/data/graphdb.html#index-4">Oxigraph</a>
+</li>
+          <li><a href="comparison/data/graphdb.html#index-8">Virtuoso</a>
 </li>
         </ul></li>
     </ul></td>
@@ -492,7 +519,7 @@
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="comparison/p2p/bittorrent.html#index-1">Merkle Tree</a>
+        <li><a href="comparison/p2p/bittorrent.html#index-2">Merkle Tree</a>
 </li>
         <li><a href="comparison/p2p/spritely.html#index-3">Mutability</a>
 </li>
@@ -540,7 +567,7 @@
         <ul>
           <li><a href="comparison/p2p/bittorrent.html#index-0">BitTorrent</a>
 </li>
-          <li><a href="comparison/p2p/bittorrent.html#index-5">Gnutella</a>
+          <li><a href="comparison/p2p/bittorrent.html#index-6">Gnutella</a>
 </li>
           <li><a href="comparison/social/ssb.html#index-0">Secure Scuttlebutt</a>
 </li>
@@ -552,6 +579,15 @@
 <section id="R" class="genindex-section">
   <h2>R</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li>
+    RDBMS
+
+        <ul>
+          <li><a href="comparison/data/sqlite.html#index-1">SQLite</a>
+</li>
+        </ul></li>
+    </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="comparison/ld/rdf.html#index-0">RDF</a>
 </li>
@@ -574,6 +610,8 @@
         </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="comparison/data/graphdb.html#index-9">SOLID</a>
+</li>
         <li>
     Storage
 
@@ -585,11 +623,26 @@
   </tr></table>
 </section>
 
+<section id="T" class="genindex-section">
+  <h2>T</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="comparison/data/graphdb.html#index-3">Triple Store</a>
+
+        <ul>
+          <li>
+    see Graph Database
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
 <section id="W" class="genindex-section">
   <h2>W</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="comparison/p2p/bittorrent.html#index-9">Web Seeds</a>, <a href="comparison/p2p/ipfs.html#index-13">[1]</a>
+        <li><a href="comparison/p2p/bittorrent.html#index-10">Web Seeds</a>, <a href="comparison/p2p/ipfs.html#index-13">[1]</a>
 </li>
     </ul></td>
   </tr></table>

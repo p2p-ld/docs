@@ -6,6 +6,8 @@ This site describes the implementation of the p2p linked data protocol in {cite}
  
 ## Document Status
 
+**23-11-27** - Back at it again after some digressions into [chatbridge](https://git.jon-e.net/jonny/chatbridge) and [nwb-linkml](https://github.com/p2p-ld/nwb-linkml/) - gathering more information on storage and interchange formats for databases and triple stores before trying to prop up the first peers sharing graphs of NWB data. Still mostly populating the [Comparison](comparison) section as I take notes and before I restructure these docs.
+
 **23-06-08** - Populating the [Comparison](comparison) section first to refresh myself on other projects, and starting to sketch diagrammatically in [Sketchpad](sketchpad). The rest of the pages are just stubs to keep track of ideas before fleshing them out.
 
 ```{toctree}
@@ -59,11 +61,5 @@ sketchpad
 
 genindex
 references
+todo
 ``` 
- 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

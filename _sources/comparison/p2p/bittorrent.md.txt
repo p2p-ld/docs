@@ -43,7 +43,7 @@ For example, a directory of three random files has a (decoded) `.torrent` file t
 }
 ```
 
-The contents of a torrent file are then uniquely indexed by the `infohash`, which is the hash of the entire (bencoded) `info` dictionary. {key}`Magnet Links <BitTorrent; Magnet Links>` are an abbreviated form of the `.torrent` file that contain only the info-hash, which allows downloading peers to request and independently verify the rest of the info dictionary and start downloading without a complete `.torrent`.
+The contents of a torrent file are then uniquely indexed by the `infohash`, which is the hash of the entire (bencoded) `info` dictionary. {index}`Magnet Links <BitTorrent; Magnet Links>` are an abbreviated form of the `.torrent` file that contain only the info-hash, which allows downloading peers to request and independently verify the rest of the info dictionary and start downloading without a complete `.torrent`.
 
 A generic magnet link looks like:
 

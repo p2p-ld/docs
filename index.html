@@ -189,6 +189,8 @@
 <li class="toctree-l3"><a class="reference internal" href="comparison/data/datalad.html">DataLad</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparison/data/dmc.html">DMC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparison/data/eris.html">ERIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison/data/graphdb.html">Graph Databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparison/data/sqlite.html">SQLite</a></li>
 </ul>
 </li>
 </ul>
@@ -206,10 +208,9 @@
 <li class="toctree-l1"><a class="reference internal" href="vocabulary.html">6. Vocabulary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="querying.html">7. Querying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="encryption.html">8. Encryption</a></li>
-<li class="toctree-l1"><a class="reference internal" href="encryption.html#todo">9. TODO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="federation.html">10. Federation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backwards_compatibility.html">11. Backwards Compatibility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="evolvability.html">12. Evolvability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="federation.html">9. Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backwards_compatibility.html">10. Backwards Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evolvability.html">11. Evolvability</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
 <ul>
@@ -229,6 +230,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">TODO</a></li>
 </ul>
 
 </div>
@@ -269,6 +271,7 @@
 <p>This site describes the implementation of the p2p linked data protocol in <span id="id1">[<a class="reference internal" href="references.html#id15" title="Jonny L. Saunders. Decentralized Infrastructure for (Neuro)science. 2022-08-31. URL: http://arxiv.org/abs/2209.07493 (visited on 2023-03-01), arXiv:2209.07493, doi:10.48550/arXiv.2209.07493.">Saunders, 2022</a>]</span></p>
 <section id="document-status">
 <h2>Document Status<a class="headerlink" href="#document-status" title="Permalink to this heading">#</a></h2>
+<p><strong>23-11-27</strong> - Back at it again after some digressions into <a class="reference external" href="https://git.jon-e.net/jonny/chatbridge">chatbridge</a> and <a class="reference external" href="https://github.com/p2p-ld/nwb-linkml/">nwb-linkml</a> - gathering more information on storage and interchange formats for databases and triple stores before trying to prop up the first peers sharing graphs of NWB data. Still mostly populating the <a class="reference internal" href="comparison/index.html#comparison"><span class="std std-ref">Comparison</span></a> section as I take notes and before I restructure these docs.</p>
 <p><strong>23-06-08</strong> - Populating the <a class="reference internal" href="comparison/index.html#comparison"><span class="std std-ref">Comparison</span></a> section first to refresh myself on other projects, and starting to sketch diagrammatically in <a class="reference internal" href="sketchpad.html"><span class="doc std std-doc">Sketchpad</span></a>. The rest of the pages are just stubs to keep track of ideas before fleshing them out.</p>
 <div class="toctree-wrapper compound">
 </div>
@@ -281,14 +284,6 @@
 <div class="toctree-wrapper compound">
 </div>
 </section>
-</section>
-<section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">#</a></h1>
-<ul class="simple">
-<li><p>:ref:<code class="docutils literal notranslate"><span class="pre">genindex</span></code></p></li>
-<li><p>:ref:<code class="docutils literal notranslate"><span class="pre">modindex</span></code></p></li>
-<li><p>:ref:<code class="docutils literal notranslate"><span class="pre">search</span></code></p></li>
-</ul>
 </section>
 
         </article>
@@ -342,7 +337,6 @@
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
 
           </div>
