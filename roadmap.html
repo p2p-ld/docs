@@ -3,11 +3,11 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="3. Identity" href="identity.html" /><link rel="prev" title="1. Definitions" href="definitions.html" />
-        <link rel="canonical" href="/docs/protocol.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Comparison" href="comparison/index.html" /><link rel="prev" title="Overview" href="overview.html" />
+        <link rel="canonical" href="/docs/roadmap.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
-        <title>2. Protocol - p2p-ld 0.1.0 documentation</title>
+        <title>Roadmap - p2p-ld 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
@@ -157,9 +157,9 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Roadmap</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="comparison/index.html">Comparison</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Comparison</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="comparison/p2p/index.html">P2P</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of P2P</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="comparison/p2p/bittorrent.html">BitTorrent</a></li>
@@ -200,9 +200,9 @@
 <li class="toctree-l1"><a class="reference internal" href="out_of_scope.html">Out of Scope</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Protocol</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="definitions.html">1. Definitions</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">2. Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="protocol.html">2. Protocol</a></li>
 <li class="toctree-l1"><a class="reference internal" href="identity.html">3. Identity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="discovery.html">4. Discovery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_structures.html">5. Data Structures</a></li>
@@ -266,28 +266,117 @@
           </label>
         </div>
         <article role="main">
-          <section id="protocol">
-<h1><span class="section-number">2. </span>Protocol<a class="headerlink" href="#protocol" title="Permalink to this heading">#</a></h1>
-<section id="connection">
-<h2><span class="section-number">2.1. </span>Connection<a class="headerlink" href="#connection" title="Permalink to this heading">#</a></h2>
+          <section id="roadmap">
+<h1>Roadmap<a class="headerlink" href="#roadmap" title="Permalink to this heading">#</a></h1>
+<p>What things do we build and in what order?</p>
+<section id="phase-1-format-sandbox">
+<h2>Phase 1: Format Sandbox<a class="headerlink" href="#phase-1-format-sandbox" title="Permalink to this heading">#</a></h2>
+<div class="admonition-goals admonition">
+<p class="admonition-title">Goals</p>
 <ul class="simple">
-<li><p>When connecting to a peer, a peer MUST advertise its own connections to other peers whose discoverability permissions allow it</p>
-<ul>
-<li><p>eg. a peer can desig</p></li>
+<li><p>Experimenting with needs for format translation</p></li>
+<li><p>Encoding of triple graphs + hashed binary files</p></li>
 </ul>
-</li>
+</div>
+<p>In this phase we are using <span class="target" id="index-0"></span>NWB as a naturalistic development case of a complex format with an idiosyncratic implementation (ie. written in its own schema language, with its own I/O API, etc.)</p>
+<p>See <a class="reference external" href="https://github.com/p2p-ld/nwb-linkml">nwb-linkml</a></p>
+</section>
+<section id="phase-2-simple-transfer">
+<h2>Phase 2: Simple Transfer<a class="headerlink" href="#phase-2-simple-transfer" title="Permalink to this heading">#</a></h2>
+<div class="admonition-goals admonition">
+<p class="admonition-title">Goals</p>
+<ul class="simple">
+<li><p>Simplest possible peer model: self-sharing between devices owned by peer</p></li>
+<li><p>Share, query, and download data</p></li>
 </ul>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">peer</span></code> has a public <code class="docutils literal notranslate"><span class="pre">identity</span></code> that is represented by one or multiple <code class="docutils literal notranslate"><span class="pre">machines</span></code> that host the <code class="docutils literal notranslate"><span class="pre">graphs</span></code> associated with that identity. Each graph has some collection of <code class="docutils literal notranslate"><span class="pre">triples</span></code> which are identified relative to the IRI of the parent graph. A triple can refer to a <code class="docutils literal notranslate"><span class="pre">binary</span></code> file that is not stored in the graph itself by its hash, encoding, and other metadata needed to use the file. The (semantic) metadata that describes that <code class="docutils literal notranslate"><span class="pre">binary</span></code> file can point to it without needing to encode arrays/etc. in RDF-like graphs.</p>
+<div class="mermaid">
+            ---
+config:
+  er:
+    layoutDirection: LR
+---
+erDiagram
+	PEER {
+		string private_key
+	}
+	PEER ||--|{ IDENTITY : knownAs
+	IDENTITY {
+		string private_key
+		string public_key
+		string preferredName
+	}
+	IDENTITY ||--|{ GRAPH : hasFeed
+	IDENTITY }o--o{ IDENTITY : peerList
+	IDENTITY }|--|{ MACHINE : represents
+	MACHINE {
+		graph mirrorRules
+	}
+	MACHINE }|--o{ GRAPH: stores
+
+	GRAPH {
+		IRI id
+		string name
+		capability read
+		capability write
+	}
+	GRAPH }|--|{ TRIPLE : contains
+	TRIPLE {
+		IRI relative_id
+		string subject
+		string predicate
+		string object
+	}
+	TRIPLE ||--o{ BINARY : indicates
+	BINARY {
+		string encoding
+		string hash
+		graph metadata
+
+	}
+        </div><p>The MVP for simple transfer is to have a single peer be able to transfer subgraphs and binary files between multiple machines keyed to their public identity.</p>
 </section>
-<section id="requests">
-<h2><span class="section-number">2.2. </span>Requests<a class="headerlink" href="#requests" title="Permalink to this heading">#</a></h2>
+<section id="phase-3-schema-manipulation">
+<h2>Phase 3: Schema Manipulation<a class="headerlink" href="#phase-3-schema-manipulation" title="Permalink to this heading">#</a></h2>
+<div class="admonition-goals admonition">
+<p class="admonition-title">Goals</p>
+<ul class="simple">
+<li><p>Make custom schema</p></li>
+<li><p>Declare and resolve sameness relations</p></li>
+<li><p>Dataset versioning</p></li>
+</ul>
+</div>
 </section>
-<section id="sharding">
-<h2><span class="section-number">2.3. </span>Sharding<a class="headerlink" href="#sharding" title="Permalink to this heading">#</a></h2>
+<section id="phase-4-peer-federation">
+<h2>Phase 4: Peer Federation<a class="headerlink" href="#phase-4-peer-federation" title="Permalink to this heading">#</a></h2>
+<div class="admonition-goals admonition">
+<p class="admonition-title">Goals</p>
+<ul class="simple">
+<li><p>Ontology for determining access</p></li>
+<li><p>Pinning and mirroring</p></li>
+</ul>
+</div>
 </section>
-<section id="backlinks">
-<h2><span class="section-number">2.4. </span>Backlinks<a class="headerlink" href="#backlinks" title="Permalink to this heading">#</a></h2>
-<p>Every link has an implicit backlink that can be accepted/denied by the owner of the referenced object.</p>
-<p>If a link is proposed from a blocked identifier, the proposed link is automatically dropped</p>
+<section id="phase-5-external-resources">
+<h2>Phase 5: External Resources<a class="headerlink" href="#phase-5-external-resources" title="Permalink to this heading">#</a></h2>
+<div class="admonition-goals admonition">
+<p class="admonition-title">Goals</p>
+<ul class="simple">
+<li><p>Treat external resources as peers</p></li>
+<li><p>HTTP, S3 mirroring</p></li>
+</ul>
+</div>
+</section>
+<section id="phase-6-discoverability">
+<h2>Phase 6: Discoverability<a class="headerlink" href="#phase-6-discoverability" title="Permalink to this heading">#</a></h2>
+<div class="admonition-goals admonition">
+<p class="admonition-title">Goals</p>
+<ul class="simple">
+<li><p>Use external sources of identity to connect to peer</p></li>
+<li><p>Bootstrap servers</p></li>
+</ul>
+</div>
 </section>
 </section>
 
@@ -296,23 +385,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="identity.html">
+          <a class="next-page" href="comparison/index.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title"><span class="section-number">3. </span>Identity</div>
+                <div class="title">Comparison</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="definitions.html">
+          <a class="prev-page" href="overview.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title"><span class="section-number">1. </span>Definitions</div>
+                <div class="title">Overview</div>
                 
               </div>
             </a>
@@ -346,11 +435,13 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">2. Protocol</a><ul>
-<li><a class="reference internal" href="#connection">2.1. Connection</a></li>
-<li><a class="reference internal" href="#requests">2.2. Requests</a></li>
-<li><a class="reference internal" href="#sharding">2.3. Sharding</a></li>
-<li><a class="reference internal" href="#backlinks">2.4. Backlinks</a></li>
+<li><a class="reference internal" href="#">Roadmap</a><ul>
+<li><a class="reference internal" href="#phase-1-format-sandbox">Phase 1: Format Sandbox</a></li>
+<li><a class="reference internal" href="#phase-2-simple-transfer">Phase 2: Simple Transfer</a></li>
+<li><a class="reference internal" href="#phase-3-schema-manipulation">Phase 3: Schema Manipulation</a></li>
+<li><a class="reference internal" href="#phase-4-peer-federation">Phase 4: Peer Federation</a></li>
+<li><a class="reference internal" href="#phase-5-external-resources">Phase 5: External Resources</a></li>
+<li><a class="reference internal" href="#phase-6-discoverability">Phase 6: Discoverability</a></li>
 </ul>
 </li>
 </ul>
@@ -367,5 +458,12 @@
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
     <script src="_static/design-tabs.js"></script>
+    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script>
+mermaid.initialize({
+    "startOnLoad":true,
+    "theme": "dark"
+})
+</script>
     </body>
 </html>
