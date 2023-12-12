@@ -81,6 +81,7 @@ mermaid.initialize({
     "theme": "dark"
 })
 """
+mermaid_version="10.6.1"
 
     # "themeVariables": {
     #   "darkMode": true,
