@@ -278,8 +278,29 @@
 <p class="admonition-title">Important</p>
 <p>Return here re: RDF canonicalization and IPFS <a class="reference external" href="https://github.com/multiformats/multicodec/pull/261">https://github.com/multiformats/multicodec/pull/261</a></p>
 </div>
+<section id="rdf-basics">
+<h3>RDF Basics<a class="headerlink" href="#rdf-basics" title="Permalink to this heading">#</a></h3>
+<section id="rdf-datasets">
+<h4>RDF Datasets<a class="headerlink" href="#rdf-datasets" title="Permalink to this heading">#</a></h4>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>Document RDF Datasets!</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-dataset">https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-dataset</a></p></li>
+<li><p><a class="reference external" href="https://www.w3.org/TR/rdf11-datasets/">https://www.w3.org/TR/rdf11-datasets/</a></p></li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+<section id="formats">
+<h2>Formats<a class="headerlink" href="#formats" title="Permalink to this heading">#</a></h2>
 <section id="json-ld">
 <span id="index-2"></span><h3>JSON-LD<a class="headerlink" href="#json-ld" title="Permalink to this heading">#</a></h3>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<p>Document JSON-LD :)</p>
+</div>
 </section>
 </section>
 <section id="challenges">
@@ -755,16 +776,17 @@ JSON Schema</label><div class="sd-tab-content docutils">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.w3.org/TR/rdf11-primer/">RDF 1.1 Primer</a></p></li>
-<li><p>W3C Recommendation on generating RDF from tabular data: <span id="id3">[<a class="reference internal" href="../../references.html#id18" title="Jeremy Tandy, Ivan Herman, and Gregg Kellogg. Generating RDF from Tabular Data on the Web. 2015-12-17. URL: https://www.w3.org/TR/csv2rdf/ (visited on 2023-06-28).">Tandy <em>et al.</em>, 2015</a>]</span></p>
+<li><p>W3C Recommendation on generating RDF from tabular data: <span id="id5">[<a class="reference internal" href="../../references.html#id18" title="Jeremy Tandy, Ivan Herman, and Gregg Kellogg. Generating RDF from Tabular Data on the Web. 2015-12-17. URL: https://www.w3.org/TR/csv2rdf/ (visited on 2023-06-28).">Tandy <em>et al.</em>, 2015</a>]</span></p>
 <ul>
 <li><p>Tabular data model: <a class="reference external" href="https://www.w3.org/TR/2015/REC-tabular-data-model-20151217/#parsing">https://www.w3.org/TR/2015/REC-tabular-data-model-20151217/#parsing</a></p></li>
 <li><p>Metadata model: <a class="reference external" href="https://www.w3.org/TR/2015/REC-tabular-metadata-20151217/">https://www.w3.org/TR/2015/REC-tabular-metadata-20151217/</a></p></li>
 </ul>
 </li>
-<li><p><span class="target" id="index-4"></span>JSON Schema in RDF: <span id="id4">[<a class="reference internal" href="../../references.html#id2" title="Victor Charpenay, Maxime Lefrançois, and María Poveda Villalón. JSON Schema in RDF. 2023-06-14. URL: https://www.w3.org/2019/wot/json-schema (visited on 2023-06-28).">Charpenay <em>et al.</em>, 2023</a>]</span></p></li>
+<li><p><span class="target" id="index-4"></span>JSON Schema in RDF: <span id="id6">[<a class="reference internal" href="../../references.html#id2" title="Victor Charpenay, Maxime Lefrançois, and María Poveda Villalón. JSON Schema in RDF. 2023-06-14. URL: https://www.w3.org/2019/wot/json-schema (visited on 2023-06-28).">Charpenay <em>et al.</em>, 2023</a>]</span></p></li>
 <li><p><a class="reference external" href="https://www.w3.org/TR/rdf12-turtle/">Turtle</a></p></li>
 <li><p><a class="reference external" href="https://www.w3.org/TR/swbp-n-aryRelations/">N-ary relations in RDF</a></p></li>
 <li><p><a class="reference external" href="https://www.w3.org/TR/rdf11-mt/">RDF 1.1 Semantics</a></p></li>
+<li><p><a class="reference external" href="https://www.w3.org/TR/sparql11-entailment/">SPARQL Entailment</a></p></li>
 </ul>
 <section id="libraries">
 <h3>Libraries<a class="headerlink" href="#libraries" title="Permalink to this heading">#</a></h3>
@@ -772,7 +794,7 @@ JSON Schema</label><div class="sd-tab-content docutils">
 <li><p><a class="reference external" href="https://github.com/digitalbazaar/jsonld.js">jsonld.js</a></p></li>
 <li><p><a class="reference external" href="https://github.com/digitalbazaar/rdf-canonize-native">rdf-canonize-native</a></p></li>
 <li><p><a class="reference external" href="https://github.com/biolink/biolink-model">biolink-model</a> for a nice example of generating multiple schema formats from a .yaml file.</p></li>
-<li><p><a class="reference external" href="https://linkml.io/">linkml</a> - modeling language for linked data <span id="id5">[<a class="reference internal" href="../../references.html#id11" title="Sierra Moxon, Harold Solbrig, Deepak Unni, Dazhi Jiao, Richard Bruskiewich, James Balhoff, Gaurav Vaidya, William Duncan, Harshad Hegde, Mark Miller, Matthew Brush, Nomi Harris, Melissa Haendel, and Christopher Mungall. The linked data modeling language (linkml): a general-purpose data modeling framework grounded in machine-readable semantics. In CEUR Workshop Proceedings, volume 3073, 148–151. CEUR-WS, 2021. URL: https://pure.johnshopkins.edu/en/publications/the-linked-data-modeling-language-linkml-a-general-purpose-data-m (visited on 2023-06-28).">Moxon <em>et al.</em>, 2021</a>]</span></p>
+<li><p><a class="reference external" href="https://linkml.io/">linkml</a> - modeling language for linked data <span id="id7">[<a class="reference internal" href="../../references.html#id11" title="Sierra Moxon, Harold Solbrig, Deepak Unni, Dazhi Jiao, Richard Bruskiewich, James Balhoff, Gaurav Vaidya, William Duncan, Harshad Hegde, Mark Miller, Matthew Brush, Nomi Harris, Melissa Haendel, and Christopher Mungall. The linked data modeling language (linkml): a general-purpose data modeling framework grounded in machine-readable semantics. In CEUR Workshop Proceedings, volume 3073, 148–151. CEUR-WS, 2021. URL: https://pure.johnshopkins.edu/en/publications/the-linked-data-modeling-language-linkml-a-general-purpose-data-m (visited on 2023-06-28).">Moxon <em>et al.</em>, 2021</a>]</span></p>
 <ul>
 <li><p>Multidimensional arrays in linkml <a class="reference external" href="https://linkml.io/linkml/howtos/multidimensional-arrays.html">https://linkml.io/linkml/howtos/multidimensional-arrays.html</a></p></li>
 </ul>
@@ -789,6 +811,11 @@ JSON Schema</label><div class="sd-tab-content docutils">
 <li><p><a class="reference external" href="https://github.com/jmchandonia/CORAL">CORAL</a></p></li>
 <li><p><a class="reference external" href="https://www.cs.ox.ac.uk/isg/challenges/sem-tab/">SEMTAB</a> - competition for mapping tabular data to RDF</p></li>
 <li><p><a class="reference external" href="https://www.ceur-ws.org/Vol-1272/paper_22.pdf">SciSPARQL</a> - an extension of SPARQL to include arrays.</p></li>
+<li><p><a class="reference external" href="https://www.vldb.org/pvldb/vol11/p1978-jamour.pdf">MAGiQ</a> - using sparse arrays for RDF graphs</p>
+<ul>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2106.14038">GSmart</a> (same thing)</p></li>
+</ul>
+</li>
 </ul>
 </section>
 <section id="example-datasets">
@@ -858,6 +885,13 @@ JSON Schema</label><div class="sd-tab-content docutils">
             <ul>
 <li><a class="reference internal" href="#">RDF and Friends</a><ul>
 <li><a class="reference internal" href="#id2">RDF And Friends</a><ul>
+<li><a class="reference internal" href="#rdf-basics">RDF Basics</a><ul>
+<li><a class="reference internal" href="#rdf-datasets">RDF Datasets</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#formats">Formats</a><ul>
 <li><a class="reference internal" href="#json-ld">JSON-LD</a></li>
 </ul>
 </li>
