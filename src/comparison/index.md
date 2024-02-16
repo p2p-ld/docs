@@ -32,6 +32,16 @@ data/index
 - Repute.Social
 - LinkedTrust.us
 - https://ganarchy.github.io/ - pull request-less git
+- semantic hashing
+	- https://iscc.codes/#the-iscc-is - multipart content identifiers from [bengo](https://mastodon.social/@bengo/111615921362561222)
+	- [simhash](https://en.wikipedia.org/wiki/SimHash) - similarity-sensitive hashes, also from [bengo](https://mastodon.social/@bengo/111616070992289762)
+	- [hypervectors](https://techhub.social/@hosford42/111615949285396537)
+- Scholcomm-adjacent stuff
+	- from [Patrick Hochstenbach](https://openbiblio.social/@hochstenbach): [Event Notifications](https://www.eventnotifications.net/) - [paper](https://journal.code4lib.org/articles/17823), [spec](https://mellonscholarlycommunication.github.io/spec-orchestrator/)
+- [rdf/js](http://rdf.js.org/data-model-spec/) - ORM for RDF
+- [Willow Protocol](https://willowprotocol.org/)
+- [neurobagel](https://neurobagel.org/overview/)
+- [ActivityPods](https://github.com/assemblee-virtuelle/activitypods) - SOLID and ActivityPub
 
 ## See also
 

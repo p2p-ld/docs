@@ -24,6 +24,10 @@
 | {index}`Virtuoso <Graph Database; Virtuoso>` | | | | 
 ```
 
+## Oxigraph
+
+- [https://github.com/oxigraph/oxrdflib](oxrdflib) - integration with {index}`rdflib`
+
 ## TODO
 
 - What in the heck is {index}`SOLID` using?

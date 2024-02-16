@@ -16,12 +16,28 @@ We depart from that vision, instead favoring radical vernacularism {cite}`saunde
 Return here re: RDF canonicalization and IPFS https://github.com/multiformats/multicodec/pull/261
 ```
 
+### RDF Basics
+
+#### RDF Datasets
+
+```{todo}
+Document RDF Datasets!
+
+- https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-dataset
+- https://www.w3.org/TR/rdf11-datasets/
+```
+
+
+## Formats
+
 ```{index} JSON-LD
 ```
 ### JSON-LD
 
 
-
+```{todo}
+Document JSON-LD :)
+```
 
 ## Challenges
 
@@ -475,6 +491,7 @@ I'll just leave this example of encoding the pixels in one RGB video frame as a 
 - [Turtle](https://www.w3.org/TR/rdf12-turtle/)
 - [N-ary relations in RDF](https://www.w3.org/TR/swbp-n-aryRelations/)
 - [RDF 1.1 Semantics](https://www.w3.org/TR/rdf11-mt/)
+- [SPARQL Entailment](https://www.w3.org/TR/sparql11-entailment/)
 
 ### Libraries
 
@@ -493,6 +510,8 @@ I'll just leave this example of encoding the pixels in one RGB video frame as a 
 - [CORAL](https://github.com/jmchandonia/CORAL)
 - [SEMTAB](https://www.cs.ox.ac.uk/isg/challenges/sem-tab/) - competition for mapping tabular data to RDF
 - [SciSPARQL](https://www.ceur-ws.org/Vol-1272/paper_22.pdf) - an extension of SPARQL to include arrays.
+- [MAGiQ](https://www.vldb.org/pvldb/vol11/p1978-jamour.pdf) - using sparse arrays for RDF graphs
+  - [GSmart](https://arxiv.org/abs/2106.14038) (same thing)
 
 ### Example Datasets
 
