@@ -42,6 +42,8 @@ data/index
 - [Willow Protocol](https://willowprotocol.org/)
 - [neurobagel](https://neurobagel.org/overview/)
 - [ActivityPods](https://github.com/assemblee-virtuelle/activitypods) - SOLID and ActivityPub
+- [Data Treehouse](https://www.data-treehouse.com/) - ??
+- [Cambria](https://www.inkandswitch.com/cambria/)
 
 ## See also
 
