@@ -10,6 +10,7 @@ ld_fragments
 hdt
 ld_platform
 nanopubs
+webid
 ```
 
 Linked data was born to be p2p. Many of the [initial, lofty visions](https://jon-e.net/surveillance-graphs/#semantic-web-priesthoods) of the [semantic web](https://jon-e.net/infrastructure/#linked-data-has-an-ambivalent-history-of-thought-regarding-the-l) are only possible with p2p systems - fluid, languagelike ontologies, portable personal data, truly decentralized information structuring on the web and so on {cite}`saundersSurveillanceGraphs2023,saundersDecentralizedInfrastructureNeuro2022`. That's one of the central goals of this project --- as might be obvious from its placeholder name: p2p-ld.
